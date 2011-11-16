@@ -1,6 +1,5 @@
 package moteurrecherche;
 
-import java.util.Arrays;
 import java.util.HashMap;
 
 public class MoteurRecherche {
@@ -13,7 +12,7 @@ public class MoteurRecherche {
         HashMap<Integer, Noeud> noeudMap = noeudReader.read("/resources/Collection/d001.xml");
         
         
-        TraitementCollection traiteCollection = new TraitementCollection();
+        TraitementCollection collectionTraitee = new TraitementCollection();
         
         String str = "La douceur de l'air, un ciel voilé, les cloches qui sonnent, "
                 + "cent objets muets préparés pour frapper l'imagination, "
@@ -21,7 +20,9 @@ public class MoteurRecherche {
                 + "l'éternelle étincelle mystique : c'est Lourdes, où règne "
                 + "la Vierge.";
 
-        System.out.println(traiteCollection.traiterChaine(str, 0));
+        ChaineTraitee chaineTraitee = collectionTraitee.traiterChaine(str, 0);
+        System.out.println("Liste termes de la chaine traitée : "+chaineTraitee.getListeTermes());
+        System.out.println("Freq. des termes dans la chaine   : "+chaineTraitee.getFrequenceTerme());
         
         str = "je suis allé tout droit droit droit à la grotte de la révélation. "
                 + "L'eau susurre et se froisse en glissant, les cloches tintent "
@@ -29,9 +30,12 @@ public class MoteurRecherche {
                 + "bêlement des troupeaux. Quelque chose d'ineffable flotte "
                 + "dans cette solitude.";
         
-        System.out.println(traiteCollection.traiterChaine(str, 1));
+        chaineTraitee = collectionTraitee.traiterChaine(str, 1);
+        
+        System.out.println("Liste termes de la chaine traitée : "+chaineTraitee.getListeTermes());
+        System.out.println("Freq. des termes dans la chaine   : "+chaineTraitee.getFrequenceTerme());
 
-        System.out.println(traiteCollection.getListeTermes());
+        System.out.println("Liste termes de toute la collection : "+collectionTraitee.getListeTermes());
 
 
 

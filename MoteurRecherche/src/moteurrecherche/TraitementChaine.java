@@ -10,6 +10,8 @@ public class TraitementChaine {
     private TraitementCollection traitementCollec;
     private HashMap<String, Integer> listeTermesCollection;
     private ArrayList<Terme> listeTermesChaine;
+    /* Permet d'avoir un accès direct aux indices de l'arraylist */
+    HashMap<String, Integer> frequenceTerme;
     private ArrayList<String> stopListe;
     private String chaine;
     private int idNoeud;
@@ -30,6 +32,7 @@ public class TraitementChaine {
         this.idNoeud = id_noeud;
         this.listeTermesCollection = tc.getListeTermes();
         this.listeTermesChaine = new ArrayList<Terme>();
+        this.frequenceTerme = new HashMap<String, Integer>();
         this.stopListe = tc.getStopListe();
         this.traitementCollec = tc;
         this.position = 1;
@@ -40,8 +43,8 @@ public class TraitementChaine {
      * @param str la chaîne de caractères à traiter
      */
     public void traiterChaine() {
-        /* Permet d'avoir un accès direct aux indices de l'arraylist */
-        HashMap<String, Integer> positionTermeDansListe = new HashMap<String, Integer>();
+        
+        Integer freq;
 
         /* Mettre la chaine en minuscule et remplacer les accents */
         chaine = chaine.toLowerCase();
@@ -76,12 +79,13 @@ public class TraitementChaine {
                         }
 
                         //Incrémenter le nb d'occurrences si existe déjà
-                        //if(listeTermesChaine.contains(mot) != null)
-                            //listeTermesChaine.get(mot).incrementerOccurrence();
+                        if((freq = frequenceTerme.get(mot)) != null)
+                            frequenceTerme.put(mot, freq+1);
+                        else
+                            frequenceTerme.put(mot, 1);
 
                         /* Ajout dans la liste de termes de cette chaîne */
                         listeTermesChaine.add(new Terme(mot, idNoeud, position++));
-                        
                     }
                 }
             }
@@ -97,6 +101,15 @@ public class TraitementChaine {
     public ArrayList<Terme> getListeTermesChaine() {
         return listeTermesChaine;
     }
+
+    /**
+     * @return la frequence pour un mot donné dans la chaîne considérée
+     */
+    public HashMap<String, Integer> getFrequenceTerme() {
+        return frequenceTerme;
+    }
+    
+    
 
     /**
      * Remplace tous les accents dans une chaîne de caractères.

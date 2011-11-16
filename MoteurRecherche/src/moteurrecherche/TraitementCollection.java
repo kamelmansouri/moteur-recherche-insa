@@ -38,11 +38,13 @@ public class TraitementCollection {
      * formatés issus de celle-ci dans la liste de termes.
      * @param str la chaîne à traiter
      * @param idNoeud le noeud dans lequel la chaîne se trouve
+     * @return Un objet ChaineTraitee @see ChaineTraitee
      */
-    public ArrayList<Terme> traiterChaine(String str, int idNoeud) {
+    public ChaineTraitee traiterChaine(String str, int idNoeud) {
         TraitementChaine p = new TraitementChaine(this, str, idNoeud);
         p.traiterChaine();
-        return p.getListeTermesChaine();
+
+        return new ChaineTraitee(p.getListeTermesChaine(), p.getFrequenceTerme());
     }
     
     /**
