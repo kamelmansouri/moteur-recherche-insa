@@ -1,11 +1,14 @@
 package moteurrecherche;
 
+import java.sql.SQLException;
 import java.util.HashMap;
 
 public class MoteurRecherche {
 
-    public static void main(String[] args) {
-//        MySQLAccess access = new MySQLAccess();
+    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+        MySQLAccess access = new MySQLAccess();
+        access.insertTerm("autruche", 27);
+        access.insertDocument("d002");
         
         
         XMLNoeudReader noeudReader = new XMLNoeudReader();

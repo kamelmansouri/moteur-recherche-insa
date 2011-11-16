@@ -9,6 +9,8 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  *
@@ -17,6 +19,8 @@ import java.sql.Statement;
 public class MySQLAccess {
 
     private final static String DBNAME = "repco14";
+    private final static boolean DEBUG = true;
+    
     private Connection connection;
 
     public MySQLAccess() throws ClassNotFoundException {
@@ -49,5 +53,66 @@ public class MySQLAccess {
                 stmt.close();
             }
         }
+    }
+    
+    public boolean requeteUpdate(String q) throws SQLException {
+        Statement stmt = null;
+        int result = 0;
+        
+        try {
+            stmt = connection.createStatement();
+
+            result = stmt.executeUpdate(q);
+            
+        } catch (SQLException e) {
+            System.out.println(e.getMessage());
+        } finally {
+            if (stmt != null) {
+                stmt.close();
+            }
+        }
+        
+        return (result != 0);
+    }
+    
+    /**
+     * Insère un terme dans la table Terms
+     * @param mot le mot à insérer dans la colonne value
+     * @param frequence la fréquence de ce mot
+     * @return true si l'insertion a réussie, false sinon
+     * @throws SQLException 
+     */
+    public boolean insertTerm(String mot, int frequence) throws SQLException {
+     
+        String query = "INSERT INTO terms VALUES('', '"+ mot +"', '"+ frequence +"')";
+        
+        boolean result = requeteUpdate(query);
+        
+        if(DEBUG) {
+            if(!result) System.out.println("[Terms][INS] "+mot+" --> FAIL (check unique constraint)");
+            else System.out.println("[Terms][INS] "+mot);
+        }
+        
+        return result;
+    }
+    
+    /**
+     * Insère un document dans la table Documents
+     * @param nomDoc
+     * @return true si l'insertion a réussie, false sinon
+     * @throws SQLException 
+     */
+    public boolean insertDocument(String nomDoc) throws SQLException {
+     
+        String query = "INSERT INTO documents VALUES('', '"+ nomDoc +"')";
+        
+        boolean result = requeteUpdate(query);
+        
+        if(DEBUG) {
+            if(!result) System.out.println("[Documents][INS] "+nomDoc+" --> FAIL (check unique constraint)");
+            else System.out.println("[Documents][INS] "+nomDoc);
+        }
+        
+        return result;
     }
 }
