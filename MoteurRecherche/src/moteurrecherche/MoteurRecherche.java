@@ -7,9 +7,6 @@ public class MoteurRecherche {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
         MySQLAccess access = new MySQLAccess();
-        access.insertTerm("autruche", 27);
-        access.insertDocument("d002");
-        
         
         XMLNoeudReader noeudReader = new XMLNoeudReader();
         HashMap<Integer, Noeud> noeudMap = noeudReader.read("/resources/Collection/d001.xml");

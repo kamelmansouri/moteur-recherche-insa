@@ -9,8 +9,6 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  *
@@ -18,11 +16,14 @@ import java.util.logging.Logger;
  */
 public class MySQLAccess {
 
-    private final static String DBNAME = "repco14";
     private final static boolean DEBUG = true;
     
     private Connection connection;
 
+    /**
+     * Initialise une connexion à la base de données
+     * @throws ClassNotFoundException 
+     */
     public MySQLAccess() throws ClassNotFoundException {
         try {
             Class.forName("com.mysql.jdbc.Driver");
@@ -33,19 +34,20 @@ public class MySQLAccess {
         }
     }
 
-    public void viewDocument() throws SQLException {
+    /**
+     * Traite les requêtes de sélection
+     * @param q la requête à exécuter
+     * @return null si le résultat de la requête est vide, ResultSet sinon
+     * @throws SQLException 
+     */
+    public ResultSet requeteSelect(String q) throws SQLException {
         Statement stmt = null;
-        String query = "select * from documents";
+        ResultSet rs = null;
 
         try {
             stmt = connection.createStatement();
-            ResultSet rs = stmt.executeQuery(query);
-            
-            while (rs.next()) {
-                int id = rs.getInt("id");
-                String name = rs.getString("name");
-                System.out.println(id + " > " + name);
-            }
+            rs = stmt.executeQuery(q);
+
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         } finally {
@@ -53,9 +55,17 @@ public class MySQLAccess {
                 stmt.close();
             }
         }
+        
+        return rs;
     }
     
-    public boolean requeteUpdate(String q) throws SQLException {
+    /**
+     * Traite les requêtes d'insertion, update et suppression
+     * @param q la requête à exécuter
+     * @return true si la requête a renvoyé quelque chose, false sinon
+     * @throws SQLException 
+     */
+    private boolean requeteUpdate(String q) throws SQLException {
         Statement stmt = null;
         int result = 0;
         
@@ -111,6 +121,79 @@ public class MySQLAccess {
         if(DEBUG) {
             if(!result) System.out.println("[Documents][INS] "+nomDoc+" --> FAIL (check unique constraint)");
             else System.out.println("[Documents][INS] "+nomDoc);
+        }
+        
+        return result;
+    }
+    
+    /**
+     * Insère un noeud dans la table Nodes
+     * @param id l'id du noeud
+     * @param doc_id l'id du document dans lequel se trouve le noeud
+     * @param label l'intitulé du noeud
+     * @param parent_id l'id du noeud parent
+     * @return true si l'insertion a réussie, false sinon
+     * @throws SQLException 
+     */  
+    public boolean insertNode(int id, int doc_id, String label, int parent_id) throws SQLException {
+     
+        String query = "INSERT INTO nodes VALUES('"+ id +"', '"+ doc_id +
+                "', '"+ label +"', '"+ parent_id +"')";
+        
+        boolean result = requeteUpdate(query);
+        
+        if(DEBUG) {
+            if(!result) System.out.println("[Nodes][INS] "+id+"/"+label
+                    +" --> FAIL (check unique constraint)");
+            else System.out.println("[Nodes][INS] "+id+"/"+label);
+        }
+        
+        return result;
+    }
+    
+    /**
+     * Insère un couple terme/noeud dans la table Term_in_node
+     * @param term_id l'id du terme à insérer
+     * @param node_id l'id du noeud contenant le terme à insérer
+     * @param freq la fréquence du terme dans ce noeud
+     * @return true si l'insertion a réussie, false sinon
+     * @throws SQLException 
+     */
+    public boolean insertTermInNode(int term_id, int node_id, int freq) throws SQLException {
+     
+        String query = "INSERT INTO term_in_node VALUES('"+ term_id +"', '"
+                + node_id +"', '"+ freq +"')";
+        
+        boolean result = requeteUpdate(query);
+        
+        if(DEBUG) {
+            if(!result) System.out.println("[Term_in_Node][INS] "+term_id+"/"+node_id
+                    +" --> FAIL (check unique constraint)");
+            else System.out.println("[Term_in_Node][INS] "+term_id+"/"+node_id);
+        }
+        
+        return result;
+    }
+    
+    /**
+     * Insère un couple terme/noeud avec la position du terme dans ce noeud
+     * @param term_id l'id du terme à insérer
+     * @param node_id l'id du noeud contenant le terme à insérer
+     * @param pos la position du terme dans ce noeud
+     * @return true si l'insertion a réussie, false sinon
+     * @throws SQLException 
+     */
+    public boolean insertTermPos(int term_id, int node_id, int pos) throws SQLException {
+     
+        String query = "INSERT INTO term_pos VALUES('"+ term_id +"', '"
+                + node_id +"', '"+ pos +"')";
+        
+        boolean result = requeteUpdate(query);
+        
+        if(DEBUG) {
+            if(!result) System.out.println("[Term_pos][INS] "+term_id+"/"+node_id
+                    +" --> FAIL (check unique constraint)");
+            else System.out.println("[Term_pos][INS] "+term_id+"/"+node_id);
         }
         
         return result;
