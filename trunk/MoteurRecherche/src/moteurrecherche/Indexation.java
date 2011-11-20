@@ -1,6 +1,9 @@
 
 package moteurrecherche;
 
+import moteurrecherche.ParserXML.XMLCollectionReader;
+import moteurrecherche.ParserXML.NoeudText;
+import moteurrecherche.ParserChaine.TraitementCollection;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.ArrayList;

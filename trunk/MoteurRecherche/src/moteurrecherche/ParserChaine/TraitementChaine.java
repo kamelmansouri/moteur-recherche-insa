@@ -1,4 +1,4 @@
-package moteurrecherche;
+package moteurrecherche.ParserChaine;
 
 import java.text.Normalizer;
 import java.util.ArrayList;

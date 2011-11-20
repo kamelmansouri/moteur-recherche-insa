@@ -1,5 +1,5 @@
 
-package moteurrecherche;
+package moteurrecherche.ParserChaine;
 
 public class Noeud {
     private int idDoc;

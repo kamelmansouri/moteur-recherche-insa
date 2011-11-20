@@ -1,8 +1,5 @@
-/*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
-package moteurrecherche;
+
+package moteurrecherche.Database;
 
 import com.mysql.jdbc.Connection;
 import java.sql.DriverManager;
@@ -10,10 +7,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 
-/**
- *
- * @author alexis
- */
+
 public class MySQLAccess {
 
     private final static boolean DEBUG = true;

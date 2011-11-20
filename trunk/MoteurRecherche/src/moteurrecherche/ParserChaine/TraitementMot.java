@@ -1,5 +1,5 @@
 
-package moteurrecherche;
+package moteurrecherche.ParserChaine;
 
 import java.text.Normalizer;
 

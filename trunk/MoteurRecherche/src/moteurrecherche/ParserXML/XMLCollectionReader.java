@@ -1,5 +1,5 @@
 
-package moteurrecherche;
+package moteurrecherche.ParserXML;
 
 import java.io.File;
 import java.io.IOException;
@@ -7,6 +7,7 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import moteurrecherche.MoteurRecherche;
 import org.jdom.Document;
 import org.jdom.Element;
 import org.jdom.JDOMException;
