@@ -6,12 +6,12 @@ import java.util.HashMap;
 public class MoteurRecherche {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        MySQLAccess access = new MySQLAccess();
+        //MySQLAccess access = new MySQLAccess();
         
-        XMLNoeudReader noeudReader = new XMLNoeudReader();
-        HashMap<Integer, Noeud> noeudMap = noeudReader.read("/resources/Collection/d001.xml");
+        Indexation indexation = new Indexation();
+        indexation.indexer();
         
-        
+        /*
         TraitementCollection collectionTraitee = new TraitementCollection();
         
         String str = "La douceur de l'air, un ciel voilé, les cloches qui sonnent, "
@@ -36,7 +36,7 @@ public class MoteurRecherche {
         System.out.println("Freq. des termes dans la chaine   : "+chaineTraitee.getFrequenceTerme());
 
         System.out.println("Liste termes de toute la collection : "+collectionTraitee.getListeTermes());
-
+*/
 
 
     }
