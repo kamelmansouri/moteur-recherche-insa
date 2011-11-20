@@ -1,5 +1,5 @@
 
-package moteurrecherche;
+package moteurrecherche.ParserChaine;
 
 class Terme {
     private String mot;

@@ -1,5 +1,5 @@
 
-package moteurrecherche;
+package moteurrecherche.ParserXML;
 
 public class NoeudText {
     private int id;
