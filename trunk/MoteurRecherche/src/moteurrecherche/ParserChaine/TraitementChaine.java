@@ -7,8 +7,8 @@ import java.util.HashMap;
 public class TraitementChaine {
 
     /* Attributs donnés en param de constructeur */
-    private TraitementCollection traitementCollec;
-    private HashMap<String, Integer> listeTermesCollection;
+    private TraitementCollection collection;
+    private HashMap<String, TermeCollection> listeTermesCollection;
     private ArrayList<Terme> listeTermesChaine;
     /* Permet d'avoir un accès direct aux indices de l'arraylist */
     HashMap<String, Integer> frequenceTerme;
@@ -34,7 +34,7 @@ public class TraitementChaine {
         this.listeTermesChaine = new ArrayList<Terme>();
         this.frequenceTerme = new HashMap<String, Integer>();
         this.stopListe = tc.getStopListe();
-        this.traitementCollec = tc;
+        this.collection = tc;
         this.position = 1;
     }
 
@@ -45,6 +45,7 @@ public class TraitementChaine {
     public void traiterChaine() {
         
         Integer freq;
+        int indexIdTerme;
 
         /* Mettre la chaine en minuscule et remplacer les accents */
         chaine = chaine.toLowerCase();
@@ -68,14 +69,15 @@ public class TraitementChaine {
                 if (mot.length() > 1) {
                     /* Si le mot n'est pas dans la stop liste */
                     if (!existeDansStopListe(mot)) {
-
+                        indexIdTerme = collection.getIndexIdTerme();
+                        
                         /* Mise à jour si déjà présent dans la liste collection */
                         if (existeDansListeTermesCollection(mot)) {
-                            listeTermesCollection.put(mot,
-                                    listeTermesCollection.get(mot)+1);
+                            listeTermesCollection.get(mot).incrementerFrequence();
                         } /* Ajout si nouveau mot */
                         else {
-                            listeTermesCollection.put(mot, 1);
+                            listeTermesCollection.put(mot, new TermeCollection(indexIdTerme));
+                            collection.incrementerIdTerme();
                         }
 
                         //Incrémenter le nb d'occurrences si existe déjà
@@ -86,13 +88,14 @@ public class TraitementChaine {
 
                         /* Ajout dans la liste de termes de cette chaîne */
                         listeTermesChaine.add(new Terme(mot, idNoeud, position++));
+                        
                     }
                 }
             }
 
         }
         /* Mise à jour effective de la liste de termes */
-        traitementCollec.setListeTermes(listeTermesCollection);
+        collection.setListeTermes(listeTermesCollection);
     }
 
     /**

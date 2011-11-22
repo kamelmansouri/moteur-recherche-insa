@@ -86,9 +86,9 @@ public class MySQLAccess {
      * @return true si l'insertion a réussie, false sinon
      * @throws SQLException 
      */
-    public boolean insertTerm(String mot, int frequence) throws SQLException {
+    public boolean insertTerm(int id, String mot, int frequence) throws SQLException {
      
-        String query = "INSERT INTO terms VALUES('', '"+ mot +"', '"+ frequence +"')";
+        String query = "INSERT INTO terms VALUES('"+ id +"', '"+ mot +"', '"+ frequence +"')";
         
         boolean result = requeteUpdate(query);
         
