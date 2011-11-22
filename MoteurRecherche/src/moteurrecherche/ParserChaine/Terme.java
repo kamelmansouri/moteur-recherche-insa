@@ -1,22 +1,22 @@
 
 package moteurrecherche.ParserChaine;
 
-class Terme {
+public class Terme {
     private String mot;
     private int idNoeud;
     private int position;
 
     public Terme(String mot, int idNoeud, int pos) {
-        this.mot = mot;
-        this.idNoeud = idNoeud;
-        this.position = pos;
+        this.mot        = mot;
+        this.idNoeud    = idNoeud;
+        this.position   = pos;
     }
-
+    
     public String getMot() {
         return this.mot;
     }
 
-    public int getPositionDansListeNoeuds() {
+    public int getIdNoeud() {
         return idNoeud;
     }
 

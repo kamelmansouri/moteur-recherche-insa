@@ -1,13 +1,12 @@
 package moteurrecherche;
 
 import java.sql.SQLException;
-import java.util.HashMap;
+import moteurrecherche.Database.MySQLAccess;
 
 public class MoteurRecherche {
 
     public static void main(String[] args) throws ClassNotFoundException, SQLException {
-        //MySQLAccess access = new MySQLAccess();
-        
+
         Indexation indexation = new Indexation();
         indexation.indexer();
         

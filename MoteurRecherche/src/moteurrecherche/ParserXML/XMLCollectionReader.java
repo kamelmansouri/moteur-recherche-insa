@@ -20,7 +20,7 @@ public class XMLCollectionReader {
                     noeud_id;
     
     //Hashmap of elements in the document
-    ArrayList<NoeudText> Noeuds = new ArrayList<NoeudText>();
+    ArrayList<NoeudText> noeuds;
     
     
     /**
@@ -29,6 +29,7 @@ public class XMLCollectionReader {
     public XMLCollectionReader(){
         this.doc_id  = 0;
         this.noeud_id = 0;
+        this.noeuds = new ArrayList<NoeudText>();
     }
     
     
@@ -40,6 +41,7 @@ public class XMLCollectionReader {
     public XMLCollectionReader(Integer doc_id, Integer noeud_id){
         this.doc_id   = doc_id;
         this.noeud_id = noeud_id;
+        noeuds = new ArrayList<NoeudText>();
     }
 
     public Integer getNoeud_id() {
@@ -113,7 +115,7 @@ public class XMLCollectionReader {
             Logger.getLogger(MoteurRecherche.class.getName()).log(Level.SEVERE, null, ex);
         }
         
-        return this.Noeuds;
+        return this.noeuds;
     }
     
     /**
@@ -125,7 +127,7 @@ public class XMLCollectionReader {
     private Integer putNoeud (String tag, Integer parent, String text){
         
         // Adds Noeud and increments the Noeud_id
-        this.Noeuds.add(new NoeudText(this.noeud_id, this.doc_id, parent, tag, text));
+        this.noeuds.add(new NoeudText(this.noeud_id, this.doc_id, parent, tag, text));
         this.noeud_id++;
 
         return this.noeud_id -1;

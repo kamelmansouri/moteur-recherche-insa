@@ -11,20 +11,29 @@ import java.util.HashMap;
 public class TraitementCollection {
     private final static String STOP_LISTE_PATH = "/resources/stopliste.txt";
 
-    private HashMap<String, Integer> listeTermes; //<mot, nbOccurrence>
+    private HashMap<String, TermeCollection> listeTermes; //<mot, nbOccurrence>
     private ArrayList<String> stopListe;
+    private int indexIdTerme; //permet de donner un id à un terme
     
     public TraitementCollection() {
-        listeTermes = new HashMap<String, Integer>();
+        listeTermes = new HashMap<String, TermeCollection>();
         stopListe   = new ArrayList<String>();
         chargerStopListe();
     }
+    
+    public int getIndexIdTerme() {
+        return indexIdTerme;
+    }
+    
+    public void incrementerIdTerme() {
+        indexIdTerme++;
+    }
 
-    public HashMap<String, Integer> getListeTermes() {
+    public HashMap<String, TermeCollection> getListeTermes() {
         return listeTermes;
     }
 
-    public void setListeTermes(HashMap<String, Integer> listeTermes) {
+    public void setListeTermes(HashMap<String, TermeCollection> listeTermes) {
         this.listeTermes = listeTermes;
     }
     

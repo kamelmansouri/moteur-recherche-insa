@@ -1,7 +1,6 @@
 
 package moteurrecherche.ParserChaine;
 
-import moteurrecherche.ParserChaine.Terme;
 import java.util.ArrayList;
 import java.util.HashMap;
 
