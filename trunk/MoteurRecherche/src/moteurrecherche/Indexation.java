@@ -7,11 +7,7 @@ import moteurrecherche.ParserChaine.TraitementCollection;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
-import java.util.Map.Entry;
 import moteurrecherche.Database.MySQLAccess;
-import moteurrecherche.ParserChaine.TermePosition;
-import moteurrecherche.ParserChaine.TermeCollection;
-import moteurrecherche.ParserChaine.TermeDansNoeud;
 
 public class Indexation {
 
@@ -51,15 +47,11 @@ public class Indexation {
         files = directory.listFiles(filter);
         int idDocCourant=0;
 
-        int limit = 1;
         //Lit et traite tous les fichiers de la collection
         for (File f : files) {
             if (DEBUG)
                 System.out.print(f.getName() + " : ");
 
-            if(limit == 0) break;
-            
-            limit--;
 
             listeNoeuds = collectionReader.readDocument(f);
 
@@ -99,63 +91,24 @@ public class Indexation {
      * Insère les documents/termes/noeuds issus de la collection traitée
      */
     private void insererDansBase() throws SQLException {
+        
         /* Insertion des documents de la collection */
-        int idDoc = 0;
-        for (File f : files) {
-            access.insertDocument(idDoc++, f.getName());
-        }
-        if (DEBUG) {
-            System.out.println("Insertion des documents : OK\n");
-        }
+        access.insertDocument(files);
+        
         
         /* Insertion dans la table termes */
         access.insertTerm(collectionTraitee.getListeTermes());
-        if (DEBUG) {
-            System.out.println("Insertion des termes : OK\n");
-        }
-
+        
 
         /* Insertion des noeuds */
-        int parent;
-
-        for (NoeudText noeud : this.listeNoeuds) {
-            if (noeud != null) {
-                if (DEBUG) {
-                    System.out.print("DocID:" + noeud.getIdDoc() + " ");
-                }
-                access.insertNode(
-                        noeud.getId(),
-                        noeud.getIdDoc(),
-                        noeud.getLabel(),
-                        noeud.getIdParent());
-            }
-        }
-        if (DEBUG) {
-            System.out.println("Insertion des noeuds : OK\n");
-        }
+        access.insertNode(listeNoeuds);
 
         
         /* Insertion des term_in_node */
-        for (TermeDansNoeud terme : collectionTraitee.getListeTermesDansNoeud()) {
-            access.insertTermInNode(
-                    terme.getIdTerme(),
-                    terme.getIdNoeud(),
-                    terme.getFreq());
-        }
-        if (DEBUG) {
-            System.out.println("Insertion des term_in_node : OK\n");
-        }
+        access.insertTermInNode(collectionTraitee.getListeTermesDansNoeud());
         
         /* Insertion des term_pos */
-        for (TermePosition terme : collectionTraitee.getListeTermesPosition()) {
-            access.insertTermPos(
-                    terme.getIdTerme(),
-                    terme.getIdNoeud(),
-                    terme.getPos());
-        }
-        if (DEBUG) {
-            System.out.println("Insertion des term_pos : OK\n");
-        }
+        access.insertTermPos(collectionTraitee.getListeTermesPosition());
 
     }
 }
