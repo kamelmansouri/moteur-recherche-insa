@@ -6,11 +6,15 @@ import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.HashMap;
+import java.util.Map.Entry;
+import moteurrecherche.ParserChaine.TermeCollection;
 
 
 public class MySQLAccess {
 
     private final static boolean DEBUG = true;
+    private final static int MAX_QUERIES = 300;
     
     private Connection connection;
 
@@ -86,15 +90,31 @@ public class MySQLAccess {
      * @return true si l'insertion a réussie, false sinon
      * @throws SQLException 
      */
-    public boolean insertTerm(int id, String mot, int frequence) throws SQLException {
-     
-        String query = "INSERT INTO terms VALUES('"+ id +"', '"+ mot +"', '"+ frequence +"')";
+    public boolean insertTerm(HashMap<String, TermeCollection> listeTermesCollection) throws SQLException {
+        int idTerme, freq, cpt=0;
+        boolean result = false;
         
-        boolean result = requeteUpdate(query);
+        String query = "INSERT INTO terms (id, value, frequency) VALUES ";
         
-        if(DEBUG) {
-            if(!result) System.out.println("[Terms][INS] "+mot+" --> FAIL (check unique constraint)");
-            else System.out.println("[Terms][INS] "+mot);
+        for (Entry<String, TermeCollection> entry :
+                listeTermesCollection.entrySet()) {
+
+            String mot = entry.getKey();
+            TermeCollection termeCollection = entry.getValue();
+            idTerme = termeCollection.getIdTerme();
+            freq = termeCollection.getFrequence();
+
+            if(cpt > 0) query += ", ";
+            query += "('"+ idTerme +"', '"+ mot +"', '"+ freq +"')";
+            
+            cpt++;
+            
+            if(cpt == 300) {
+                if(DEBUG) System.out.println(query);
+                result = requeteUpdate(query); //executer
+                cpt=0;
+                query = "INSERT INTO terms (id, value, frequency) VALUES ";
+            }
         }
         
         return result;
@@ -106,9 +126,9 @@ public class MySQLAccess {
      * @return true si l'insertion a réussie, false sinon
      * @throws SQLException 
      */
-    public boolean insertDocument(String nomDoc) throws SQLException {
+    public boolean insertDocument(int idDoc, String nomDoc) throws SQLException {
      
-        String query = "INSERT INTO documents VALUES('', '"+ nomDoc +"')";
+        String query = "INSERT INTO documents VALUES('"+ idDoc +"', '"+ nomDoc +"')";
         
         boolean result = requeteUpdate(query);
         
@@ -192,4 +212,5 @@ public class MySQLAccess {
         
         return result;
     }
+  
 }

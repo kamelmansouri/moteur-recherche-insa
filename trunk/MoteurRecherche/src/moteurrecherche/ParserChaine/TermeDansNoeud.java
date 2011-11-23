@@ -6,10 +6,10 @@ public class TermeDansNoeud {
     private int idNoeud;
     private int freq;
 
-    public TermeDansNoeud(int idTerme, int idNoeud, int freq) {
+    public TermeDansNoeud(int idTerme, int idNoeud) {
         this.idTerme = idTerme;
         this.idNoeud = idNoeud;
-        this.freq   = freq;
+        this.freq    = 1;
     }
     
     public int getIdTerme() {
@@ -22,6 +22,10 @@ public class TermeDansNoeud {
 
     public int getFreq() {
         return freq;
+    }
+    
+    public void incrementerFreq() {
+        freq++;
     }
     
     @Override

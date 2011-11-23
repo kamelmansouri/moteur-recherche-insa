@@ -9,7 +9,6 @@ import java.io.FilenameFilter;
 import java.util.ArrayList;
 import java.util.Map.Entry;
 import moteurrecherche.Database.MySQLAccess;
-import moteurrecherche.ParserChaine.ChaineTraitee;
 import moteurrecherche.ParserChaine.TermePosition;
 import moteurrecherche.ParserChaine.TermeCollection;
 import moteurrecherche.ParserChaine.TermeDansNoeud;
@@ -36,8 +35,6 @@ public class Indexation {
 
     public void indexer() throws SQLException {
 
-
-
         // Filtre pour ne traiter que les fichier xml, ce filtre est utilisé quand
         // on lit les fichiers xml dans un dossier specifique
         FilenameFilter filter = new FilenameFilter() {
@@ -52,12 +49,17 @@ public class Indexation {
         File directory = new File(Indexation.class.getResource(COLLECTION_PATH).getPath());
 
         files = directory.listFiles(filter);
+        int idDocCourant=0;
 
+        int limit = 1;
         //Lit et traite tous les fichiers de la collection
         for (File f : files) {
             if (DEBUG)
                 System.out.print(f.getName() + " : ");
 
+            if(limit == 0) break;
+            
+            limit--;
 
             listeNoeuds = collectionReader.readDocument(f);
 
@@ -82,6 +84,15 @@ public class Indexation {
 
         //Insertion des termes / noeuds etc dans la base
         insererDansBase();
+        
+//        System.out.println("Nombre de neouds: "+ listeNoeuds.size());
+//        System.out.println("Nombre de termes dans noeud: "+ 
+//                collectionTraitee.getListeTermesDansNoeud().size());
+//        System.out.println("Nombre de termes position: "+ 
+//                collectionTraitee.getListeTermesPosition().size());
+//        
+//        System.out.println("=== TERMES DANS DOC ===");
+//        System.out.println(this.listeTermesDansDoc);
     }
 
     /**
@@ -89,28 +100,16 @@ public class Indexation {
      */
     private void insererDansBase() throws SQLException {
         /* Insertion des documents de la collection */
+        int idDoc = 0;
         for (File f : files) {
-            access.insertDocument(f.getName());
+            access.insertDocument(idDoc++, f.getName());
         }
         if (DEBUG) {
             System.out.println("Insertion des documents : OK\n");
         }
-
-        int idTerme, freq;
+        
         /* Insertion dans la table termes */
-        for (Entry<String, TermeCollection> entry :
-                collectionTraitee.getListeTermes().entrySet()) {
-
-            String mot = entry.getKey();
-            TermeCollection termeCollection = entry.getValue();
-            idTerme = termeCollection.getIdTerme();
-            freq = termeCollection.getFrequence();
-
-            access.insertTerm(
-                    idTerme,
-                    mot,
-                    freq);
-        }
+        access.insertTerm(collectionTraitee.getListeTermes());
         if (DEBUG) {
             System.out.println("Insertion des termes : OK\n");
         }
@@ -135,12 +134,13 @@ public class Indexation {
             System.out.println("Insertion des noeuds : OK\n");
         }
 
+        
         /* Insertion des term_in_node */
         for (TermeDansNoeud terme : collectionTraitee.getListeTermesDansNoeud()) {
             access.insertTermInNode(
                     terme.getIdTerme(),
                     terme.getIdNoeud(),
-                    -1);
+                    terme.getFreq());
         }
         if (DEBUG) {
             System.out.println("Insertion des term_in_node : OK\n");
