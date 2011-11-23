@@ -11,15 +11,31 @@ import java.util.HashMap;
 public class TraitementCollection {
     private final static String STOP_LISTE_PATH = "/resources/stopliste.txt";
 
-    private HashMap<String, TermeCollection> listeTermes; //<mot, nbOccurrence>
+    private HashMap<String, TermeCollection> listeTermes; //<mot, <id, nbOccurrence>>
+    //private HashMap<Integer, String> listeTermesById; //<id, mot>
+    private ArrayList<TermeDansNoeud> listeTermesDansNoeud;
+    private ArrayList<TermePosition> listeTermesPosition;
     private ArrayList<String> stopListe;
     private int indexIdTerme; //permet de donner un id à un terme
     
     public TraitementCollection() {
         listeTermes = new HashMap<String, TermeCollection>();
+        listeTermesPosition = new ArrayList<TermePosition>();
+        listeTermesDansNoeud = new ArrayList<TermeDansNoeud>();
         stopListe   = new ArrayList<String>();
         chargerStopListe();
     }
+
+    public ArrayList<TermeDansNoeud> getListeTermesDansNoeud() {
+        return listeTermesDansNoeud;
+    }
+
+    public ArrayList<TermePosition> getListeTermesPosition() {
+        return listeTermesPosition;
+    }
+    
+    
+    
     
     public int getIndexIdTerme() {
         return indexIdTerme;
