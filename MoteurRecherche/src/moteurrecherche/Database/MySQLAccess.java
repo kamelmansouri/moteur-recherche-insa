@@ -1,21 +1,23 @@
-
 package moteurrecherche.Database;
 
 import com.mysql.jdbc.Connection;
+import java.io.File;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import moteurrecherche.ParserChaine.TermeCollection;
-
+import moteurrecherche.ParserChaine.TermeDansNoeud;
+import moteurrecherche.ParserChaine.TermePosition;
+import moteurrecherche.ParserXML.NoeudText;
 
 public class MySQLAccess {
 
     private final static boolean DEBUG = true;
     private final static int MAX_QUERIES = 300;
-    
     private Connection connection;
 
     /**
@@ -53,10 +55,10 @@ public class MySQLAccess {
                 stmt.close();
             }
         }
-        
+
         return rs;
     }
-    
+
     /**
      * Traite les requêtes d'insertion, update et suppression
      * @param q la requête à exécuter
@@ -66,12 +68,12 @@ public class MySQLAccess {
     private boolean requeteUpdate(String q) throws SQLException {
         Statement stmt = null;
         int result = 0;
-        
+
         try {
             stmt = connection.createStatement();
 
             result = stmt.executeUpdate(q);
-            
+
         } catch (SQLException e) {
             System.out.println(e.getMessage());
         } finally {
@@ -79,10 +81,10 @@ public class MySQLAccess {
                 stmt.close();
             }
         }
-        
+
         return (result != 0);
     }
-    
+
     /**
      * Insère un terme dans la table Terms
      * @param mot le mot à insérer dans la colonne value
@@ -91,11 +93,11 @@ public class MySQLAccess {
      * @throws SQLException 
      */
     public boolean insertTerm(HashMap<String, TermeCollection> listeTermesCollection) throws SQLException {
-        int idTerme, freq, cpt=0;
+        int idTerme, freq, cpt = 0;
         boolean result = false;
-        
+
         String query = "INSERT INTO terms (id, value, frequency) VALUES ";
-        
+
         for (Entry<String, TermeCollection> entry :
                 listeTermesCollection.entrySet()) {
 
@@ -104,42 +106,55 @@ public class MySQLAccess {
             idTerme = termeCollection.getIdTerme();
             freq = termeCollection.getFrequence();
 
-            if(cpt > 0) query += ", ";
-            query += "('"+ idTerme +"', '"+ mot +"', '"+ freq +"')";
-            
+            if (cpt > 0) {
+                query += ", ";
+            }
+            query += "('" + idTerme + "', '" + mot + "', '" + freq + "')";
+
             cpt++;
-            
-            if(cpt == 300) {
-                if(DEBUG) System.out.println(query);
+
+            if (cpt == MAX_QUERIES) {
                 result = requeteUpdate(query); //executer
-                cpt=0;
+                cpt = 0;
                 query = "INSERT INTO terms (id, value, frequency) VALUES ";
             }
         }
-        
+
+        if (DEBUG) {
+            System.out.println("Insertion des termes : OK\n");
+        }
+
         return result;
     }
-    
+
     /**
      * Insère un document dans la table Documents
      * @param nomDoc
      * @return true si l'insertion a réussie, false sinon
      * @throws SQLException 
      */
-    public boolean insertDocument(int idDoc, String nomDoc) throws SQLException {
-     
-        String query = "INSERT INTO documents VALUES('"+ idDoc +"', '"+ nomDoc +"')";
-        
-        boolean result = requeteUpdate(query);
-        
-        if(DEBUG) {
-            if(!result) System.out.println("[Documents][INS] "+nomDoc+" --> FAIL (check unique constraint)");
-            else System.out.println("[Documents][INS] "+nomDoc);
+    public boolean insertDocument(File[] files) throws SQLException {
+        int cpt = 0;
+        String query = "INSERT INTO documents (id, name) VALUES ";
+
+        for (File doc : files) {
+            if (cpt > 0) {
+                query += ", ";
+            }
+            query += "('', '" + doc.getName() + "')";
+
+            cpt++;
         }
-        
+
+        boolean result = requeteUpdate(query);
+
+        if (DEBUG) {
+            System.out.println("Insertion des documents : OK\n");
+        }
+
         return result;
     }
-    
+
     /**
      * Insère un noeud dans la table Nodes
      * @param id l'id du noeud
@@ -148,23 +163,39 @@ public class MySQLAccess {
      * @param parent_id l'id du noeud parent
      * @return true si l'insertion a réussie, false sinon
      * @throws SQLException 
-     */  
-    public boolean insertNode(int id, int doc_id, String label, int parent_id) throws SQLException {
-     
-        String query = "INSERT INTO nodes VALUES('"+ id +"', '"+ doc_id +
-                "', '"+ label +"', '"+ parent_id +"')";
+     */
+    public boolean insertNode(ArrayList<NoeudText> listeNoeuds) throws SQLException {
+        boolean result = false;
+        int cpt = 0;
+
+        String query = "INSERT INTO nodes (id, doc_id, label, parent_id) VALUES ";
         
-        boolean result = requeteUpdate(query);
-        
-        if(DEBUG) {
-            if(!result) System.out.println("[Nodes][INS] "+id+"/"+label
-                    +" --> FAIL (check unique constraint)");
-            else System.out.println("[Nodes][INS] "+id+"/"+label);
+        for (NoeudText noeud : listeNoeuds) {
+            if (noeud != null) {
+                if (cpt > 0) {
+                    query += ", ";
+                }
+
+                query += "('" + noeud.getId() + "', '" + noeud.getIdDoc()
+                        + "', '" + noeud.getLabel() + "', '" + noeud.getIdParent() + "')";
+
+                cpt++;
+
+                if (cpt == MAX_QUERIES || cpt == listeNoeuds.size()) {
+                    result = requeteUpdate(query); //executer
+                    cpt = 0;
+                    query = "INSERT INTO nodes (id, doc_id, label, parent_id) VALUES ";
+                }
+            }
         }
-        
+
+        if (DEBUG) {
+            System.out.println("Insertion des noeuds : OK\n");
+        }
+
         return result;
     }
-    
+
     /**
      * Insère un couple terme/noeud dans la table Term_in_node
      * @param term_id l'id du terme à insérer
@@ -173,22 +204,40 @@ public class MySQLAccess {
      * @return true si l'insertion a réussie, false sinon
      * @throws SQLException 
      */
-    public boolean insertTermInNode(int term_id, int node_id, int freq) throws SQLException {
-     
-        String query = "INSERT INTO term_in_node VALUES('"+ term_id +"', '"
-                + node_id +"', '"+ freq +"')";
+    public boolean insertTermInNode(ArrayList<TermeDansNoeud> listeTermesDansNoeud)
+            throws SQLException {
+
+        boolean result = false;
+        int cpt = 0;
+
+        String query = "INSERT INTO term_in_node (term_id, node_id, frequency) VALUES ";
         
-        boolean result = requeteUpdate(query);
-        
-        if(DEBUG) {
-            if(!result) System.out.println("[Term_in_Node][INS] "+term_id+"/"+node_id
-                    +" --> FAIL (check unique constraint)");
-            else System.out.println("[Term_in_Node][INS] "+term_id+"/"+node_id);
+        for (TermeDansNoeud terme : listeTermesDansNoeud) {
+
+                if (cpt > 0) {
+                    query += ", ";
+                }
+
+                query += "('" + terme.getIdTerme() + "', '" + terme.getIdNoeud()
+                        + "', '" + terme.getFreq() + "')";
+
+                cpt++;
+
+                if (cpt == MAX_QUERIES || cpt == listeTermesDansNoeud.size()) {
+                    result = requeteUpdate(query); //executer
+                    cpt = 0;
+                    query = "INSERT INTO term_in_node (term_id, node_id, frequency) VALUES ";
+                }
+
         }
-        
+
+        if (DEBUG) {
+            System.out.println("Insertion des termes dans noeud : OK\n");
+        }
+
         return result;
     }
-    
+
     /**
      * Insère un couple terme/noeud avec la position du terme dans ce noeud
      * @param term_id l'id du terme à insérer
@@ -197,20 +246,37 @@ public class MySQLAccess {
      * @return true si l'insertion a réussie, false sinon
      * @throws SQLException 
      */
-    public boolean insertTermPos(int term_id, int node_id, int pos) throws SQLException {
-     
-        String query = "INSERT INTO term_pos VALUES('"+ term_id +"', '"
-                + node_id +"', '"+ pos +"')";
+    public boolean insertTermPos(ArrayList<TermePosition> listeTermesPosition) 
+            throws SQLException {
+
+        boolean result = false;
+        int cpt = 0;
+
+        String query = "INSERT INTO term_pos (term_id, node_id, pos) VALUES ";
         
-        boolean result = requeteUpdate(query);
-        
-        if(DEBUG) {
-            if(!result) System.out.println("[Term_pos][INS] "+term_id+"/"+node_id
-                    +" --> FAIL (check unique constraint)");
-            else System.out.println("[Term_pos][INS] "+term_id+"/"+node_id);
+        for (TermePosition terme : listeTermesPosition) {
+
+                if (cpt > 0) {
+                    query += ", ";
+                }
+
+                query += "('" + terme.getIdTerme() + "', '" + terme.getIdNoeud()
+                        + "', '" + terme.getPos() + "')";
+
+                cpt++;
+
+                if (cpt == MAX_QUERIES || cpt == listeTermesPosition.size()) {
+                    result = requeteUpdate(query); //executer
+                    cpt = 0;
+                    query = "INSERT INTO term_pos (term_id, node_id, pos) VALUES ";
+                }
+
         }
-        
+
+        if (DEBUG) {
+            System.out.println("Insertion des termes position : OK\n");
+        }
+
         return result;
     }
-  
 }
