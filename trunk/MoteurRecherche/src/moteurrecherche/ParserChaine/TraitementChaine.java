@@ -9,13 +9,14 @@ public class TraitementChaine {
     /* Attributs donnés en param de constructeur */
     private TraitementCollection collection;
     private HashMap<String, TermeCollection> listeTermesCollection;
-    private ArrayList<Terme> listeTermesChaine;
+    private ArrayList<TermePosition> listeTermesChaine;
     /* Permet d'avoir un accès direct aux indices de l'arraylist */
     HashMap<String, Integer> frequenceTerme;
     private ArrayList<String> stopListe;
     private String chaine;
     private int idNoeud;
     private int position;   /* Position du mot dans la chaîne */
+
 
     /**
      * Construit un objet dont la méthode principale traiterChaine
@@ -31,7 +32,7 @@ public class TraitementChaine {
         this.chaine = str;
         this.idNoeud = id_noeud;
         this.listeTermesCollection = tc.getListeTermes();
-        this.listeTermesChaine = new ArrayList<Terme>();
+        this.listeTermesChaine = new ArrayList<TermePosition>();
         this.frequenceTerme = new HashMap<String, Integer>();
         this.stopListe = tc.getStopListe();
         this.collection = tc;
@@ -43,9 +44,9 @@ public class TraitementChaine {
      * @param str la chaîne de caractères à traiter
      */
     public void traiterChaine() {
-        
+
         Integer freq;
-        int indexIdTerme;
+        int indexIdTerme, idTermeCourant;
 
         /* Mettre la chaine en minuscule et remplacer les accents */
         chaine = chaine.toLowerCase();
@@ -71,29 +72,50 @@ public class TraitementChaine {
                     if (!existeDansStopListe(mot)) {
                         indexIdTerme = collection.getIndexIdTerme();
                         
-                        /* Mise à jour si déjà présent dans la liste collection */
+                        /* Mise à jour frequence si déjà présent dans liste collection */
                         if (existeDansListeTermesCollection(mot)) {
                             listeTermesCollection.get(mot).incrementerFrequence();
-                        } /* Ajout si nouveau mot */
-                        else {
+                            idTermeCourant = listeTermesCollection.get(mot).getIdTerme();
+                        } /* Ajout si nouveau mot */ else {
                             listeTermesCollection.put(mot, new TermeCollection(indexIdTerme));
+
                             collection.incrementerIdTerme();
+                            idTermeCourant = collection.getIndexIdTerme();
                         }
 
-                        //Incrémenter le nb d'occurrences si existe déjà
-                        if((freq = frequenceTerme.get(mot)) != null)
-                            frequenceTerme.put(mot, freq+1);
-                        else
-                            frequenceTerme.put(mot, 1);
+                        /* Ajout dans la liste de termes avec position */
+                        collection.getListeTermesPosition().add(
+                                new TermePosition(
+                                idTermeCourant,
+                                idNoeud,
+                                position));
 
-                        /* Ajout dans la liste de termes de cette chaîne */
-                        listeTermesChaine.add(new Terme(mot, idNoeud, position++));
-                        
+                        //Incrémenter le nb d'occurrences si existe déjà
+                        if ((freq = frequenceTerme.get(mot)) != null) {
+                            frequenceTerme.put(mot, freq + 1);
+                        } else {
+                            frequenceTerme.put(mot, 1);
+                        }
+
+                        /* Ajout dans la liste de termes de CE noeud s'il
+                        n'existe pas encore */
+                        if (frequenceTerme.get(mot) == 1) {
+                            collection.getListeTermesDansNoeud().add(
+                                    new TermeDansNoeud(
+                                    idTermeCourant,
+                                    idNoeud,
+                                    1));
+                        }
+
+                        position++;
+
+
                     }
                 }
             }
 
         }
+
         /* Mise à jour effective de la liste de termes */
         collection.setListeTermes(listeTermesCollection);
     }
@@ -101,7 +123,7 @@ public class TraitementChaine {
     /**
      * @return La liste de termes de la chaîne traitée
      */
-    public ArrayList<Terme> getListeTermesChaine() {
+    public ArrayList<TermePosition> getListeTermesChaine() {
         return listeTermesChaine;
     }
 
@@ -111,8 +133,6 @@ public class TraitementChaine {
     public HashMap<String, Integer> getFrequenceTerme() {
         return frequenceTerme;
     }
-    
-    
 
     /**
      * Remplace tous les accents dans une chaîne de caractères.

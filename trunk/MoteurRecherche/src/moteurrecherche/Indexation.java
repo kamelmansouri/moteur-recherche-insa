@@ -10,8 +10,9 @@ import java.util.ArrayList;
 import java.util.Map.Entry;
 import moteurrecherche.Database.MySQLAccess;
 import moteurrecherche.ParserChaine.ChaineTraitee;
-import moteurrecherche.ParserChaine.Terme;
+import moteurrecherche.ParserChaine.TermePosition;
 import moteurrecherche.ParserChaine.TermeCollection;
+import moteurrecherche.ParserChaine.TermeDansNoeud;
 
 public class Indexation {
 
@@ -22,8 +23,6 @@ public class Indexation {
     private XMLCollectionReader collectionReader;
     //Pour traiter la collection
     private TraitementCollection collectionTraitee;
-    //Les chaines traitées dans toute la collection
-    private ArrayList<ChaineTraitee> listeChainesTraitees;
     //La hashmap qui represente un document
     private ArrayList<NoeudText> listeNoeuds;
     private File files[]; //collection de fichiers à traiter
@@ -32,13 +31,12 @@ public class Indexation {
         access = new MySQLAccess();
         collectionReader = new XMLCollectionReader();
         collectionTraitee = new TraitementCollection();
-        listeChainesTraitees = new ArrayList<ChaineTraitee>();
         listeNoeuds = null;
     }
 
     public void indexer() throws SQLException {
 
-        
+
 
         // Filtre pour ne traiter que les fichier xml, ce filtre est utilisé quand
         // on lit les fichiers xml dans un dossier specifique
@@ -57,37 +55,33 @@ public class Indexation {
 
         //Lit et traite tous les fichiers de la collection
         for (File f : files) {
-                if (DEBUG) {
-                    System.out.print(f.getName() + " : ");
-                }
+            if (DEBUG)
+                System.out.print(f.getName() + " : ");
 
-                listeNoeuds = collectionReader.readDocument(f);
 
-                for (NoeudText node : listeNoeuds) {
-                    if (node.getText() != null) {
-                        listeChainesTraitees.add(
-                                collectionTraitee.traiterChaine(
-                                node.getText(),
-                                node.getId()));
-                        node.setText("");
-                    }
-                }
+            listeNoeuds = collectionReader.readDocument(f);
 
-                if (DEBUG) {
-                    System.out.print("Parsing XML : OK\n");
+            for (NoeudText node : listeNoeuds) {
+                if (node.getText() != null) {
+                    collectionTraitee.traiterChaine(node.getText(), node.getId());
+                    node.setText(""); //evite le heap space out of memory
                 }
             }
+
+            if (DEBUG) {
+                System.out.print("Parsing XML : OK\n");
+            }
+        }
 
 
         if (DEBUG) {
             System.out.println("\n" + collectionTraitee.getListeTermes().size()
                     + " mots indexés\n");
-            System.out.println(collectionTraitee.getListeTermes());
+            //System.out.println(collectionTraitee.getListeTermes());
         }
 
         //Insertion des termes / noeuds etc dans la base
         insererDansBase();
-
     }
 
     /**
@@ -102,18 +96,20 @@ public class Indexation {
             System.out.println("Insertion des documents : OK\n");
         }
 
+        int idTerme, freq;
         /* Insertion dans la table termes */
         for (Entry<String, TermeCollection> entry :
                 collectionTraitee.getListeTermes().entrySet()) {
 
             String mot = entry.getKey();
             TermeCollection termeCollection = entry.getValue();
+            idTerme = termeCollection.getIdTerme();
+            freq = termeCollection.getFrequence();
 
             access.insertTerm(
-                    termeCollection.getIdTerme(), 
-                    mot, 
-                    termeCollection.getFrequence()
-                    );
+                    idTerme,
+                    mot,
+                    freq);
         }
         if (DEBUG) {
             System.out.println("Insertion des termes : OK\n");
@@ -123,10 +119,11 @@ public class Indexation {
         /* Insertion des noeuds */
         int parent;
 
-
         for (NoeudText noeud : this.listeNoeuds) {
             if (noeud != null) {
-                if(DEBUG) System.out.print("DocID:" + noeud.getIdDoc() + " ");
+                if (DEBUG) {
+                    System.out.print("DocID:" + noeud.getIdDoc() + " ");
+                }
                 access.insertNode(
                         noeud.getId(),
                         noeud.getIdDoc(),
@@ -138,23 +135,26 @@ public class Indexation {
             System.out.println("Insertion des noeuds : OK\n");
         }
 
-        /* Insertion des term_in_node et de la position */
-        for(ChaineTraitee chaine : listeChainesTraitees) {
-            for(Terme terme : chaine.getListeTermes()) {
-                access.insertTermInNode(
-                        collectionTraitee.getListeTermes().get(terme.getMot()).getIdTerme(), 
-                        terme.getIdNoeud(), 
-                        -1);
-                
-                access.insertTermPos(
-                        collectionTraitee.getListeTermes().get(terme.getMot()).getIdTerme(), 
-                        terme.getIdNoeud(), 
-                        terme.getPos());
-                
-            }
+        /* Insertion des term_in_node */
+        for (TermeDansNoeud terme : collectionTraitee.getListeTermesDansNoeud()) {
+            access.insertTermInNode(
+                    terme.getIdTerme(),
+                    terme.getIdNoeud(),
+                    -1);
         }
         if (DEBUG) {
-            System.out.println("Insertion des term_in_node + position : OK\n");
+            System.out.println("Insertion des term_in_node : OK\n");
+        }
+        
+        /* Insertion des term_pos */
+        for (TermePosition terme : collectionTraitee.getListeTermesPosition()) {
+            access.insertTermPos(
+                    terme.getIdTerme(),
+                    terme.getIdNoeud(),
+                    terme.getPos());
+        }
+        if (DEBUG) {
+            System.out.println("Insertion des term_pos : OK\n");
         }
 
     }
