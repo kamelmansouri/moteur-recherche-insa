@@ -33,9 +33,7 @@ public class TraitementCollection {
     public ArrayList<TermePosition> getListeTermesPosition() {
         return listeTermesPosition;
     }
-    
-    
-    
+
     
     public int getIndexIdTerme() {
         return indexIdTerme;
@@ -69,7 +67,7 @@ public class TraitementCollection {
         TraitementChaine p = new TraitementChaine(this, str, idNoeud);
         p.traiterChaine();
 
-        return new ChaineTraitee(p.getListeTermesChaine(), p.getFrequenceTerme());
+        return new ChaineTraitee(p.getListeTermesChaine(), p.getTermesDansNoeudCourant());
     }
     
     /**

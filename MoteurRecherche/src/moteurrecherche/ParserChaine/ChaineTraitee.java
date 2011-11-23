@@ -5,20 +5,20 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 public class ChaineTraitee {
-    ArrayList<TermePosition> listeTermes;
-    HashMap<String, Integer> frequenceTerme;
+    ArrayList<TermePosition> listeTermesPosition;
+    HashMap<String, TermeDansNoeud> listeTermesDansNoeud;
     
-    public ChaineTraitee(ArrayList<TermePosition> l, HashMap<String, Integer> f) {
-        listeTermes     = l;
-        frequenceTerme  = f;
+    public ChaineTraitee(ArrayList<TermePosition> l, HashMap<String, TermeDansNoeud> f) {
+        listeTermesPosition     = l;
+        listeTermesDansNoeud   = f;
     }
 
-    public HashMap<String, Integer> getFrequenceTerme() {
-        return frequenceTerme;
+    public HashMap<String, TermeDansNoeud> getListeTermesDansNoeud() {
+        return listeTermesDansNoeud;
     }
 
-    public ArrayList<TermePosition> getListeTermes() {
-        return listeTermes;
+    public ArrayList<TermePosition> getListeTermesPosition() {
+        return listeTermesPosition;
     }
     
 }
