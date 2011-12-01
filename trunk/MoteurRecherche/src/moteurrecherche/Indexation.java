@@ -2,12 +2,13 @@ package moteurrecherche;
 
 import java.sql.SQLException;
 import moteurrecherche.ParserXML.XMLCollectionReader;
-import moteurrecherche.ParserXML.NoeudText;
+import moteurrecherche.ParserXML.Noeud;
 import moteurrecherche.ParserChaine.TraitementCollection;
 import java.io.File;
 import java.io.FilenameFilter;
 import java.util.ArrayList;
 import moteurrecherche.Database.MySQLAccess;
+import moteurrecherche.ParserChaine.ChaineTraitee;
 
 public class Indexation {
 
@@ -19,14 +20,16 @@ public class Indexation {
     //Pour traiter la collection
     private TraitementCollection collectionTraitee;
     //La hashmap qui represente un document
-    private ArrayList<NoeudText> listeNoeuds;
+    private ArrayList<Noeud> listeNoeudsCourante;
+    private ArrayList<Noeud> listeNoeudsFinale;
     private File files[]; //collection de fichiers à traiter
 
     public Indexation() throws ClassNotFoundException {
         access = new MySQLAccess();
         collectionReader = new XMLCollectionReader();
         collectionTraitee = new TraitementCollection();
-        listeNoeuds = null;
+        listeNoeudsCourante = null;
+        listeNoeudsFinale = new ArrayList<Noeud>();
     }
 
     public void indexer() throws SQLException {
@@ -46,18 +49,22 @@ public class Indexation {
 
         files = directory.listFiles(filter);
         int idDocCourant=0;
+        ChaineTraitee chaineTraitee;
 
         //Lit et traite tous les fichiers de la collection
+
         for (File f : files) {
             if (DEBUG)
                 System.out.print(f.getName() + " : ");
 
 
-            listeNoeuds = collectionReader.readDocument(f);
+            listeNoeudsCourante = collectionReader.readDocument(f);
+            listeNoeudsFinale.addAll(listeNoeudsCourante);
 
-            for (NoeudText node : listeNoeuds) {
+            for (Noeud node : listeNoeudsCourante) {
                 if (node.getText() != null) {
-                    collectionTraitee.traiterChaine(node.getText(), node.getId());
+                    chaineTraitee = collectionTraitee.traiterChaine(node.getText(), node.getId());
+                    node.setNbMots(chaineTraitee.getNombreTermesDansNoeud());
                     node.setText(""); //evite le heap space out of memory
                 }
             }
@@ -77,14 +84,12 @@ public class Indexation {
         //Insertion des termes / noeuds etc dans la base
         insererDansBase();
         
-//        System.out.println("Nombre de neouds: "+ listeNoeuds.size());
-//        System.out.println("Nombre de termes dans noeud: "+ 
-//                collectionTraitee.getListeTermesDansNoeud().size());
-//        System.out.println("Nombre de termes position: "+ 
-//                collectionTraitee.getListeTermesPosition().size());
-//        
-//        System.out.println("=== TERMES DANS DOC ===");
-//        System.out.println(this.listeTermesDansDoc);
+        System.out.println("Nombre de noeuds: "+ listeNoeudsFinale.size());
+        System.out.println("Nombre de termes dans noeud: "+ 
+                collectionTraitee.getListeTermesDansNoeud().size());
+        System.out.println("Nombre de termes position: "+ 
+                collectionTraitee.getListeTermesPosition().size());
+
     }
 
     /**
@@ -101,7 +106,7 @@ public class Indexation {
         
 
         /* Insertion des noeuds */
-        access.insertNode(listeNoeuds);
+        access.insertNode(listeNoeudsFinale);
 
         
         /* Insertion des term_in_node */

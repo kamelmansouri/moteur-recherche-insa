@@ -20,7 +20,7 @@ public class XMLCollectionReader {
                     noeud_id;
     
     //Hashmap of elements in the document
-    ArrayList<NoeudText> noeuds;
+    ArrayList<Noeud> noeuds;
     
     
     /**
@@ -29,7 +29,7 @@ public class XMLCollectionReader {
     public XMLCollectionReader(){
         this.doc_id  = 0;
         this.noeud_id = 0;
-        this.noeuds = new ArrayList<NoeudText>();
+        this.noeuds = new ArrayList<Noeud>();
     }
     
     
@@ -41,7 +41,7 @@ public class XMLCollectionReader {
     public XMLCollectionReader(Integer doc_id, Integer noeud_id){
         this.doc_id   = doc_id;
         this.noeud_id = noeud_id;
-        noeuds = new ArrayList<NoeudText>();
+        noeuds = new ArrayList<Noeud>();
     }
 
     public Integer getNoeud_id() {
@@ -66,9 +66,11 @@ public class XMLCollectionReader {
      * @param f the address of the xml file
      * @return the hashmap representing the document
      */
-    public ArrayList<NoeudText> readDocument(File f) {
+    public ArrayList<Noeud> readDocument(File f) {
         //increment l'id du doc
         this.doc_id++;
+
+        this.noeuds.clear();
         
         // Tries to read the XML file
         try {
@@ -127,7 +129,7 @@ public class XMLCollectionReader {
     private Integer putNoeud (String tag, Integer parent, String text){
         
         // Adds Noeud and increments the Noeud_id
-        this.noeuds.add(new NoeudText(this.noeud_id, this.doc_id, parent, tag, text));
+        this.noeuds.add(new Noeud(this.noeud_id, this.doc_id, parent, tag, text));
         this.noeud_id++;
 
         return this.noeud_id -1;

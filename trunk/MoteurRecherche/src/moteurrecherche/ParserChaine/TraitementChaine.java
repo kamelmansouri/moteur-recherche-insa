@@ -16,6 +16,7 @@ public class TraitementChaine {
     private String chaine;
     private int idNoeud;
     private int position;   /* Position du mot dans la chaîne */
+    private int compteurMotsDansNoeud;
 
 
     /**
@@ -37,6 +38,9 @@ public class TraitementChaine {
         this.stopListe = tc.getStopListe();
         this.collection = tc;
         this.position = 1;
+        this.compteurMotsDansNoeud = 0;
+
+        //System.out.println("long a traiter : "+this.chaine.length());
     }
 
     /**
@@ -57,7 +61,9 @@ public class TraitementChaine {
         String[] listeMots = chaine.split(delimiteur);
 
         /* Appliquer le formatage pour chaque mot */
+        
         for (String mot : listeMots) {
+            
             /* On ignore les mots de 1 lettre */
             if (mot.length() > 1) {
 
@@ -68,8 +74,11 @@ public class TraitementChaine {
 
                 /* Ajout dans la liste si le mot fait au moins 2 lettres */
                 if (mot.length() > 1) {
+                    
                     /* Si le mot n'est pas dans la stop liste */
                     if (!existeDansStopListe(mot)) {
+                        compteurMotsDansNoeud++;
+
                         indexIdTerme = collection.getIndexIdTerme();
                         
                         /* Mise à jour frequence si déjà présent dans liste collection */
@@ -114,6 +123,11 @@ public class TraitementChaine {
         collection.setListeTermes(listeTermesCollection);
     }
 
+    public int getCompteurMotsDansNoeud() {
+        return compteurMotsDansNoeud;
+    }
+
+
     /**
      * @return La liste de termes de la chaîne traitée
      */
@@ -129,7 +143,6 @@ public class TraitementChaine {
         return termesDansNoeudCourant;
     }
 
-    
 
     /**
      * Remplace tous les accents dans une chaîne de caractères.

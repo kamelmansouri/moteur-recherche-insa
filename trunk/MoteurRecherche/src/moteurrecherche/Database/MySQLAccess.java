@@ -12,7 +12,7 @@ import java.util.Map.Entry;
 import moteurrecherche.ParserChaine.TermeCollection;
 import moteurrecherche.ParserChaine.TermeDansNoeud;
 import moteurrecherche.ParserChaine.TermePosition;
-import moteurrecherche.ParserXML.NoeudText;
+import moteurrecherche.ParserXML.Noeud;
 
 public class MySQLAccess {
 
@@ -161,27 +161,28 @@ public class MySQLAccess {
      * @return true si l'insertion a réussie, false sinon
      * @throws SQLException 
      */
-    public boolean insertNode(ArrayList<NoeudText> listeNoeuds) throws SQLException {
+    public boolean insertNode(ArrayList<Noeud> listeNoeuds) throws SQLException {
         boolean result = false;
         int cpt = 0;
 
-        String query = "INSERT INTO nodes (id, doc_id, label, parent_id) VALUES ";
+        String query = "INSERT INTO nodes (id, doc_id, label, parent_id, words) VALUES ";
         
-        for (NoeudText noeud : listeNoeuds) {
+        for (Noeud noeud : listeNoeuds) {
             if (noeud != null) {
                 if (cpt > 0) {
                     query += ", ";
                 }
 
                 query += "('" + noeud.getId() + "', '" + noeud.getIdDoc()
-                        + "', '" + noeud.getLabel() + "', '" + noeud.getIdParent() + "')";
+                        + "', '" + noeud.getLabel() + "', '" + noeud.getIdParent() 
+                        + "', '" + noeud.getNbMots() + "')";
 
                 cpt++;
 
                 if (cpt == MAX_QUERIES || cpt == listeNoeuds.size()) {
                     result = requeteUpdate(query); //executer
                     cpt = 0;
-                    query = "INSERT INTO nodes (id, doc_id, label, parent_id) VALUES ";
+                    query = "INSERT INTO nodes (id, doc_id, label, parent_id, words) VALUES ";
                 }
             }
         }
@@ -278,25 +279,52 @@ public class MySQLAccess {
     }
 
     /**
-     * Cherche l'id d'un terme à partir de sa valeur littérale
+     * Charge un objet Term à partir d'un mot
      * @param term_value la valeur du terme
-     * @return l'id associé à la valeur du terme cherché
+     * @return l'objet term associé à la valeur du terme
      * @throws SQLException
      */
-    public int getTermIdByTermValue(String term_value) throws SQLException {
-        int term_id = -1;
+    public Term getTermByTermValue(String term_value) throws SQLException {
+        Term term = null;
 
-        String query = "SELECT id FROM terms "+
+        String query = "SELECT * FROM terms "+
                 "WHERE value='"+ term_value +"'";
 
         ResultSet rs = requeteSelect(query);
 
         if(rs.first());
-            term_id = rs.getInt("id");
+            term = new Term(rs.getInt("id"), term_value, rs.getInt("frequency"));
 
         rs.close();
 
-        return term_id;
+        return term;
+    }
+
+    /**
+     * Charge toutes les informations d'un noeud donné en mémoire
+     * @param id l'id du noeud à chargé
+     * @return un objet de type Noeud contenant les infos pour id noeud
+     * @throws SQLException
+     */
+    public Noeud getNodeByNodeId(int id) throws SQLException {
+        Noeud node = null;
+
+        String query = "SELECT * FROM nodes WHERE id='"+ id +"'";
+
+        ResultSet rs = requeteSelect(query);
+
+        if(rs.first()) {
+            node = new Noeud(
+                    rs.getInt("id"),
+                    rs.getInt("doc_id"),
+                    rs.getString("label"),
+                    rs.getInt("parent_id"),
+                    rs.getInt("words"));
+        }
+
+        rs.close();
+
+        return node;
     }
 
     /**
@@ -324,5 +352,44 @@ public class MySQLAccess {
         rs.close();
 
         return termInNodeList;
+    }
+
+    /**
+     *
+     * @return
+     * @throws SQLException
+     */
+    public int getNumNodes() throws SQLException{
+        String query = "SELECT COUNT(id) AS num_nodes FROM nodes"+
+                " WHERE label='P' OR label='TITRE' OR label='SOUS-TITRE' OR label='AUTEUR'";
+
+        ResultSet result = requeteSelect(query);
+        int nodes = 0;
+
+        if(result.first()){
+            nodes = Integer.parseInt(result.getString("num_nodes"));
+        }
+
+        return nodes;
+    }
+
+    /**
+     * Calcule le nombre de paragraphes qui contiennent un mot donné
+     * @param term_id l'id du mot à chercher
+     * @return le nombre de noeuds (paragraphes, etc) contenant le mot donné
+     * @throws SQLException
+     */
+    public int getNbOfNodesWithTermId(int term_id) throws SQLException{
+        String query = "SELECT COUNT(node_id) AS num_nodes FROM term_in_node "+
+                "WHERE term_id='" + term_id + "'";
+
+        ResultSet result = this.requeteSelect(query);
+        int num_nodes = 0;
+
+        if(result.first()){
+            num_nodes = Integer.parseInt(result.getString("num_nodes"));
+        }
+
+        return num_nodes;
     }
 }

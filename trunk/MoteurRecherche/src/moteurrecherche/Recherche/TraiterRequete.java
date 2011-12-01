@@ -1,10 +1,13 @@
 
-package moteurrecherche.ParserChaine;
+package moteurrecherche.Recherche;
 
 import java.sql.SQLException;
 import java.util.ArrayList;
+import java.util.Collections;
 import moteurrecherche.Database.MySQLAccess;
+import moteurrecherche.Database.Term;
 import moteurrecherche.Database.TermInNode;
+import moteurrecherche.ParserChaine.TraitementMot;
 
 public class TraiterRequete {
     private final static int MAX_MOTS = 20;
@@ -12,6 +15,7 @@ public class TraiterRequete {
 
     private String requete;
     private String[] listeMotsRequete;
+    private ArrayList<ScoredTerm> scoredTerms;
 
     public TraiterRequete(String req) throws ClassNotFoundException {
         requete = req;
@@ -22,24 +26,24 @@ public class TraiterRequete {
         
     }
 
-    public ArrayList<TermInNode> getTermesEtNoeuds() throws SQLException {
-        int idTerme;
-        ArrayList<TermInNode> termesEtNoeuds = new ArrayList<TermInNode>();
+    public ArrayList<ScoredTermInNode> getScoredTermsInNodes() throws SQLException, ClassNotFoundException {
+        Term term;
+        scoredTerms = new ArrayList<ScoredTerm>();
+        ArrayList<ScoredTermInNode> scoredTermsInNodes = new ArrayList<ScoredTermInNode>();
 
         for(String mot : listeMotsRequete) {
-            //Chercher l'id pour le terme considéré
-            idTerme = db.getTermIdByTermValue(mot);
+            term = db.getTermByTermValue(mot);
 
-            /* Si le terme existe dans l'index, chercher le triplet
-              <term_id, node_id, frequency> dans la table term_in_node */
-            if(idTerme != -1) {
-                termesEtNoeuds.addAll(
-                    db.getTermInNodeByTermId(idTerme)
-                    );
-            }
+            scoredTerms.add(new ScoredTerm(term, db));
         }
 
-        return termesEtNoeuds;
+        for(ScoredTerm scTerm : scoredTerms) {
+            scoredTermsInNodes.addAll(scTerm.getTermNodesList());
+        }
+
+        Collections.sort(scoredTermsInNodes, new ComparateurTFIDF());
+
+        return scoredTermsInNodes;
     }
 
     private void formaterRequeteEntree() {

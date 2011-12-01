@@ -3,8 +3,11 @@ package moteurrecherche;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
+import moteurrecherche.Database.MySQLAccess;
 import moteurrecherche.Database.TermInNode;
-import moteurrecherche.ParserChaine.TraiterRequete;
+import moteurrecherche.ParserXML.Noeud;
+import moteurrecherche.Recherche.ScoredTerm;
+import moteurrecherche.Recherche.TraiterRequete;
 
 public class MoteurRecherche {
 
@@ -17,15 +20,10 @@ public class MoteurRecherche {
         Scanner sc = new Scanner(System.in);
 
         String ligneLue = sc.nextLine();
-        
+
         TraiterRequete requete = new TraiterRequete(ligneLue);
-        ArrayList<TermInNode> termesEtNoeuds = new ArrayList<TermInNode>();
-
-        termesEtNoeuds = requete.getTermesEtNoeuds();
-
-        requete.afficherMotsRequete();
-        System.out.println("Nombre Occurrences trouvées : "+termesEtNoeuds.size()+"\n");
-        System.out.println("Occurrences trouvées : "+termesEtNoeuds);
+        System.out.println(requete.getScoredTermsInNodes());
+        
     }
 
     /*
