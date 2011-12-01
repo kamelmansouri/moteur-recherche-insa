@@ -1,5 +1,6 @@
 package moteurrecherche;
 
+import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
@@ -7,11 +8,14 @@ import moteurrecherche.Database.MySQLAccess;
 import moteurrecherche.Database.TermInNode;
 import moteurrecherche.ParserXML.Noeud;
 import moteurrecherche.Recherche.ScoredTerm;
+import moteurrecherche.Recherche.ScoredTermInNode;
 import moteurrecherche.Recherche.TraiterRequete;
+import org.jdom.JDOMException;
 
 public class MoteurRecherche {
 
-    public static void main(String[] args) throws ClassNotFoundException, SQLException {
+    public static void main(String[] args) throws ClassNotFoundException, 
+            SQLException, JDOMException, IOException {
 
         //Indexation indexation = new Indexation();
         //indexation.indexer();
@@ -22,7 +26,11 @@ public class MoteurRecherche {
         String ligneLue = sc.nextLine();
 
         TraiterRequete requete = new TraiterRequete(ligneLue);
-        System.out.println(requete.getScoredTermsInNodes());
+        ArrayList<ScoredTermInNode> list = requete.getScoredTermsInNodes();
+
+        System.out.println(list);
+
+        requete.retournerParagraphesReponse(list, 1);
         
     }
 

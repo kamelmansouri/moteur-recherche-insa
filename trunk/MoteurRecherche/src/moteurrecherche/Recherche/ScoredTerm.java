@@ -45,8 +45,6 @@ public class ScoredTerm {
             Noeud node = db.getNodeByNodeId(termInNode.getNode_id());
 
             ScoredTermInNode scoredTiN = new ScoredTermInNode(termInNode);
-
-            System.out.println("calcul tf:"+termInNode.getFrequency() +"/"+ node.getNbMots());
             
             scoredTiN.setTf(new Double((double) termInNode.getFrequency() / (double) node.getNbMots()));
             scoredTiN.setTfIdf(scoredTiN.getTf() * idf);
