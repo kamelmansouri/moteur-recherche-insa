@@ -50,10 +50,7 @@ public class MySQLAccess {
 
         } catch (SQLException e) {
             System.out.println(e.getMessage());
-        } finally {
-            if (stmt != null) {
-                stmt.close();
-            }
+            stmt.close();
         }
 
         return rs;
@@ -278,5 +275,54 @@ public class MySQLAccess {
         }
 
         return result;
+    }
+
+    /**
+     * Cherche l'id d'un terme à partir de sa valeur littérale
+     * @param term_value la valeur du terme
+     * @return l'id associé à la valeur du terme cherché
+     * @throws SQLException
+     */
+    public int getTermIdByTermValue(String term_value) throws SQLException {
+        int term_id = -1;
+
+        String query = "SELECT id FROM terms "+
+                "WHERE value='"+ term_value +"'";
+
+        ResultSet rs = requeteSelect(query);
+
+        if(rs.first());
+            term_id = rs.getInt("id");
+
+        rs.close();
+
+        return term_id;
+    }
+
+    /**
+     * Cherche tous les triplets <term_id, node_id, frequency> pour un term_id donné
+     * @param term_id la clé de l'ensemble à chercher
+     * @return une liste de triplets dont la clé est l'id du terme
+     * @throws SQLException
+     */
+    public ArrayList<TermInNode> getTermInNodeByTermId(int term_id) throws SQLException {
+        ArrayList<TermInNode> termInNodeList = new ArrayList<TermInNode>();
+
+        String query = "SELECT * FROM term_in_node "+
+                "WHERE term_id='"+ term_id +"'";
+
+        ResultSet rs = requeteSelect(query);
+
+        while(rs.next()) {
+            termInNodeList.add(new TermInNode(
+                    rs.getInt("term_id"),
+                    rs.getInt("node_id"),
+                    rs.getInt("frequency")
+                    ));
+        }
+
+        rs.close();
+
+        return termInNodeList;
     }
 }
