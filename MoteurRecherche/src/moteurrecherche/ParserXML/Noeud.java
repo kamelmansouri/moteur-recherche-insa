@@ -1,19 +1,31 @@
 
 package moteurrecherche.ParserXML;
 
-public class NoeudText {
+public class Noeud {
     private int id;
     private int idDoc;
     private int idParent;
     private String label;
     private String text;
+    private int nbMots;
 
-    public NoeudText(int id, int idDoc, int idParent, String label, String text){
+    /* Pour le modèle servant au parsing xml */
+    public Noeud(int id, int idDoc, int idParent, String label, String text){
         this.id       = id;
         this.idDoc    = idDoc;
         this.idParent = idParent;
         this.label    = label;
         this.text     = text;
+    }
+
+    /* Pour la database */
+    public Noeud(int id, int idDoc, String label, int idParent, int words){
+        this.id       = id;
+        this.idDoc    = idDoc;
+        this.idParent = idParent;
+        this.label    = label;
+        this.nbMots   = words;
+        this.text     = null;
     }
 
     public int getId() {
@@ -55,6 +67,17 @@ public class NoeudText {
     public void setText(String text) {
         this.text = text;
     }
+
+    public int getNbMots() {
+        return nbMots;
+    }
+
+    public void setNbMots(int nbMots) {
+        this.nbMots = nbMots;
+    }
     
-    
+    @Override
+    public String toString() {
+        return id + " / nb mots: "+ nbMots;
+    }
 }

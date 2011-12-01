@@ -67,7 +67,12 @@ public class TraitementCollection {
         TraitementChaine p = new TraitementChaine(this, str, idNoeud);
         p.traiterChaine();
 
-        return new ChaineTraitee(p.getListeTermesChaine(), p.getTermesDansNoeudCourant());
+         //System.out.println(p.getCompteurMotsDansNoeud());
+
+        return new ChaineTraitee(
+                p.getListeTermesChaine(),
+                p.getTermesDansNoeudCourant(),
+                p.getCompteurMotsDansNoeud());
     }
     
     /**
