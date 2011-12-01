@@ -370,6 +370,8 @@ public class MySQLAccess {
             nodes = Integer.parseInt(result.getString("num_nodes"));
         }
 
+        result.close();
+
         return nodes;
     }
 
@@ -390,6 +392,29 @@ public class MySQLAccess {
             num_nodes = Integer.parseInt(result.getString("num_nodes"));
         }
 
+        result.close();
+
         return num_nodes;
+    }
+
+    /**
+     * Renvoie le nom d'un document suivant l'id donné
+     * @param doc_id l'id du document
+     * @return le nom du document correspondant à doc_id
+     * @throws SQLException
+     */
+    public String getDocNameById(int doc_id) throws SQLException {
+        String retour = null;
+        String query = "SELECT name FROM documents WHERE id='" + doc_id + "'";
+
+        ResultSet result = this.requeteSelect(query);
+
+        if(result.first()){
+            retour = result.getString("name");
+        }
+
+        result.close();
+
+        return retour;
     }
 }
