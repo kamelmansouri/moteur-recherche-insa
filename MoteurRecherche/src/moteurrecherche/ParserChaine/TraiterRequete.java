@@ -1,20 +1,45 @@
 
 package moteurrecherche.ParserChaine;
 
-import java.text.Normalizer;
+import java.sql.SQLException;
+import java.util.ArrayList;
+import moteurrecherche.Database.MySQLAccess;
+import moteurrecherche.Database.TermInNode;
 
 public class TraiterRequete {
     private final static int MAX_MOTS = 20;
+    private final MySQLAccess db;
 
     private String requete;
     private String[] listeMotsRequete;
 
-    public TraiterRequete(String req) {
+    public TraiterRequete(String req) throws ClassNotFoundException {
         requete = req;
         listeMotsRequete = new String[MAX_MOTS];
+        db = new MySQLAccess();
 
         formaterRequeteEntree();
         
+    }
+
+    public ArrayList<TermInNode> getTermesEtNoeuds() throws SQLException {
+        int idTerme;
+        ArrayList<TermInNode> termesEtNoeuds = new ArrayList<TermInNode>();
+
+        for(String mot : listeMotsRequete) {
+            //Chercher l'id pour le terme considéré
+            idTerme = db.getTermIdByTermValue(mot);
+
+            /* Si le terme existe dans l'index, chercher le triplet
+              <term_id, node_id, frequency> dans la table term_in_node */
+            if(idTerme != -1) {
+                termesEtNoeuds.addAll(
+                    db.getTermInNodeByTermId(idTerme)
+                    );
+            }
+        }
+
+        return termesEtNoeuds;
     }
 
     private void formaterRequeteEntree() {

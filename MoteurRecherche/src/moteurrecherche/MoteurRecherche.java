@@ -1,7 +1,9 @@
 package moteurrecherche;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.Scanner;
+import moteurrecherche.Database.TermInNode;
 import moteurrecherche.ParserChaine.TraiterRequete;
 
 public class MoteurRecherche {
@@ -17,8 +19,13 @@ public class MoteurRecherche {
         String ligneLue = sc.nextLine();
         
         TraiterRequete requete = new TraiterRequete(ligneLue);
+        ArrayList<TermInNode> termesEtNoeuds = new ArrayList<TermInNode>();
+
+        termesEtNoeuds = requete.getTermesEtNoeuds();
 
         requete.afficherMotsRequete();
+        System.out.println("Nombre Occurrences trouvées : "+termesEtNoeuds.size()+"\n");
+        System.out.println("Occurrences trouvées : "+termesEtNoeuds);
     }
 
     /*
