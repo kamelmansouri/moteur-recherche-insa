@@ -17,7 +17,7 @@ import moteurrecherche.ParserXML.NoeudText;
 public class MySQLAccess {
 
     private final static boolean DEBUG = true;
-    private final static int MAX_QUERIES = 300;
+    private final static int MAX_QUERIES = 227;
     private Connection connection;
 
     /**

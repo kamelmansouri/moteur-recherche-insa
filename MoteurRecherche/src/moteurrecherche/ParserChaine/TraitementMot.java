@@ -7,6 +7,12 @@ public class TraitementMot {
     private final static int MAX_TRONCATURE = 7;
     
     private String mot;
+
+    /**
+     * Constructeur par défaut
+     */
+    public TraitementMot() {
+    }
     
     /**
      * Construit un objet dont la méthode principale formaterMot
@@ -19,6 +25,10 @@ public class TraitementMot {
     
     public String getMot() {
         return mot;
+    }
+
+    public void setMot(String mot) {
+        this.mot = mot;
     }
     
     /**
