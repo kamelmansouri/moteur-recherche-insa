@@ -7,25 +7,28 @@ public class Noeud {
     private int idParent;
     private String label;
     private String text;
+    private String path;
     private int nbMots;
 
     /* Pour le modèle servant au parsing xml */
-    public Noeud(int id, int idDoc, int idParent, String label, String text){
+    public Noeud(int id, int idDoc, int idParent, String label, String text, String path){
         this.id       = id;
         this.idDoc    = idDoc;
         this.idParent = idParent;
         this.label    = label;
         this.text     = text;
+        this.path     = path;
     }
 
     /* Pour la database */
-    public Noeud(int id, int idDoc, String label, int idParent, int words){
+    public Noeud(int id, int idDoc, String label, int idParent, int words, String path){
         this.id       = id;
         this.idDoc    = idDoc;
         this.idParent = idParent;
         this.label    = label;
         this.nbMots   = words;
         this.text     = null;
+        this.path     = path;
     }
 
     public int getId() {
@@ -51,7 +54,7 @@ public class Noeud {
     public void setIdParent(int idParent) {
         this.idParent = idParent;
     }
-    
+
     public String getLabel() {
         return label;
     }
@@ -75,9 +78,19 @@ public class Noeud {
     public void setNbMots(int nbMots) {
         this.nbMots = nbMots;
     }
-    
+
     @Override
     public String toString() {
         return id + " / nb mots: "+ nbMots;
     }
+
+    public String getPath() {
+        return path;
+    }
+
+    public void setPath(String path) {
+        this.path = path;
+    }
+
+
 }
