@@ -22,7 +22,7 @@ public class MySQLAccess {
 
     /**
      * Initialise une connexion à la base de données
-     * @throws ClassNotFoundException 
+     * @throws ClassNotFoundException
      */
     public MySQLAccess() throws ClassNotFoundException {
         try {
@@ -38,7 +38,7 @@ public class MySQLAccess {
      * Traite les requêtes de sélection
      * @param q la requête à exécuter
      * @return null si le résultat de la requête est vide, ResultSet sinon
-     * @throws SQLException 
+     * @throws SQLException
      */
     public ResultSet requeteSelect(String q) throws SQLException {
         Statement stmt = null;
@@ -60,7 +60,7 @@ public class MySQLAccess {
      * Traite les requêtes d'insertion, update et suppression
      * @param q la requête à exécuter
      * @return true si la requête a renvoyé quelque chose, false sinon
-     * @throws SQLException 
+     * @throws SQLException
      */
     private boolean requeteUpdate(String q) throws SQLException {
         Statement stmt = null;
@@ -87,7 +87,7 @@ public class MySQLAccess {
      * @param mot le mot à insérer dans la colonne value
      * @param frequence la fréquence de ce mot
      * @return true si l'insertion a réussie, false sinon
-     * @throws SQLException 
+     * @throws SQLException
      */
     public boolean insertTerm(HashMap<String, TermeCollection> listeTermesCollection) throws SQLException {
         int idTerme, freq, cpt = 0;
@@ -128,7 +128,7 @@ public class MySQLAccess {
      * Insère un document dans la table Documents
      * @param nomDoc
      * @return true si l'insertion a réussie, false sinon
-     * @throws SQLException 
+     * @throws SQLException
      */
     public boolean insertDocument(File[] files) throws SQLException {
         int cpt = 0;
@@ -159,14 +159,14 @@ public class MySQLAccess {
      * @param label l'intitulé du noeud
      * @param parent_id l'id du noeud parent
      * @return true si l'insertion a réussie, false sinon
-     * @throws SQLException 
+     * @throws SQLException
      */
     public boolean insertNode(ArrayList<Noeud> listeNoeuds) throws SQLException {
         boolean result = false;
         int cpt = 0;
 
         String query = "INSERT INTO nodes (id, doc_id, label, parent_id, words) VALUES ";
-        
+
         for (Noeud noeud : listeNoeuds) {
             if (noeud != null) {
                 if (cpt > 0) {
@@ -174,15 +174,15 @@ public class MySQLAccess {
                 }
 
                 query += "('" + noeud.getId() + "', '" + noeud.getIdDoc()
-                        + "', '" + noeud.getLabel() + "', '" + noeud.getIdParent() 
-                        + "', '" + noeud.getNbMots() + "')";
+                        + "', '" + noeud.getLabel() + "', '" + noeud.getIdParent()
+                        + "', '" + noeud.getNbMots() + "', '" + noeud.getPath() + "')";
 
                 cpt++;
 
                 if (cpt == MAX_QUERIES || cpt == listeNoeuds.size()) {
                     result = requeteUpdate(query); //executer
                     cpt = 0;
-                    query = "INSERT INTO nodes (id, doc_id, label, parent_id, words) VALUES ";
+                    query = "INSERT INTO nodes (id, doc_id, label, parent_id, words, path) VALUES ";
                 }
             }
         }
@@ -200,7 +200,7 @@ public class MySQLAccess {
      * @param node_id l'id du noeud contenant le terme à insérer
      * @param freq la fréquence du terme dans ce noeud
      * @return true si l'insertion a réussie, false sinon
-     * @throws SQLException 
+     * @throws SQLException
      */
     public boolean insertTermInNode(ArrayList<TermeDansNoeud> listeTermesDansNoeud)
             throws SQLException {
@@ -209,7 +209,7 @@ public class MySQLAccess {
         int cpt = 0;
 
         String query = "INSERT INTO term_in_node (term_id, node_id, frequency) VALUES ";
-        
+
         for (TermeDansNoeud terme : listeTermesDansNoeud) {
 
                 if (cpt > 0) {
@@ -242,16 +242,16 @@ public class MySQLAccess {
      * @param node_id l'id du noeud contenant le terme à insérer
      * @param pos la position du terme dans ce noeud
      * @return true si l'insertion a réussie, false sinon
-     * @throws SQLException 
+     * @throws SQLException
      */
-    public boolean insertTermPos(ArrayList<TermePosition> listeTermesPosition) 
+    public boolean insertTermPos(ArrayList<TermePosition> listeTermesPosition)
             throws SQLException {
 
         boolean result = false;
         int cpt = 0;
 
         String query = "INSERT INTO term_pos (term_id, node_id, pos) VALUES ";
-        
+
         for (TermePosition terme : listeTermesPosition) {
 
                 if (cpt > 0) {
@@ -292,7 +292,7 @@ public class MySQLAccess {
 
         ResultSet rs = requeteSelect(query);
 
-        if(rs.first());
+        if(rs != null && rs.first());
             term = new Term(rs.getInt("id"), term_value, rs.getInt("frequency"));
 
         rs.close();
@@ -319,7 +319,8 @@ public class MySQLAccess {
                     rs.getInt("doc_id"),
                     rs.getString("label"),
                     rs.getInt("parent_id"),
-                    rs.getInt("words"));
+                    rs.getInt("words"),
+                    rs.getString("path"));
         }
 
         rs.close();

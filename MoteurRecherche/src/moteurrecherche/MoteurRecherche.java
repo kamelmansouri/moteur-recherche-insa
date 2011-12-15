@@ -4,10 +4,6 @@ import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Scanner;
-import moteurrecherche.Database.MySQLAccess;
-import moteurrecherche.Database.TermInNode;
-import moteurrecherche.ParserXML.Noeud;
-import moteurrecherche.Recherche.ScoredTerm;
 import moteurrecherche.Recherche.ScoredTermInNode;
 import moteurrecherche.Recherche.TraiterRequete;
 import org.jdom.JDOMException;
@@ -26,11 +22,11 @@ public class MoteurRecherche {
         String ligneLue = sc.nextLine();
 
         TraiterRequete requete = new TraiterRequete(ligneLue);
-        ArrayList<ScoredTermInNode> list = requete.getScoredTermsInNodes();
+        //ArrayList<ScoredTermInNode> list = requete.getScoredTermsInNodes();
 
-        System.out.println(list);
+        //System.out.println(list);
 
-        requete.retournerParagraphesReponse(list, 1);
+        //requete.retournerParagraphesReponse(list, 1);
         
     }
 

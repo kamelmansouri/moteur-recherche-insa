@@ -44,12 +44,14 @@ public class ScoredTerm {
 
             Noeud node = db.getNodeByNodeId(termInNode.getNode_id());
 
-            ScoredTermInNode scoredTiN = new ScoredTermInNode(termInNode);
-            
-            scoredTiN.setTf(new Double((double) termInNode.getFrequency() / (double) node.getNbMots()));
-            scoredTiN.setTfIdf(scoredTiN.getTf() * idf);
-            
-            termNodesList.add(scoredTiN);
+            if(node != null) {
+                ScoredTermInNode scoredTiN = new ScoredTermInNode(termInNode);
+
+                scoredTiN.setTf(new Double((double) termInNode.getFrequency() / (double) node.getNbMots()));
+                scoredTiN.setTfIdf(scoredTiN.getTf() * idf);
+
+                termNodesList.add(scoredTiN);
+            }
             
         }
     }
