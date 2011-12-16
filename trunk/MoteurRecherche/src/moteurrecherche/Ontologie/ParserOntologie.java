@@ -10,6 +10,7 @@ import org.semanticweb.owlapi.model.*;
 import org.semanticweb.owlapi.vocab.OWLRDFVocabulary;
 
 public class ParserOntologie {
+
     private HashMap<String, Object> tableLabelInstance;
     private HashMap<Object, ArrayList<String>> tableInstanceLabel;
 
@@ -52,8 +53,14 @@ public class ParserOntologie {
                     tableLabelInstance.put(val.getLiteral(), instance);
 
                     //Ajout map <instance, liste_label>
-                    if()
-                    tableInstanceLabel.put(instance, val.getLiteral());
+                    if (tableInstanceLabel.get(instance) == null) {
+                        ArrayList<String> labels = new ArrayList<String>();
+                        labels.add(val.getLiteral());
+                        tableInstanceLabel.put(instance, labels);
+                    } else {
+                        tableInstanceLabel.get(instance).add(val.getLiteral());
+                    }
+
                 }
             }
         }
@@ -63,17 +70,28 @@ public class ParserOntologie {
         /*    Ajouter les couples (label, individus) dans la map  */
         /**********************************************************/
         for (OWLNamedIndividual instance : ontologie.getIndividualsInSignature()) {
-            for (OWLAnnotation annotation : instance.getAnnotations(ontologie)) {
+            for (OWLAnnotation annotation : instance.getAnnotations(ontologie, label)) {
                 if (annotation.getValue() instanceof OWLLiteral) {
                     OWLLiteral val = (OWLLiteral) annotation.getValue();
-                    tableLabelInstance.put(val.getLiteral(), instance); //ajout dans les maps
-                    tableInstanceLabel.put(instance, val.getLiteral());
+
+                    //Ajout map <label, instance>
+                    tableLabelInstance.put(val.getLiteral(), instance);
+
+                    //Ajout map <instance, liste_label>
+                    if (tableInstanceLabel.get(instance) == null) {
+                        ArrayList<String> labels = new ArrayList<String>();
+                        labels.add(val.getLiteral());
+                        tableInstanceLabel.put(instance, labels);
+                    } else {
+                        tableInstanceLabel.get(instance).add(val.getLiteral());
+                    }
                 }
             }
         }
 
         //DEBUG only, afficher la hashmap
-        //System.out.println(tableLabelInstance);
+        //System.out.println("Table <Label, Instance> : \n"+tableLabelInstance);
+        //System.out.println("Table <Instance, List<Labels>> : \n"+tableInstanceLabel);
 
 
         /*Entrée clavier */
@@ -90,32 +108,32 @@ public class ParserOntologie {
         /************************************************************************/
         if (o instanceof OWLClass) {
 
-            // récupération des super classes (tous les niveaux)
-            //System.out.println("Super classes : " + ((OWLClass) o).getSuperClasses(tpws));
-            //superclasses(((OWLClass) o).getSuperClasses(tpws), tpws);
-
+            // récupération des super classes (de niveau supérieur uniquement)
+            System.out.println("Super classe : " + ((OWLClass) o).getSuperClasses(ontologie));
 
             //Récupération du premier niveau de sous-classes
             Set<OWLClassExpression> sousClasses = ((OWLClass) o).getSubClasses(ontologie);
 
+
             //Pour chaque sous-classe, aller recuperer les mots associes
             for (OWLClassExpression sousClasse : sousClasses) {
-                String get = tableInstanceLabel.get(sousClasse);
-                System.out.println("GET : "+get);
+                System.out.println("Sous classe : " + sousClasse);
+
+                ArrayList<String> labels = tableInstanceLabel.get(sousClasse);
+                for(String lab : labels)
+                    System.out.println("\tLabel: " + lab);
             }
-            System.out.println("Sous classe : " + ((OWLClass) o).getSubClasses(ontologie));
+            
 
 
         } /************************************************************************/
-        /* Si la recherche de l'utilisateur renvoie un objet de type Individual */
-        /************************************************************************/
+        /* Si la recherche de l'utilisateur renvoie un objet de type Individual */ /************************************************************************/
         else if (o instanceof OWLNamedIndividual) {
 
             System.out.println("Found Individual : " + o);
 
         } /************************************************************************/
-        /* Cas d'erreur : la clef n'existe pas ******************************** */
-        /************************************************************************/
+        /* Cas d'erreur : la clef n'existe pas ******************************** */ /************************************************************************/
         else {
             System.out.println("Erreur : la clef entrée ne retourne aucune valeur.");
         }

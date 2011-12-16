@@ -7,7 +7,7 @@
 3) Lire et mettre en mémoire l'ontologie :
     3-1) Supprimer accents du mot lu
     3-2) Mettre en minuscule
-    3-3) Mettre dans les Hashmap ---> déjà fait (todo alexis :finir arraylist)
+    3-3) Mettre dans les Hashmap ---> DONE
 
 4) Chercher les termes de la requête dans les Hashmap de l'ontologie :
     4-1) Chercher par groupes de 3 termes
@@ -16,8 +16,11 @@
 
 5) Ajouter des termes à partir de ce qu'on a trouvé dans l'ontologie :
     5-1) Les synonymes (mauricio)
-    5-2) Les sous-classes (alexis)
---> Dans traiter requete, faire une nouvelle fonction pour ajouter des mots à la requete initiale
+    5-2) Les sous-classes (alexis, 50%)
+--> Dans traiter requete, faire une nouvelle fonction pour ajouter les mots trouvés à la requete initiale
+
+Sera à faire plus tard :
+    - Pondérer les termes de la requête (actuellement pondération = 1) selon leur pertinence/importance
 
 Améliorations :
     - Pour les individuals : rechercher le type en plus
