@@ -1,0 +1,23 @@
+0) Faire les tests qrel sur la méthode actuelle (sans ontologie) (partie 1 du Projet2.pdf)
+----
+
+1) Supprimer accents de la requête
+2) Mettre en minuscule les mots de la requête
+
+3) Lire et mettre en mémoire l'ontologie :
+    3-1) Supprimer accents du mot lu
+    3-2) Mettre en minuscule
+    3-3) Mettre dans les Hashmap ---> déjà fait (todo alexis :finir arraylist)
+
+4) Chercher les termes de la requête dans les Hashmap de l'ontologie :
+    4-1) Chercher par groupes de 3 termes
+    4-2) Si pas trouvé : chercher par groupes de 2 termes
+    4-3) Si pas trouvé : chercher par 1 terme à la fois
+
+5) Ajouter des termes à partir de ce qu'on a trouvé dans l'ontologie :
+    5-1) Les synonymes (mauricio)
+    5-2) Les sous-classes (alexis)
+--> Dans traiter requete, faire une nouvelle fonction pour ajouter des mots à la requete initiale
+
+Améliorations :
+    - Pour les individuals : rechercher le type en plus
