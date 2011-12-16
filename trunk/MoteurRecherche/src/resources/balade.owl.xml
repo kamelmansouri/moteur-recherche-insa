@@ -1,0 +1,1268 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE rdf:RDF [
+    <!ENTITY owl "http://www.w3.org/2002/07/owl#" >
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY owl2xml "http://www.w3.org/2006/12/owl2-xml#" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+    <!ENTITY Balade "http://www.semanticweb.org/ontologies/2011/4/Balade.owl#" >
+    <!ENTITY Ontology1305288783641 "http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#" >
+]>
+
+
+<rdf:RDF xmlns="http://www.semanticweb.org/ontologies/2011/4/Balade.owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2011/4/Balade.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:owl2xml="http://www.w3.org/2006/12/owl2-xml#"
+     xmlns:Ontology1305288783641="http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#"
+     xmlns:owl="http://www.w3.org/2002/07/owl#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:Balade="http://www.semanticweb.org/ontologies/2011/4/Balade.owl#">
+    <owl:Ontology rdf:about="http://www.semanticweb.org/ontologies/2011/4/Balade.owl"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Annotation properties
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Datatypes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Classes
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Abbaye -->
+
+    <owl:Class rdf:about="&Balade;Abbaye">
+        <rdfs:label xml:lang="fr">Abbaye</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Monument_religieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Activite_aquatique -->
+
+    <owl:Class rdf:about="&Balade;Activite_aquatique">
+        <rdfs:label xml:lang="fr">Activité aquatique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;Activite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Activite_de_montagne -->
+
+    <owl:Class rdf:about="&Balade;Activite_de_montagne">
+        <rdfs:label xml:lang="fr">activité de montagne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;Activite"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Aire_geographique -->
+
+    <owl:Class rdf:about="&Balade;Aire_geographique">
+        <rdfs:label xml:lang="fr">Aire geographique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;Lieu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Animal -->
+
+    <owl:Class rdf:about="&Balade;Animal">
+        <rdfs:label xml:lang="fr">Animal</rdfs:label>
+        <rdfs:label xml:lang="fr">animaux</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Etre_vivant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Animal_de_montagne -->
+
+    <owl:Class rdf:about="&Balade;Animal_de_montagne">
+        <rdfs:label xml:lang="fr">Animal de montagne</rdfs:label>
+        <rdfs:label xml:lang="fr">animaux de montagne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Autoroute -->
+
+    <owl:Class rdf:about="&Balade;Autoroute">
+        <rdfs:label xml:lang="fr">Autoroute</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;VoieMotorisee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Blaireau -->
+
+    <owl:Class rdf:about="&Balade;Blaireau">
+        <rdfs:label xml:lang="fr">blaireau</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;mammifere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Cathedrale -->
+
+    <owl:Class rdf:about="&Balade;Cathedrale">
+        <rdfs:label xml:lang="fr">cathedrale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Monument_religieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Chemin -->
+
+    <owl:Class rdf:about="&Balade;Chemin">
+        <rdfs:label xml:lang="fr">Chemin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;VoiePedestre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Eglise -->
+
+    <owl:Class rdf:about="&Balade;Eglise">
+        <rdfs:label xml:lang="fr">église</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Monument_religieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Epervier -->
+
+    <owl:Class rdf:about="&Balade;Epervier">
+        <rdfs:label xml:lang="fr">Epervier</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;rapace_diurne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#EtendueDeau -->
+
+    <owl:Class rdf:about="&Balade;EtendueDeau">
+        <rdfs:label xml:lang="fr">Etendue d&#39;eau</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;LieuNaturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Etre_vivant -->
+
+    <owl:Class rdf:about="&Balade;Etre_vivant">
+        <rdfs:label xml:lang="fr">Etre vivant</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Fleuve -->
+
+    <owl:Class rdf:about="&Balade;Fleuve">
+        <rdfs:label xml:lang="fr">Fleuve</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;EtendueDeau"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Gypaete_barbu -->
+
+    <owl:Class rdf:about="&Balade;Gypaete_barbu">
+        <rdfs:label xml:lang="fr">Gypaete barbu</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;rapace_diurne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Lagopede -->
+
+    <owl:Class rdf:about="&Balade;Lagopede">
+        <rdfs:label xml:lang="fr">Lagopède</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;oiseau"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Lynx -->
+
+    <owl:Class rdf:about="&Balade;Lynx">
+        <rdfs:label xml:lang="fr">lynx</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;mammifere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Marmotte -->
+
+    <owl:Class rdf:about="&Balade;Marmotte">
+        <rdfs:label xml:lang="fr">marmotte</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;mammifere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Minaret -->
+
+    <owl:Class rdf:about="&Balade;Minaret">
+        <rdfs:label xml:lang="fr">Minaret</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Monument_religieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Monastere -->
+
+    <owl:Class rdf:about="&Balade;Monastere">
+        <rdfs:label xml:lang="fr">Monastere</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Monument_religieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Monument_religieux -->
+
+    <owl:Class rdf:about="&Balade;Monument_religieux">
+        <rdfs:label xml:lang="fr">Monument religieux</rdfs:label>
+        <rdfs:label xml:lang="fr">monuments religieux</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;monument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Monument_symbolique -->
+
+    <owl:Class rdf:about="&Balade;Monument_symbolique">
+        <rdfs:label xml:lang="fr">Monument symbolique</rdfs:label>
+        <rdfs:label xml:lang="fr">monument alegorique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;monument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Mosquee -->
+
+    <owl:Class rdf:about="&Balade;Mosquee">
+        <rdfs:label xml:lang="fr">mosquée</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Monument_religieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Ocean -->
+
+    <owl:Class rdf:about="&Balade;Ocean">
+        <rdfs:label xml:lang="fr">Ocean</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;EtendueDeau"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Peripherique -->
+
+    <owl:Class rdf:about="&Balade;Peripherique">
+        <rdfs:label xml:lang="fr">Peripherique</rdfs:label>
+        <rdfs:label xml:lang="fr">rocade</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;VoieMotorisee"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Plongee_sous_marine -->
+
+    <owl:Class rdf:about="&Balade;Plongee_sous_marine">
+        <rdfs:label xml:lang="fr">Plongée sous marine</rdfs:label>
+        <rdfs:label xml:lang="fr">plongée</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Activite_aquatique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Prieure -->
+
+    <owl:Class rdf:about="&Balade;Prieure">
+        <rdfs:label xml:lang="fr">prieuré</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Monument_religieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Raquette -->
+
+    <owl:Class rdf:about="&Balade;Raquette">
+        <rdfs:label xml:lang="fr">Raquette</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Activite_de_montagne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Religion -->
+
+    <owl:Class rdf:about="&Balade;Religion">
+        <rdfs:label xml:lang="fr">Religion</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Renard -->
+
+    <owl:Class rdf:about="&Balade;Renard">
+        <rdfs:label xml:lang="fr">renard</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;mammifere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Sentier -->
+
+    <owl:Class rdf:about="&Balade;Sentier">
+        <rdfs:label xml:lang="fr">Sentier</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;VoiePedestre"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Ski -->
+
+    <owl:Class rdf:about="&Balade;Ski">
+        <rdfs:label xml:lang="fr">ski</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Activite_de_montagne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Ski_nautique -->
+
+    <owl:Class rdf:about="&Balade;Ski_nautique">
+        <rdfs:label xml:lang="fr">Ski nautique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Activite_aquatique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Vegetal -->
+
+    <owl:Class rdf:about="&Balade;Vegetal">
+        <rdfs:label xml:lang="fr">Végétal</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Etre_vivant"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#VoieMotorisee -->
+
+    <owl:Class rdf:about="&Balade;VoieMotorisee">
+        <rdfs:label xml:lang="fr">Voie motorisée</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;Voie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#VoiePedestre -->
+
+    <owl:Class rdf:about="&Balade;VoiePedestre">
+        <rdfs:label xml:lang="fr">voie pédestre</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;Voie"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#aigle -->
+
+    <owl:Class rdf:about="&Balade;aigle">
+        <rdfs:label xml:lang="fr">aigle</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;rapace_diurne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#arc_de_triomphe -->
+
+    <owl:Class rdf:about="&Balade;arc_de_triomphe">
+        <rdfs:label xml:lang="fr">arc de triomphe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;monument_militaire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#bouquetin -->
+
+    <owl:Class rdf:about="&Balade;bouquetin">
+        <rdfs:label xml:lang="fr">bouquetin</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;mammifere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#campagnol -->
+
+    <owl:Class rdf:about="&Balade;campagnol">
+        <rdfs:label xml:lang="fr">campagnol</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;mammifere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#cerf -->
+
+    <owl:Class rdf:about="&Balade;cerf">
+        <rdfs:label xml:lang="fr">cerf</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;mammifere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#chamoix -->
+
+    <owl:Class rdf:about="&Balade;chamoix">
+        <rdfs:label xml:lang="fr">chamoix</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;mammifere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#chappelle -->
+
+    <owl:Class rdf:about="&Balade;chappelle">
+        <rdfs:label xml:lang="fr">chappelle</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Monument_religieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#chevreuil -->
+
+    <owl:Class rdf:about="&Balade;chevreuil">
+        <rdfs:label xml:lang="fr">chevreuil</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;mammifere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#chocard -->
+
+    <owl:Class rdf:about="&Balade;chocard">
+        <rdfs:label xml:lang="fr">chocard</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;mammifere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#chouette -->
+
+    <owl:Class rdf:about="&Balade;chouette">
+        <rdfs:label xml:lang="fr">chouette</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;rapace_nocturne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#cimetiere -->
+
+    <owl:Class rdf:about="&Balade;cimetiere">
+        <rdfs:label xml:lang="fr">cimetiere</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;monument_funeraire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#faucon -->
+
+    <owl:Class rdf:about="&Balade;faucon">
+        <rdfs:label xml:lang="fr">faucon</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;rapace_diurne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#glacier -->
+
+    <owl:Class rdf:about="&Balade;glacier">
+        <rdfs:label xml:lang="fr">glacier</rdfs:label>
+        <rdfs:label xml:lang="fr">glaciers</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;LieuNaturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#hibou -->
+
+    <owl:Class rdf:about="&Balade;hibou">
+        <rdfs:label xml:lang="fr">hibou</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;rapace_nocturne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#lac -->
+
+    <owl:Class rdf:about="&Balade;lac">
+        <rdfs:label xml:lang="fr">lac</rdfs:label>
+        <rdfs:label xml:lang="fr">lacs</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;EtendueDeau"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#lievreDesNeiges -->
+
+    <owl:Class rdf:about="&Balade;lievreDesNeiges">
+        <rdfs:label xml:lang="fr">lièvre</rdfs:label>
+        <rdfs:label xml:lang="fr">lièvre des neiges</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;mammifere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#loup -->
+
+    <owl:Class rdf:about="&Balade;loup">
+        <rdfs:label xml:lang="fr">loup</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;mammifere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#mammifere -->
+
+    <owl:Class rdf:about="&Balade;mammifere">
+        <rdfs:label xml:lang="fr">mammifère</rdfs:label>
+        <rdfs:label xml:lang="fr">mammifères</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#mausolee -->
+
+    <owl:Class rdf:about="&Balade;mausolee">
+        <rdfs:label xml:lang="fr">mausolee</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;monument_funeraire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#monument -->
+
+    <owl:Class rdf:about="&Balade;monument">
+        <rdfs:label xml:lang="fr">edifice</rdfs:label>
+        <rdfs:label xml:lang="fr">monument</rdfs:label>
+        <rdfs:label xml:lang="fr">monuments</rdfs:label>
+        <rdfs:label xml:lang="fr">édifice</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;LieuArtificiel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#monument_funeraire -->
+
+    <owl:Class rdf:about="&Balade;monument_funeraire">
+        <rdfs:label xml:lang="fr">monument funeraire</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;monument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#monument_historique -->
+
+    <owl:Class rdf:about="&Balade;monument_historique">
+        <rdfs:label xml:lang="fr">monument historique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;monument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#monument_militaire -->
+
+    <owl:Class rdf:about="&Balade;monument_militaire">
+        <rdfs:label xml:lang="fr">monument militaire</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;monument"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#musaraigne -->
+
+    <owl:Class rdf:about="&Balade;musaraigne">
+        <rdfs:label xml:lang="fr">musaraigne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;mammifere"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#necropole -->
+
+    <owl:Class rdf:about="&Balade;necropole">
+        <rdfs:label xml:lang="fr">necropole</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;monument_funeraire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#oiseau -->
+
+    <owl:Class rdf:about="&Balade;oiseau">
+        <rdfs:label xml:lang="fr">oiseau</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#palais -->
+
+    <owl:Class rdf:about="&Balade;palais">
+        <rdfs:label xml:lang="fr">palais</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;monument_historique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#rapace -->
+
+    <owl:Class rdf:about="&Balade;rapace">
+        <rdfs:label xml:lang="fr">rapace</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;oiseau"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#rapace_diurne -->
+
+    <owl:Class rdf:about="&Balade;rapace_diurne">
+        <rdfs:label xml:lang="fr">rapace diurne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;rapace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#rapace_nocturne -->
+
+    <owl:Class rdf:about="&Balade;rapace_nocturne">
+        <rdfs:label xml:lang="fr">rapace nocturne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;rapace"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#religion_chretienne -->
+
+    <owl:Class rdf:about="&Balade;religion_chretienne">
+        <rdfs:label xml:lang="fr">religion catholique</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Religion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#religion_juive -->
+
+    <owl:Class rdf:about="&Balade;religion_juive">
+        <rdfs:label xml:lang="fr">religion juive</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Religion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#religion_musulmane -->
+
+    <owl:Class rdf:about="&Balade;religion_musulmane">
+        <rdfs:label xml:lang="fr">religion musulmane</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Religion"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#riviere -->
+
+    <owl:Class rdf:about="&Balade;riviere">
+        <rdfs:label xml:lang="fr">rivière</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;EtendueDeau"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#ruine -->
+
+    <owl:Class rdf:about="&Balade;ruine">
+        <rdfs:label xml:lang="fr">ruine</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;monument_historique"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#sanctuaire -->
+
+    <owl:Class rdf:about="&Balade;sanctuaire">
+        <rdfs:label xml:lang="fr">sanctuaire</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Monument_religieux"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#tombe -->
+
+    <owl:Class rdf:about="&Balade;tombe">
+        <rdfs:label xml:lang="fr">tombe</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;monument_funeraire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#tombeau -->
+
+    <owl:Class rdf:about="&Balade;tombeau">
+        <rdfs:label xml:lang="fr">tombeau</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;monument_funeraire"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#vautour -->
+
+    <owl:Class rdf:about="&Balade;vautour">
+        <rdfs:label xml:lang="fr">vautour</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Balade;Animal_de_montagne"/>
+        <rdfs:subClassOf rdf:resource="&Balade;rapace_diurne"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#Activite -->
+
+    <owl:Class rdf:about="&Ontology1305288783641;Activite">
+        <rdfs:label xml:lang="fr">activité</rdfs:label>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#Capitale -->
+
+    <owl:Class rdf:about="&Ontology1305288783641;Capitale">
+        <rdfs:label xml:lang="fr">capitale</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;Ville"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#Continent -->
+
+    <owl:Class rdf:about="&Ontology1305288783641;Continent">
+        <rdfs:label xml:lang="fr">continent</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;LieuAdministratif"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#Habitation -->
+
+    <owl:Class rdf:about="&Ontology1305288783641;Habitation">
+        <rdfs:label xml:lang="fr">domicile</rdfs:label>
+        <rdfs:label xml:lang="fr">etablissement</rdfs:label>
+        <rdfs:label xml:lang="fr">habitat</rdfs:label>
+        <rdfs:label xml:lang="fr">habitation</rdfs:label>
+        <rdfs:label xml:lang="fr">logement</rdfs:label>
+        <rdfs:label xml:lang="fr">logis</rdfs:label>
+        <rdfs:label xml:lang="fr">propriété</rdfs:label>
+        <rdfs:label xml:lang="fr">résidence</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;LieuArtificiel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#Lieu -->
+
+    <owl:Class rdf:about="&Ontology1305288783641;Lieu">
+        <rdfs:label xml:lang="fr">coin</rdfs:label>
+        <rdfs:label xml:lang="fr">endroit</rdfs:label>
+        <rdfs:label xml:lang="fr">espace</rdfs:label>
+        <rdfs:label xml:lang="fr">lieu</rdfs:label>
+        <rdfs:label xml:lang="fr">localite</rdfs:label>
+        <rdfs:label xml:lang="fr">quelque part</rdfs:label>
+        <rdfs:label xml:lang="fr">secteur</rdfs:label>
+        <rdfs:label xml:lang="fr">site</rdfs:label>
+        <rdfs:label xml:lang="fr">zone</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&owl;Thing"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#LieuAdministratif -->
+
+    <owl:Class rdf:about="&Ontology1305288783641;LieuAdministratif">
+        <rdfs:label xml:lang="fr">lieu administratif</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;Lieu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#LieuArtificiel -->
+
+    <owl:Class rdf:about="&Ontology1305288783641;LieuArtificiel">
+        <rdfs:label xml:lang="fr">lieu artificiel</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;Lieu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#LieuNaturel -->
+
+    <owl:Class rdf:about="&Ontology1305288783641;LieuNaturel">
+        <rdfs:label xml:lang="fr">lieu naturel</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;Lieu"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#Maison -->
+
+    <owl:Class rdf:about="&Ontology1305288783641;Maison">
+        <rdfs:label xml:lang="fr">baraque</rdfs:label>
+        <rdfs:label xml:lang="fr">bicoque</rdfs:label>
+        <rdfs:label xml:lang="fr">case</rdfs:label>
+        <rdfs:label xml:lang="fr">demeure</rdfs:label>
+        <rdfs:label xml:lang="fr">maison</rdfs:label>
+        <rdfs:label xml:lang="fr">pavillon</rdfs:label>
+        <rdfs:label xml:lang="fr">villa</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;Habitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#MassifMontagneux -->
+
+    <owl:Class rdf:about="&Ontology1305288783641;MassifMontagneux">
+        <rdfs:label>massif montagneux</rdfs:label>
+        <rdfs:label xml:lang="fr">colline</rdfs:label>
+        <rdfs:label xml:lang="fr">elevation</rdfs:label>
+        <rdfs:label xml:lang="fr">eminence</rdfs:label>
+        <rdfs:label xml:lang="fr">haut-lieu</rdfs:label>
+        <rdfs:label xml:lang="fr">hauteur</rdfs:label>
+        <rdfs:label xml:lang="fr">massif</rdfs:label>
+        <rdfs:label xml:lang="fr">mont</rdfs:label>
+        <rdfs:label xml:lang="fr">montagne</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;LieuNaturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#Pays -->
+
+    <owl:Class rdf:about="&Ontology1305288783641;Pays">
+        <rdfs:label xml:lang="fr">pays</rdfs:label>
+        <rdfs:label xml:lang="fr">territoire</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;LieuAdministratif"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#Refuge -->
+
+    <owl:Class rdf:about="&Ontology1305288783641;Refuge">
+        <rdfs:label xml:lang="fr">abri</rdfs:label>
+        <rdfs:label xml:lang="fr">cabane</rdfs:label>
+        <rdfs:label xml:lang="fr">cahute</rdfs:label>
+        <rdfs:label xml:lang="fr">gite</rdfs:label>
+        <rdfs:label xml:lang="fr">hutte</rdfs:label>
+        <rdfs:label xml:lang="fr">refuge</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;Habitation"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#Sommet -->
+
+    <owl:Class rdf:about="&Ontology1305288783641;Sommet">
+        <rdfs:label xml:lang="fr">acme</rdfs:label>
+        <rdfs:label xml:lang="fr">aiguille</rdfs:label>
+        <rdfs:label xml:lang="fr">apogee</rdfs:label>
+        <rdfs:label xml:lang="fr">crete</rdfs:label>
+        <rdfs:label xml:lang="fr">faite</rdfs:label>
+        <rdfs:label xml:lang="fr">haut-lieu</rdfs:label>
+        <rdfs:label xml:lang="fr">hauteur</rdfs:label>
+        <rdfs:label xml:lang="fr">maximum</rdfs:label>
+        <rdfs:label xml:lang="fr">pic</rdfs:label>
+        <rdfs:label xml:lang="fr">piton</rdfs:label>
+        <rdfs:label xml:lang="fr">point culminant</rdfs:label>
+        <rdfs:label xml:lang="fr">pointe</rdfs:label>
+        <rdfs:label xml:lang="fr">sommet</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;LieuNaturel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#Ville -->
+
+    <owl:Class rdf:about="&Ontology1305288783641;Ville">
+        <rdfs:label xml:lang="fr">acropole</rdfs:label>
+        <rdfs:label xml:lang="fr">agglomeration</rdfs:label>
+        <rdfs:label xml:lang="fr">cite</rdfs:label>
+        <rdfs:label xml:lang="fr">metropole</rdfs:label>
+        <rdfs:label xml:lang="fr">municipalite</rdfs:label>
+        <rdfs:label xml:lang="fr">ville</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;LieuAdministratif"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#Voie -->
+
+    <owl:Class rdf:about="&Ontology1305288783641;Voie">
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;LieuArtificiel"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#village -->
+
+    <owl:Class rdf:about="&Ontology1305288783641;village">
+        <rdfs:label xml:lang="fr">bled</rdfs:label>
+        <rdfs:label xml:lang="fr">patelin</rdfs:label>
+        <rdfs:label xml:lang="fr">trou</rdfs:label>
+        <rdfs:label xml:lang="fr">village</rdfs:label>
+        <rdfs:subClassOf rdf:resource="&Ontology1305288783641;LieuAdministratif"/>
+    </owl:Class>
+    
+
+
+    <!-- http://www.w3.org/2002/07/owl#Thing -->
+
+    <owl:Class rdf:about="&owl;Thing"/>
+    
+
+
+    <!-- 
+    ///////////////////////////////////////////////////////////////////////////////////////
+    //
+    // Individuals
+    //
+    ///////////////////////////////////////////////////////////////////////////////////////
+     -->
+
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Afrique -->
+
+    <owl:Thing rdf:about="&Balade;Afrique">
+        <rdf:type rdf:resource="&Ontology1305288783641;Continent"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Afrique</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Algerie -->
+
+    <owl:Thing rdf:about="&Balade;Algerie">
+        <rdf:type rdf:resource="&Ontology1305288783641;Pays"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Algerie</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Amerique -->
+
+    <owl:Thing rdf:about="&Balade;Amerique">
+        <rdf:type rdf:resource="&Ontology1305288783641;Continent"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Amerique</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Amerique_Latine -->
+
+    <owl:Thing rdf:about="&Balade;Amerique_Latine">
+        <rdf:type rdf:resource="&Balade;Aire_geographique"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Amérique Latine</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Andes -->
+
+    <owl:Thing rdf:about="&Balade;Andes">
+        <rdf:type rdf:resource="&Ontology1305288783641;MassifMontagneux"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label>chaîne andine</rdfs:label>
+        <rdfs:label>Andes</rdfs:label>
+        <rdfs:label xml:lang="fr">Cordillère des andes</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Argentine -->
+
+    <owl:Thing rdf:about="&Balade;Argentine">
+        <rdf:type rdf:resource="&Ontology1305288783641;Pays"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Argentine</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Asie -->
+
+    <owl:Thing rdf:about="&Balade;Asie">
+        <rdf:type rdf:resource="&Ontology1305288783641;Continent"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Asie</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Bolivie -->
+
+    <owl:Thing rdf:about="&Balade;Bolivie">
+        <rdf:type rdf:resource="&Ontology1305288783641;Pays"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Bolivie</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Bresil -->
+
+    <owl:Thing rdf:about="&Balade;Bresil">
+        <rdf:type rdf:resource="&Ontology1305288783641;Pays"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Bresil</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Chili -->
+
+    <owl:Thing rdf:about="&Balade;Chili">
+        <rdf:type rdf:resource="&Ontology1305288783641;Pays"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Chili</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Colombie -->
+
+    <owl:Thing rdf:about="&Balade;Colombie">
+        <rdf:type rdf:resource="&Ontology1305288783641;Pays"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Colombie</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Costa_Rica -->
+
+    <owl:Thing rdf:about="&Balade;Costa_Rica">
+        <rdf:type rdf:resource="&Ontology1305288783641;Pays"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Costa Rica</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Cuba -->
+
+    <owl:Thing rdf:about="&Balade;Cuba">
+        <rdf:type rdf:resource="&Ontology1305288783641;Pays"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Cuba</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Honduras -->
+
+    <owl:Thing rdf:about="&Balade;Honduras">
+        <rdf:type rdf:resource="&Ontology1305288783641;Pays"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Honduras</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Maroc -->
+
+    <owl:Thing rdf:about="&Balade;Maroc">
+        <rdf:type rdf:resource="&Ontology1305288783641;Pays"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Maroc</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Massif_Central -->
+
+    <owl:Thing rdf:about="&Balade;Massif_Central">
+        <rdf:type rdf:resource="&Ontology1305288783641;MassifMontagneux"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Massif Central</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Nicaragua -->
+
+    <owl:Thing rdf:about="&Balade;Nicaragua">
+        <rdf:type rdf:resource="&Ontology1305288783641;Pays"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Nicaragua</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Perou -->
+
+    <owl:Thing rdf:about="&Balade;Perou">
+        <rdf:type rdf:resource="&Ontology1305288783641;Pays"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Perou</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#Pyrennees -->
+
+    <owl:Thing rdf:about="&Balade;Pyrennees">
+        <rdf:type rdf:resource="&Ontology1305288783641;MassifMontagneux"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">Pyrennees</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#equateur -->
+
+    <owl:Thing rdf:about="&Balade;equateur">
+        <rdf:type rdf:resource="&Ontology1305288783641;Pays"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">equateur</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#mexique -->
+
+    <owl:Thing rdf:about="&Balade;mexique">
+        <rdf:type rdf:resource="&Ontology1305288783641;Pays"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">mexique</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#paraguay -->
+
+    <owl:Thing rdf:about="&Balade;paraguay">
+        <rdf:type rdf:resource="&Ontology1305288783641;Pays"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">paraguay</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#urugay -->
+
+    <owl:Thing rdf:about="&Balade;urugay">
+        <rdf:type rdf:resource="&Ontology1305288783641;Pays"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">urugay</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Balade.owl#venezuela -->
+
+    <owl:Thing rdf:about="&Balade;venezuela">
+        <rdf:type rdf:resource="&Ontology1305288783641;Pays"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label xml:lang="fr">venezuela</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#alpes -->
+
+    <owl:Thing rdf:about="&Ontology1305288783641;alpes">
+        <rdf:type rdf:resource="&Ontology1305288783641;MassifMontagneux"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label>Alpes</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#montBlanc -->
+
+    <owl:Thing rdf:about="&Ontology1305288783641;montBlanc">
+        <rdf:type rdf:resource="&Ontology1305288783641;Sommet"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label>Mont-Blanc</rdfs:label>
+        <rdfs:label>montblanc</rdfs:label>
+        <rdfs:label>mont blanc</rdfs:label>
+        <rdfs:label>MontBlanc</rdfs:label>
+    </owl:Thing>
+    
+
+
+    <!-- http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#teteRousse -->
+
+    <owl:Thing rdf:about="&Ontology1305288783641;teteRousse">
+        <rdf:type rdf:resource="&Ontology1305288783641;Sommet"/>
+        <rdf:type rdf:resource="&owl;NamedIndividual"/>
+        <rdfs:label>Tete Rousse</rdfs:label>
+    </owl:Thing>
+</rdf:RDF>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+
