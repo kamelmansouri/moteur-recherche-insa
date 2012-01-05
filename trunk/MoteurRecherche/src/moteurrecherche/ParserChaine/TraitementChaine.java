@@ -57,7 +57,7 @@ public class TraitementChaine {
         remplacerAccents();
 
         /* Separer les mots de la chaîne */
-        String delimiteur = "[^a-z]"; //On ne garde que les lettres
+        String delimiteur = "[^a-z0-9]"; //On ne garde que les lettres
         String[] listeMots = chaine.split(delimiteur);
 
         /* Appliquer le formatage pour chaque mot */

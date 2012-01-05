@@ -292,7 +292,7 @@ public class MySQLAccess {
 
         ResultSet rs = requeteSelect(query);
 
-        if(rs != null && rs.first());
+        if(rs.first())
             term = new Term(rs.getInt("id"), term_value, rs.getInt("frequency"));
 
         rs.close();
