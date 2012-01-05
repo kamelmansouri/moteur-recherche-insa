@@ -19,18 +19,18 @@ import moteurrecherche.ParserChaine.TraitementChaine;
 import moteurrecherche.ParserChaine.TraitementMot;
 import moteurrecherche.ParserXML.ChercherParagraphe;
 import moteurrecherche.ParserXML.Noeud;
+import moteurrecherche.TestQrel.Resultat;
 import org.jdom.JDOMException;
 
 public class TraiterRequete {
-
     private final static int MAX_MOTS = 20;
-    private final static int MAX_PARAGRAPHES = 5;
     private final static String STOP_LISTE_PATH = "/resources/stopliste.txt";
 
 
     private final MySQLAccess db;
     private ArrayList<String> stopListe;
     private String requete;
+    private int maxParagraphes;
     private ArrayList<String> listeMotsRequete;
     private ArrayList<ScoredTerm> scoredTerms;
     private HashMap<Integer, Integer> poidsTermesRequete; //<id_term, poids>
@@ -38,9 +38,11 @@ public class TraiterRequete {
     private HashMap<Integer, ArrayList<ScoredTermInNode>> tableTermesAvecScores;
     private HashMap<Integer, Double> similariteNoeud; //<id_node, similarite>
     private TreeMap<Integer, Double> similariteNoeudTriee;
+    private ArrayList<Resultat> listeResultats;
 
-    public TraiterRequete(String req) throws ClassNotFoundException, SQLException, JDOMException, IOException {
+    public TraiterRequete(String req, int maxP) throws ClassNotFoundException, SQLException, JDOMException, IOException {
         requete = req;
+        maxParagraphes = maxP;
         stopListe = new ArrayList<String>();
         listeMotsRequete = new ArrayList<String>();
         db = new MySQLAccess();
@@ -48,12 +50,13 @@ public class TraiterRequete {
         //<node_id, <term_id, Item>>
         tableTermesAvecScores = new HashMap<Integer, ArrayList<ScoredTermInNode>>();
         similariteNoeud = new HashMap<Integer, Double>();
+        listeResultats = new ArrayList<Resultat>();
 
         chargerStopListe();
         formaterRequeteEntree();
         computeScoredTermsInNodes();
         calculeSimilarite();
-        retournerParagraphesReponse(MAX_PARAGRAPHES);
+        retournerParagraphesReponse(maxParagraphes);
     }
 
     public void retournerParagraphesReponse(int maxParagraphes)
@@ -69,7 +72,8 @@ public class TraiterRequete {
             id_doc = node.getIdDoc();
 
             System.out.println("+++PARAGRAPHE "+cptParagraphe+":+++");
-            ChercherParagraphe.renvoyerParagraphe(node.getPath(), db.getDocNameById(id_doc));
+            listeResultats.add(ChercherParagraphe.renvoyerParagraphe
+                    (node.getPath(), db.getDocNameById(id_doc)));
 
         }
     }
@@ -98,19 +102,24 @@ public class TraiterRequete {
             //Pour chaque triplet <term, noeud, freq> contenant term
             for (ScoredTermInNode scTiN : scTerm.getTermNodesList()) {
 
-                //Récupérer l' id noeud
-                node_id = scTiN.getTermInNode().getNode_id();
+                //On ne recherche pas dans les noeuds SOUS TITRE
+                if(db.getNodeByNodeId(
+                        scTiN.getTermInNode().getNode_id()).getLabel()
+                        .compareTo("SOUS-TITRE") != 0) {
+                    //Récupérer l' id noeud
+                    node_id = scTiN.getTermInNode().getNode_id();
 
-                //Si nouveau, créer liste
-                if (tableTermesAvecScores.get(node_id) == null) {
-                    ArrayList<ScoredTermInNode> listeNoeuds =  new ArrayList<ScoredTermInNode>();
+                    //Si nouveau, créer liste
+                    if (tableTermesAvecScores.get(node_id) == null) {
+                        ArrayList<ScoredTermInNode> listeNoeuds =  new ArrayList<ScoredTermInNode>();
 
-                    listeNoeuds.add(scTiN);
+                        listeNoeuds.add(scTiN);
 
-                    tableTermesAvecScores.put(node_id, listeNoeuds);
-                } //Sinon ajouter à la liste déjà existante
-                else {
-                    tableTermesAvecScores.get(node_id).add(scTiN);
+                        tableTermesAvecScores.put(node_id, listeNoeuds);
+                    } //Sinon ajouter à la liste déjà existante
+                    else {
+                        tableTermesAvecScores.get(node_id).add(scTiN);
+                    }
                 }
             }
 
@@ -235,4 +244,10 @@ public class TraiterRequete {
             System.out.println("Lecture de la stop liste : ECHEC.\n" + ex.getMessage());
         }
     }
+
+    public ArrayList<Resultat> getListeResultats() {
+        return listeResultats;
+    }
+
+    
 }

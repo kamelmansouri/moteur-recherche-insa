@@ -7,6 +7,7 @@ import java.util.Scanner;
 import moteurrecherche.Ontologie.ParserOntologie;
 import moteurrecherche.Recherche.ScoredTermInNode;
 import moteurrecherche.Recherche.TraiterRequete;
+import moteurrecherche.TestQrel.EvaluerPerformance;
 import org.jdom.JDOMException;
 
 public class MoteurRecherche {
@@ -18,16 +19,15 @@ public class MoteurRecherche {
         //indexation.indexer();
 
         /*
-
         System.out.print("Veuillez entrer votre requête:  ");
         Scanner sc = new Scanner(System.in);
 
-        String ligneLue = sc.nextLine();
+        String ligneLue = sc.nextLine(); */
 
-        TraiterRequete requete = new TraiterRequete(ligneLue);
-         * */
+        //TraiterRequete requete = new TraiterRequete(ligneLue, 5);
+         EvaluerPerformance eval = new EvaluerPerformance(25);
 
-        ParserOntologie ontologieParser = new ParserOntologie();
+        //ParserOntologie ontologieParser = new ParserOntologie();
     }
 
     /*
