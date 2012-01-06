@@ -22,5 +22,6 @@
 
 6)  - Pondérer les termes de la requête (actuellement pondération = 1) selon leur pertinence/importance
 7) Supprimer Label TITRE, SOUS-TITRE
+8) Raisonneur > nouvelle ontologie 
 Améliorations :
     - Pour les individuals : rechercher le type en plus
