@@ -15,6 +15,7 @@ import javax.media.j3d.Node;
 import moteurrecherche.Database.MySQLAccess;
 import moteurrecherche.Database.Term;
 import moteurrecherche.Database.TermInNode;
+import moteurrecherche.Ontologie.ParserOntologie;
 import moteurrecherche.ParserChaine.TraitementChaine;
 import moteurrecherche.ParserChaine.TraitementMot;
 import moteurrecherche.ParserXML.ChercherParagraphe;
@@ -53,7 +54,12 @@ public class TraiterRequete {
         listeResultats = new ArrayList<Resultat>();
 
         chargerStopListe();
-        formaterRequeteEntree();
+        formaterRequeteAvantOntologie();
+
+        //ToDo intégrer ontologie
+
+        ajouterMotsOntologie();
+        formaterRequeteApresOntologie();
         computeScoredTermsInNodes();
         calculeSimilarite();
         retournerParagraphesReponse(maxParagraphes);
@@ -131,7 +137,7 @@ public class TraiterRequete {
     }
 
     private void calculeSimilarite() {
-        Double t1, t2, sum1, sum2, sum3, finalResult;
+        Double sum1, sum2, sum3, finalResult;
 
         //Calculer la somme des poids des termes de la requête
         sum2 = 0.0;
@@ -167,17 +173,22 @@ public class TraiterRequete {
         return similariteNoeudTriee;
     }
 
-    private void formaterRequeteEntree() {
+    private void formaterRequeteAvantOntologie() {
         /* ToDo: prendre en compte les requêtes avec guillemets */
 
         /* Mettre la chaine en minuscule et remplacer les accents */
         requete = requete.toLowerCase();
+        
+        TraitementMot requeteTraitee = new TraitementMot(requete);
+        requeteTraitee.remplacerAccents();
 
         /* Separer les mots de la chaîne */
-        String delimiteur = "[^a-z]"; //On ne garde que les lettres
+        String delimiteur = "[^a-z0-9]"; //On ne garde que les lettres et chiffres
 
         listeMotsRequete.addAll(Arrays.asList(requete.split(delimiteur)));
+    }
 
+    public void formaterRequeteApresOntologie() {
         /* Formater chaque mot */
         TraitementMot motTraite = new TraitementMot();
         ArrayList<String> toRemove = new ArrayList<String>();
@@ -247,6 +258,13 @@ public class TraiterRequete {
 
     public ArrayList<Resultat> getListeResultats() {
         return listeResultats;
+    }
+
+    private void ajouterMotsOntologie() {
+        ParserOntologie parser = new ParserOntologie();
+
+        if(this.listeMotsRequete.size() < 3);
+            
     }
 
     
