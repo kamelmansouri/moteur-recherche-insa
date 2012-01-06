@@ -19,23 +19,17 @@ public class MoteurRecherche {
         //indexation.indexer();
 
         
-        System.out.print("Veuillez entrer votre requête:  ");
-        Scanner sc = new Scanner(System.in);
+        //System.out.print("Veuillez entrer votre requête:  ");
+        //Scanner sc = new Scanner(System.in);
 
-        String ligneLue = sc.nextLine();
+        //String ligneLue = sc.nextLine();
 
         //TraiterRequete requete = new TraiterRequete(ligneLue, 5);
-//         EvaluerPerformance eval = new EvaluerPerformance(25);
+         EvaluerPerformance eval = new EvaluerPerformance(25);
 
         //System.out.println(list);
 
         //requete.retournerParagraphesReponse(list, 1);
-
-        ParserOntologie ontologieParser = new ParserOntologie();
-        ArrayList<String> listeMotsAAjouter = ontologieParser.getMotsAAjouter(ligneLue);
-
-        for(String motAAjouter : listeMotsAAjouter)
-            System.out.println(motAAjouter);
 
     }
 

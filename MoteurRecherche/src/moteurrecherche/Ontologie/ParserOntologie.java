@@ -140,7 +140,8 @@ public class ParserOntologie {
 
 
         } /************************************************************************/
-        /* Si la recherche de l'utilisateur renvoie un objet de type Individual */ /************************************************************************/
+        /* Si la recherche de l'utilisateur renvoie un objet de type Individual */
+        /************************************************************************/
         else if (o instanceof OWLNamedIndividual) {
             //Recuperation des synonims
             motsAAjouter.addAll(tableInstanceLabel.get(o));
