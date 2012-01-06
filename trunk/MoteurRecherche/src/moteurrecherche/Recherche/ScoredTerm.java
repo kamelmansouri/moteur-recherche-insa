@@ -52,7 +52,7 @@ public class ScoredTerm {
 
                 termNodesList.add(scoredTiN);
             }
-            
+
         }
     }
 

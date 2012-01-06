@@ -7,16 +7,12 @@ import java.io.InputStreamReader;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.HashMap;
 import java.util.Map.Entry;
 import java.util.TreeMap;
-import javax.media.j3d.Node;
 import moteurrecherche.Database.MySQLAccess;
 import moteurrecherche.Database.Term;
-import moteurrecherche.Database.TermInNode;
 import moteurrecherche.Ontologie.ParserOntologie;
-import moteurrecherche.ParserChaine.TraitementChaine;
 import moteurrecherche.ParserChaine.TraitementMot;
 import moteurrecherche.ParserXML.ChercherParagraphe;
 import moteurrecherche.ParserXML.Noeud;
@@ -157,7 +153,7 @@ public class TraiterRequete {
 
                 //Mesure du Cosinus : sum(xi*yi) / sqrt(sum(xi^2) * sum(yi^2))
                 sum1 += poidsTermesRequete.get(id_term) * scoredNode.getTfIdf();
-                
+
                 sum3 += scoredNode.getTfIdf()*scoredNode.getTfIdf();
             }
 

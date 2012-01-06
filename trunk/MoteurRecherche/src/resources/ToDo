@@ -5,8 +5,8 @@
 2) Mettre en minuscule les mots de la requête
 
 3) Lire et mettre en mémoire l'ontologie :
-    3-1) Supprimer accents du mot lu
-    3-2) Mettre en minuscule
+    3-1) Supprimer accents du mot lu ---> DONE
+    3-2) Mettre en minuscule ---> DONE
     3-3) Mettre dans les Hashmap ---> DONE
 
 4) Chercher les termes de la requête dans les Hashmap de l'ontologie :
@@ -15,8 +15,8 @@
     4-3) Si pas trouvé : chercher par 1 terme à la fois
 
 5) Ajouter des termes à partir de ce qu'on a trouvé dans l'ontologie :
-    5-1) Les synonymes (mauricio)
-    5-2) Les sous-classes (alexis, 50%)
+    5-1) Les synonymes (mauricio) ---> DONE
+    5-2) Les sous-classes (alexis) ---> DONE
 --> Dans traiter requete, faire une nouvelle fonction pour ajouter les mots trouvés à la requete initiale
 
 Sera à faire plus tard :

@@ -83,11 +83,11 @@ public class Indexation {
 
         //Insertion des termes / noeuds etc dans la base
         insererDansBase();
-        
+
         System.out.println("Nombre de noeuds: "+ listeNoeudsFinale.size());
-        System.out.println("Nombre de termes dans noeud: "+ 
+        System.out.println("Nombre de termes dans noeud: "+
                 collectionTraitee.getListeTermesDansNoeud().size());
-        System.out.println("Nombre de termes position: "+ 
+        System.out.println("Nombre de termes position: "+
                 collectionTraitee.getListeTermesPosition().size());
 
     }
@@ -96,22 +96,22 @@ public class Indexation {
      * Insère les documents/termes/noeuds issus de la collection traitée
      */
     private void insererDansBase() throws SQLException {
-        
+
         /* Insertion des documents de la collection */
         access.insertDocument(files);
-        
-        
+
+
         /* Insertion dans la table termes */
         access.insertTerm(collectionTraitee.getListeTermes());
-        
+
 
         /* Insertion des noeuds */
         access.insertNode(listeNoeudsFinale);
 
-        
+
         /* Insertion des term_in_node */
         access.insertTermInNode(collectionTraitee.getListeTermesDansNoeud());
-        
+
         /* Insertion des term_pos */
         access.insertTermPos(collectionTraitee.getListeTermesPosition());
 
