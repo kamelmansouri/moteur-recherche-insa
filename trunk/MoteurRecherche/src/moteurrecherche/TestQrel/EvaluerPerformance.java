@@ -30,12 +30,13 @@ public class EvaluerPerformance {
     public EvaluerPerformance(int maxParagraphes) throws ClassNotFoundException, SQLException,
             JDOMException, IOException {
 
-        int q=11;
+        int q=4;
 
         this.maxParagraphes = maxParagraphes;
         ArrayList<Resultat> resultats;
 
         TraiterRequete requete = new TraiterRequete(REQUETE[q-1], maxParagraphes);
+        System.out.println("Mots traités : "+requete.getListeMotsRequete());
         resultats = requete.getListeResultats();
 
         System.out.println("Q:"+REQUETE[q-1]);

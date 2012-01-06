@@ -8,7 +8,9 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.HashSet;
 import java.util.Map.Entry;
+import java.util.Set;
 import java.util.TreeMap;
 import moteurrecherche.Database.MySQLAccess;
 import moteurrecherche.Database.Term;
@@ -20,10 +22,9 @@ import moteurrecherche.TestQrel.Resultat;
 import org.jdom.JDOMException;
 
 public class TraiterRequete {
+
     private final static int MAX_MOTS = 20;
     private final static String STOP_LISTE_PATH = "/resources/stopliste.txt";
-
-
     private final MySQLAccess db;
     private ArrayList<String> stopListe;
     private String requete;
@@ -53,8 +54,7 @@ public class TraiterRequete {
         formaterRequeteAvantOntologie();
 
         //ToDo intégrer ontologie
-
-        ajouterMotsOntologie();
+        separerMots(ajouterMotsOntologie());
         formaterRequeteApresOntologie();
         computeScoredTermsInNodes();
         calculeSimilarite();
@@ -63,23 +63,24 @@ public class TraiterRequete {
 
     public void retournerParagraphesReponse(int maxParagraphes)
             throws SQLException, JDOMException, IOException {
-        int id_doc, cptParagraphe=0;
+        int id_doc, cptParagraphe = 0;
         Noeud node = null;
 
         for (Integer node_id : similariteNoeudTriee.keySet()) {
-            if(cptParagraphe++ == maxParagraphes) break;
+            if (cptParagraphe++ == maxParagraphes) {
+                break;
 
+
+            }
             node = db.getNodeByNodeId(node_id);
 
             id_doc = node.getIdDoc();
 
-            System.out.println("+++PARAGRAPHE "+cptParagraphe+":+++");
-            listeResultats.add(ChercherParagraphe.renvoyerParagraphe
-                    (node.getPath(), db.getDocNameById(id_doc)));
+            System.out.println("+++PARAGRAPHE " + cptParagraphe + ":+++");
+            listeResultats.add(ChercherParagraphe.renvoyerParagraphe(node.getPath(), db.getDocNameById(id_doc)));
 
         }
     }
-
 
     public ArrayList<ScoredTermInNode> computeScoredTermsInNodes() throws SQLException, ClassNotFoundException {
         Term term;
@@ -90,7 +91,7 @@ public class TraiterRequete {
 
             term = db.getTermByTermValue(mot);
 
-            if(term != null) {
+            if (term != null) {
                 poidsTermesRequete.put(term.getId(), 1); //attribution du poids
 
                 scoredTerms.add(new ScoredTerm(term, db));
@@ -105,15 +106,14 @@ public class TraiterRequete {
             for (ScoredTermInNode scTiN : scTerm.getTermNodesList()) {
 
                 //On ne recherche pas dans les noeuds SOUS TITRE
-                if(db.getNodeByNodeId(
-                        scTiN.getTermInNode().getNode_id()).getLabel()
-                        .compareTo("SOUS-TITRE") != 0) {
+                if (db.getNodeByNodeId(
+                        scTiN.getTermInNode().getNode_id()).getLabel().compareTo("SOUS-TITRE") != 0) {
                     //Récupérer l' id noeud
                     node_id = scTiN.getTermInNode().getNode_id();
 
                     //Si nouveau, créer liste
                     if (tableTermesAvecScores.get(node_id) == null) {
-                        ArrayList<ScoredTermInNode> listeNoeuds =  new ArrayList<ScoredTermInNode>();
+                        ArrayList<ScoredTermInNode> listeNoeuds = new ArrayList<ScoredTermInNode>();
 
                         listeNoeuds.add(scTiN);
 
@@ -137,8 +137,8 @@ public class TraiterRequete {
 
         //Calculer la somme des poids des termes de la requête
         sum2 = 0.0;
-        for(Entry<Integer, Integer> termeRequete : poidsTermesRequete.entrySet()) {
-            sum2 += termeRequete.getValue()*termeRequete.getValue();
+        for (Entry<Integer, Integer> termeRequete : poidsTermesRequete.entrySet()) {
+            sum2 += termeRequete.getValue() * termeRequete.getValue();
         }
 
         for (Entry<Integer, ArrayList<ScoredTermInNode>> entry : tableTermesAvecScores.entrySet()) {
@@ -148,16 +148,16 @@ public class TraiterRequete {
             sum1 = 0.0;
             sum3 = 0.0;
 
-            for(ScoredTermInNode scoredNode : listeScTiN) {
+            for (ScoredTermInNode scoredNode : listeScTiN) {
                 int id_term = scoredNode.getTermInNode().getTerm_id();
 
                 //Mesure du Cosinus : sum(xi*yi) / sqrt(sum(xi^2) * sum(yi^2))
                 sum1 += poidsTermesRequete.get(id_term) * scoredNode.getTfIdf();
 
-                sum3 += scoredNode.getTfIdf()*scoredNode.getTfIdf();
+                sum3 += scoredNode.getTfIdf() * scoredNode.getTfIdf();
             }
 
-            finalResult = sum1 / (Math.sqrt(sum2*sum3));
+            finalResult = sum1 / (Math.sqrt(sum2 * sum3));
             similariteNoeud.put(id_node, finalResult);
         }
 
@@ -169,12 +169,28 @@ public class TraiterRequete {
         return similariteNoeudTriee;
     }
 
+    private void separerMots(ArrayList<String> motsASeparer) {
+        ArrayList<String> motsEnPlus = new ArrayList<String>();
+
+        /* Separer les mots de la chaîne */
+        String delimiteur = "[^a-z0-9]"; //On ne garde que les lettres et chiffres
+
+        for(String mot : motsASeparer) {
+            listeMotsRequete.addAll(Arrays.asList(mot.split(delimiteur)));
+        }
+
+        Set set = new HashSet() ;
+        set.addAll(listeMotsRequete) ;
+        listeMotsRequete.clear();
+        listeMotsRequete.addAll(set);
+    }
+
     private void formaterRequeteAvantOntologie() {
         /* ToDo: prendre en compte les requêtes avec guillemets */
 
         /* Mettre la chaine en minuscule et remplacer les accents */
         requete = requete.toLowerCase();
-        
+
         TraitementMot requeteTraitee = new TraitementMot(requete);
         requeteTraitee.remplacerAccents();
 
@@ -193,16 +209,15 @@ public class TraiterRequete {
             motTraite.setMot(listeMotsRequete.get(i));
             motTraite.formaterMot();
 
-            if(!stopListe.contains(motTraite.getMot())) {
+            if (!stopListe.contains(motTraite.getMot())) {
                 listeMotsRequete.set(i, motTraite.getMot());
-            }
-            else {
+            } else {
                 toRemove.add(listeMotsRequete.get(i));
             }
         }
 
         //Supprimer les mots contenus dans la stopListe
-        for(String mot : toRemove) {
+        for (String mot : toRemove) {
             listeMotsRequete.remove(mot);
         }
     }
@@ -256,12 +271,49 @@ public class TraiterRequete {
         return listeResultats;
     }
 
-    private void ajouterMotsOntologie() {
+    private ArrayList<String> ajouterMotsOntologie() {
+        int fenetreDeRecherche = 3;
+        int start;
+        ArrayList<String> termesEnPlus = new ArrayList<String>();
+        ArrayList<String> motsRequetes = (ArrayList<String>) listeMotsRequete.clone();
+        ArrayList<String> subList = new ArrayList<String>();
+        String chaineCherchee = "";
         ParserOntologie parser = new ParserOntologie();
 
-        if(this.listeMotsRequete.size() < 3);
-            
-    }
+        while (fenetreDeRecherche > 0) {
+            start = 0;
 
-    
+            while (fenetreDeRecherche + start <= motsRequetes.size()) {
+                chaineCherchee = "";
+                subList.clear();
+
+                    subList.addAll(motsRequetes.subList(start, fenetreDeRecherche + start));
+
+
+                System.out.println("Sublist avec fenetre" + fenetreDeRecherche + " = "
+                            + subList);
+
+                for (int x = 0; x < subList.size(); x++) {
+                    if (subList.size() == 1 || x == subList.size() - 1) {
+                        chaineCherchee += subList.get(x);
+                    } else {
+                        chaineCherchee += subList.get(x) + " ";
+                    }
+                }
+
+
+                ArrayList<String> motsAAjouter = parser.getMotsAAjouter(chaineCherchee);
+                if (motsAAjouter.isEmpty()) {
+                    start++;
+                } else {
+                    termesEnPlus.addAll(motsAAjouter);
+                    motsRequetes.removeAll(subList);
+                }
+            }
+
+            fenetreDeRecherche--;
+        }
+
+        return termesEnPlus;
+    }
 }

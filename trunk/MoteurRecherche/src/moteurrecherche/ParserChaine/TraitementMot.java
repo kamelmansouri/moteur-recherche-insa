@@ -56,8 +56,10 @@ public class TraitementMot {
      * @return le mot au singulier
      */
     private void lemmatiserMot() {
-        if(mot.substring(mot.length() - 1).compareTo("s") == 0)
-            mot = mot.substring(0, mot.length() - 1);
+        if(mot.length() > 1) {
+            if(mot.substring(mot.length() - 1).compareTo("s") == 0)
+                mot = mot.substring(0, mot.length() - 1);
+        }
     }
 
     /**
