@@ -25,7 +25,7 @@ public class MoteurRecherche {
         //String ligneLue = sc.nextLine();
 
         //TraiterRequete requete = new TraiterRequete(ligneLue, 5);
-         EvaluerPerformance eval = new EvaluerPerformance(25);
+         EvaluerPerformance eval = new EvaluerPerformance(5);
 
         //System.out.println(list);
 

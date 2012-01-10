@@ -30,67 +30,78 @@ public class EvaluerPerformance {
     public EvaluerPerformance(int maxParagraphes) throws ClassNotFoundException, SQLException,
             JDOMException, IOException {
 
-        int q=4;
-
         this.maxParagraphes = maxParagraphes;
         ArrayList<Resultat> resultats;
 
-        TraiterRequete requete = new TraiterRequete(REQUETE[q-1], maxParagraphes);
-        System.out.println("Mots traités : "+requete.getListeMotsRequete());
-        resultats = requete.getListeResultats();
+        for (int q = 1; q <= 11; q++) {
 
-        System.out.println("Q:"+REQUETE[q-1]);
+            TraiterRequete requete = new TraiterRequete(REQUETE[q - 1], maxParagraphes);
+            System.out.println("Mots traités : " + requete.getListeMotsRequete());
+            resultats = requete.getListeResultats();
 
-        InputStream ips = EvaluerPerformance.class.getResourceAsStream(
-                "/resources/qrels/qrel"+q+".txt");
+            System.out.println("Q:" + REQUETE[q - 1]);
 
-        InputStreamReader ipsr = new InputStreamReader(ips);
-        BufferedReader reader = new BufferedReader(ipsr);
+            InputStream ips = EvaluerPerformance.class.getResourceAsStream(
+                    "/resources/qrels/qrel" + q + ".txt");
 
-        String ligne, filePath, path;
-        int pertinence;
-        StringTokenizer st;
+            InputStreamReader ipsr = new InputStreamReader(ips);
+            BufferedReader reader = new BufferedReader(ipsr);
 
-        ArrayList<Resultat> resultatsRestants = (ArrayList<Resultat>) resultats.clone();
-        ArrayList<Resultat> toRemove = new ArrayList<Resultat>();
+            String ligne, filePath, path;
+            int pertinence;
+            StringTokenizer st;
 
-        try {
-            while ((ligne = reader.readLine()) != null) {
-                toRemove.clear();
+            ArrayList<Resultat> resultatsRestants = (ArrayList<Resultat>) resultats.clone();
+            ArrayList<Resultat> toRemove = new ArrayList<Resultat>();
 
-                st = new StringTokenizer(ligne);
+            try {
+                while ((ligne = reader.readLine()) != null) {
+                    toRemove.clear();
 
-                if(st.hasMoreTokens()) filePath = st.nextToken();
-                else filePath = "NULL";
+                    st = new StringTokenizer(ligne);
 
-                if(st.hasMoreTokens()) path = st.nextToken();
-                else path = "NULL";
+                    if (st.hasMoreTokens()) {
+                        filePath = st.nextToken();
+                    } else {
+                        filePath = "NULL";
+                    }
 
-                if(st.hasMoreTokens()) pertinence = Integer.valueOf(st.nextToken());
-                else pertinence = -2;
+                    if (st.hasMoreTokens()) {
+                        path = st.nextToken();
+                    } else {
+                        path = "NULL";
+                    }
 
-                for (Resultat r : resultatsRestants) {
-                    if (r.getFilePath().compareTo(filePath) == 0) {
-                        if (r.getPath().compareTo(path) == 0) {
-                            r.setPertinence(pertinence);
-                            toRemove.add(r);
+                    if (st.hasMoreTokens()) {
+                        pertinence = Integer.valueOf(st.nextToken());
+                    } else {
+                        pertinence = -2;
+                    }
+
+                    for (Resultat r : resultatsRestants) {
+                        if (r.getFilePath().compareTo(filePath) == 0) {
+                            if (r.getPath().compareTo(path) == 0) {
+                                r.setPertinence(pertinence);
+                                toRemove.add(r);
+                            }
                         }
                     }
+
+                    resultatsRestants.removeAll(toRemove);
+
                 }
-
-                resultatsRestants.removeAll(toRemove);
-
+            } catch (IOException ex) {
+                System.out.println("Lecture du fichier Qrel : ECHEC.\n" + ex.getMessage());
             }
-        } catch (IOException ex) {
-            System.out.println("Lecture du fichier Qrel : ECHEC.\n" + ex.getMessage());
-        }
 
-        System.out.println(resultats);
-        int count=0;
-        for(Resultat r : resultats) {
-            if(r.getPertinence() == 1 || r.getPertinence() == -1)
-                count++;
+            System.out.println(resultats);
+            int count = 0;
+            for (Resultat r : resultats) {
+                if (r.getPertinence() == 1 || r.getPertinence() == -1) {
+                    count++;
+                }
+            }
+            System.out.println("Req"+q+" : " + count + "/" + resultats.size());
         }
-        System.out.println("nombre="+count+"/"+resultats.size());
     }
 }
