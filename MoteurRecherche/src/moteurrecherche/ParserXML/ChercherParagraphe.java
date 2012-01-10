@@ -27,11 +27,11 @@ public class ChercherParagraphe {
             XPathFactory xPathFactory = XPathFactory.newInstance();
             XPath xPath = xPathFactory.newXPath();
             XPathExpression xPathExpression = xPath.compile(path);
-
+/*
             System.out.println("file: " + file + "\n"
                     + "doc: " + doc_name + "\n"
                     + "path: " + path + "\n"
-                    + "content: " +  xPathExpression.evaluate(xmlDocument) );        
+                    + "content: " +  xPathExpression.evaluate(xmlDocument) );   */
         } catch (XPathExpressionException ex) {
             Logger.getLogger(ChercherParagraphe.class.getName()).log(Level.SEVERE, null, ex);
         } catch (SAXException ex) {

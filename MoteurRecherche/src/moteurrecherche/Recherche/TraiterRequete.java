@@ -76,7 +76,7 @@ public class TraiterRequete {
 
             id_doc = node.getIdDoc();
 
-            System.out.println("+++PARAGRAPHE " + cptParagraphe + ":+++");
+            //System.out.println("+++PARAGRAPHE " + cptParagraphe + ":+++");
             listeResultats.add(ChercherParagraphe.renvoyerParagraphe(node.getPath(), db.getDocNameById(id_doc)));
 
         }
@@ -105,9 +105,12 @@ public class TraiterRequete {
             //Pour chaque triplet <term, noeud, freq> contenant term
             for (ScoredTermInNode scTiN : scTerm.getTermNodesList()) {
 
+                Noeud n = db.getNodeByNodeId(scTiN.getTermInNode().getNode_id());
+
                 //On ne recherche pas dans les noeuds SOUS TITRE
-                if (db.getNodeByNodeId(
-                        scTiN.getTermInNode().getNode_id()).getLabel().compareTo("SOUS-TITRE") != 0) {
+                if (n.getLabel().compareTo("SOUS-TITRE") != 0
+                        && n.getLabel().compareTo("TITRE") != 0
+                        && n.getLabel().compareTo("ITEM") != 0) {
                     //Récupérer l' id noeud
                     node_id = scTiN.getTermInNode().getNode_id();
 
@@ -290,8 +293,8 @@ public class TraiterRequete {
                     subList.addAll(motsRequetes.subList(start, fenetreDeRecherche + start));
 
 
-                System.out.println("Sublist avec fenetre" + fenetreDeRecherche + " = "
-                            + subList);
+                /*System.out.println("Sublist avec fenetre" + fenetreDeRecherche + " = "
+                            + subList);*/
 
                 for (int x = 0; x < subList.size(); x++) {
                     if (subList.size() == 1 || x == subList.size() - 1) {
