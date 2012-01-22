@@ -1,0 +1,2842 @@
+<?xml version="1.0"?>
+
+
+<!DOCTYPE Ontology [
+    <!ENTITY xsd "http://www.w3.org/2001/XMLSchema#" >
+    <!ENTITY xml "http://www.w3.org/XML/1998/namespace" >
+    <!ENTITY rdfs "http://www.w3.org/2000/01/rdf-schema#" >
+    <!ENTITY rdf "http://www.w3.org/1999/02/22-rdf-syntax-ns#" >
+]>
+
+
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/ontologies/2011/4/BaladeAxiomes.owl"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     ontologyIRI="http://www.semanticweb.org/ontologies/2011/4/BaladeAxiomes.owl">
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="owl2xml" IRI="http://www.w3.org/2006/12/owl2-xml#"/>
+    <Prefix name="" IRI="http://www.semanticweb.org/ontologies/2011/4/Balade.owl#"/>
+    <Prefix name="Balade" IRI="http://www.semanticweb.org/ontologies/2011/4/Balade.owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="Ontology1305288783641" IRI="http://www.semanticweb.org/ontologies/2011/4/Ontology1305288783641.owl#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Abbaye"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Activite_aquatique"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Activite_de_montagne"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Aire_geographique"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Animal"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Autoroute"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Blaireau"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Cathedrale"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Chemin"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Eglise"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Epervier"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:EtendueDeau"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Etre_vivant"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Fleuve"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Gypaete_barbu"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Lagopede"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Lynx"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Marmotte"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Minaret"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Monastere"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Monument_religieux"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Monument_symbolique"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Mosquee"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Ocean"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Peripherique"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Plongee_sous_marine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Prieure"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Raquette"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Religion"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Renard"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Sentier"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Ski"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Ski_nautique"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Vegetal"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:Velo"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:VoieMotorisee"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:VoiePedestre"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:aigle"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:arc_de_triomphe"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:bouquetin"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:campagnol"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:cerf"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:chamoix"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:chappelle"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:chevreuil"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:chocard"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:chouette"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:cimetiere"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:faucon"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:glacier"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:hibou"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:lac"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:lievreDesNeiges"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:loup"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:mammifere"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:mausolee"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:monument"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:monument_funeraire"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:monument_historique"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:monument_militaire"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:musaraigne"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:necropole"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:oiseau"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:palais"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:rapace"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:rapace_diurne"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:rapace_nocturne"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:religion_chretienne"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:religion_juive"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:religion_musulmane"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:riviere"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:ruine"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:sanctuaire"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:tombe"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:tombeau"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Balade:vautour"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Pays_europeen"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#pays_d&#39;amerique"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1305288783641:Activite"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1305288783641:Balade"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1305288783641:Capitale"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1305288783641:Continent"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1305288783641:Habitation"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1305288783641:Lieu"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1305288783641:LieuAdministratif"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1305288783641:LieuArtificiel"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1305288783641:LieuNaturel"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1305288783641:Maison"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1305288783641:MassifMontagneux"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1305288783641:Refuge"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1305288783641:Sommet"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1305288783641:Ville"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1305288783641:Voie"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="Ontology1305288783641:village"/>
+    </Declaration>
+    <Declaration>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#contient"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#est_le_lieu_de"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#est_le_lieu_de_vie_de"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#passe_par"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#se_realise_dans"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#vit_dans"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="Balade:APourProfondeur"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty abbreviatedIRI="Balade:APourSurface"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Alger"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CapVert"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CathedraleAuCapVert"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CathedraleDeNotreDameDAfrique"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CheminDeLInca"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Chine"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CidadeValha"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CordillereRoyale"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#EgliseAuCapVert"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Europe"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#France"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#GR10"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Italie"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Kunming"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#LagunaChillata"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#LagunaQutaThiya"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#MonumentAuxMartyrs"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#RendoEnChine"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Sorata"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#TheatreDeBejaia"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#TrekkingCordillereRoyale"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#TrekkingCordillereRoyale2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#balade1"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#balade2"/>
+    </Declaration>
+    <Declaration>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#monChat"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="Balade:Animal"/>
+            <ObjectSomeValuesFrom>
+                <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#vit_dans"/>
+                <Class abbreviatedIRI="Ontology1305288783641:MassifMontagneux"/>
+            </ObjectSomeValuesFrom>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Pays_europeen"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+            <ObjectHasValue>
+                <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+                <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Europe"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#pays_d&#39;amerique"/>
+        <ObjectIntersectionOf>
+            <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+            <ObjectHasValue>
+                <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+                <NamedIndividual abbreviatedIRI="Balade:Amerique_Latine"/>
+            </ObjectHasValue>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Abbaye"/>
+        <Class abbreviatedIRI="Balade:Monument_religieux"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Activite_aquatique"/>
+        <Class abbreviatedIRI="Ontology1305288783641:Activite"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Activite_de_montagne"/>
+        <Class abbreviatedIRI="Ontology1305288783641:Activite"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Aire_geographique"/>
+        <Class abbreviatedIRI="Ontology1305288783641:Lieu"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Animal"/>
+        <Class abbreviatedIRI="Balade:Etre_vivant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Autoroute"/>
+        <Class abbreviatedIRI="Balade:VoieMotorisee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Blaireau"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Blaireau"/>
+        <Class abbreviatedIRI="Balade:mammifere"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Cathedrale"/>
+        <Class abbreviatedIRI="Balade:Monument_religieux"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Chemin"/>
+        <Class abbreviatedIRI="Balade:VoiePedestre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Eglise"/>
+        <Class abbreviatedIRI="Balade:Monument_religieux"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Epervier"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Epervier"/>
+        <Class abbreviatedIRI="Balade:rapace_diurne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:EtendueDeau"/>
+        <Class abbreviatedIRI="Ontology1305288783641:LieuNaturel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Fleuve"/>
+        <Class abbreviatedIRI="Balade:EtendueDeau"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Gypaete_barbu"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Gypaete_barbu"/>
+        <Class abbreviatedIRI="Balade:rapace_diurne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Lagopede"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Lagopede"/>
+        <Class abbreviatedIRI="Balade:oiseau"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Lynx"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Lynx"/>
+        <Class abbreviatedIRI="Balade:mammifere"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Marmotte"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Marmotte"/>
+        <Class abbreviatedIRI="Balade:mammifere"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Minaret"/>
+        <Class abbreviatedIRI="Balade:Monument_religieux"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Monastere"/>
+        <Class abbreviatedIRI="Balade:Monument_religieux"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Monument_religieux"/>
+        <Class abbreviatedIRI="Balade:monument"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Monument_symbolique"/>
+        <Class abbreviatedIRI="Balade:monument"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Mosquee"/>
+        <Class abbreviatedIRI="Balade:Monument_religieux"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Ocean"/>
+        <Class abbreviatedIRI="Balade:EtendueDeau"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Peripherique"/>
+        <Class abbreviatedIRI="Balade:VoieMotorisee"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Plongee_sous_marine"/>
+        <Class abbreviatedIRI="Balade:Activite_aquatique"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Prieure"/>
+        <Class abbreviatedIRI="Balade:Monument_religieux"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Raquette"/>
+        <Class abbreviatedIRI="Balade:Activite_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Renard"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Renard"/>
+        <Class abbreviatedIRI="Balade:mammifere"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Sentier"/>
+        <Class abbreviatedIRI="Balade:VoiePedestre"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Ski"/>
+        <Class abbreviatedIRI="Balade:Activite_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Ski_nautique"/>
+        <Class abbreviatedIRI="Balade:Activite_aquatique"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Vegetal"/>
+        <Class abbreviatedIRI="Balade:Etre_vivant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:Velo"/>
+        <Class abbreviatedIRI="Balade:Activite_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:VoieMotorisee"/>
+        <Class abbreviatedIRI="Ontology1305288783641:Voie"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:VoiePedestre"/>
+        <Class abbreviatedIRI="Ontology1305288783641:Voie"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:aigle"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:aigle"/>
+        <Class abbreviatedIRI="Balade:rapace_diurne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:arc_de_triomphe"/>
+        <Class abbreviatedIRI="Balade:monument_militaire"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:bouquetin"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:bouquetin"/>
+        <Class abbreviatedIRI="Balade:mammifere"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:campagnol"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:campagnol"/>
+        <Class abbreviatedIRI="Balade:mammifere"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:cerf"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:cerf"/>
+        <Class abbreviatedIRI="Balade:mammifere"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:chamoix"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:chamoix"/>
+        <Class abbreviatedIRI="Balade:mammifere"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:chappelle"/>
+        <Class abbreviatedIRI="Balade:Monument_religieux"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:chevreuil"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:chevreuil"/>
+        <Class abbreviatedIRI="Balade:mammifere"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:chocard"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:chocard"/>
+        <Class abbreviatedIRI="Balade:mammifere"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:chouette"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:chouette"/>
+        <Class abbreviatedIRI="Balade:rapace_nocturne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:cimetiere"/>
+        <Class abbreviatedIRI="Balade:monument_funeraire"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:faucon"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:faucon"/>
+        <Class abbreviatedIRI="Balade:rapace_diurne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:glacier"/>
+        <Class abbreviatedIRI="Ontology1305288783641:LieuNaturel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:hibou"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:hibou"/>
+        <Class abbreviatedIRI="Balade:rapace_nocturne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:lac"/>
+        <Class abbreviatedIRI="Balade:EtendueDeau"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:lievreDesNeiges"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:lievreDesNeiges"/>
+        <Class abbreviatedIRI="Balade:mammifere"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:loup"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:loup"/>
+        <Class abbreviatedIRI="Balade:mammifere"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:mammifere"/>
+        <Class abbreviatedIRI="Balade:Animal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:mausolee"/>
+        <Class abbreviatedIRI="Balade:monument_funeraire"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:monument"/>
+        <Class abbreviatedIRI="Ontology1305288783641:LieuArtificiel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:monument_funeraire"/>
+        <Class abbreviatedIRI="Balade:monument"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:monument_historique"/>
+        <Class abbreviatedIRI="Balade:monument"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:monument_militaire"/>
+        <Class abbreviatedIRI="Balade:monument"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:musaraigne"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:musaraigne"/>
+        <Class abbreviatedIRI="Balade:mammifere"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:necropole"/>
+        <Class abbreviatedIRI="Balade:monument_funeraire"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:oiseau"/>
+        <Class abbreviatedIRI="Balade:Animal"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:palais"/>
+        <Class abbreviatedIRI="Balade:monument_historique"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:rapace"/>
+        <Class abbreviatedIRI="Balade:oiseau"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:rapace_diurne"/>
+        <Class abbreviatedIRI="Balade:rapace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:rapace_nocturne"/>
+        <Class abbreviatedIRI="Balade:rapace"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:religion_chretienne"/>
+        <Class abbreviatedIRI="Balade:Religion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:religion_juive"/>
+        <Class abbreviatedIRI="Balade:Religion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:religion_musulmane"/>
+        <Class abbreviatedIRI="Balade:Religion"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:riviere"/>
+        <Class abbreviatedIRI="Balade:EtendueDeau"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:ruine"/>
+        <Class abbreviatedIRI="Balade:monument_historique"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:sanctuaire"/>
+        <Class abbreviatedIRI="Balade:Monument_religieux"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:tombe"/>
+        <Class abbreviatedIRI="Balade:monument_funeraire"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:tombeau"/>
+        <Class abbreviatedIRI="Balade:monument_funeraire"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:vautour"/>
+        <Class abbreviatedIRI="Balade:Animal_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Balade:vautour"/>
+        <Class abbreviatedIRI="Balade:rapace_diurne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1305288783641:Balade"/>
+        <Class abbreviatedIRI="Balade:Activite_de_montagne"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1305288783641:Capitale"/>
+        <Class abbreviatedIRI="Ontology1305288783641:Ville"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1305288783641:Continent"/>
+        <Class abbreviatedIRI="Ontology1305288783641:LieuAdministratif"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1305288783641:Habitation"/>
+        <Class abbreviatedIRI="Ontology1305288783641:LieuArtificiel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1305288783641:Lieu"/>
+        <Class abbreviatedIRI="owl:Thing"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1305288783641:LieuAdministratif"/>
+        <Class abbreviatedIRI="Ontology1305288783641:Lieu"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1305288783641:LieuArtificiel"/>
+        <Class abbreviatedIRI="Ontology1305288783641:Lieu"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1305288783641:LieuNaturel"/>
+        <Class abbreviatedIRI="Ontology1305288783641:Lieu"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1305288783641:Maison"/>
+        <Class abbreviatedIRI="Ontology1305288783641:Habitation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1305288783641:MassifMontagneux"/>
+        <Class abbreviatedIRI="Ontology1305288783641:LieuNaturel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <Class abbreviatedIRI="Ontology1305288783641:LieuAdministratif"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1305288783641:Refuge"/>
+        <Class abbreviatedIRI="Ontology1305288783641:Habitation"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1305288783641:Sommet"/>
+        <Class abbreviatedIRI="Ontology1305288783641:LieuNaturel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1305288783641:Ville"/>
+        <Class abbreviatedIRI="Ontology1305288783641:LieuAdministratif"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1305288783641:Voie"/>
+        <Class abbreviatedIRI="Ontology1305288783641:LieuArtificiel"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class abbreviatedIRI="Ontology1305288783641:village"/>
+        <Class abbreviatedIRI="Ontology1305288783641:LieuAdministratif"/>
+    </SubClassOf>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Continent"/>
+        <NamedIndividual abbreviatedIRI="Balade:Afrique"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Afrique"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual abbreviatedIRI="Balade:Algerie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Algerie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Continent"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Balade:Aire_geographique"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique_Latine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique_Latine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:MassifMontagneux"/>
+        <NamedIndividual abbreviatedIRI="Balade:Andes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Andes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual abbreviatedIRI="Balade:Argentine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Argentine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Continent"/>
+        <NamedIndividual abbreviatedIRI="Balade:Asie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Asie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual abbreviatedIRI="Balade:Bolivie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Bolivie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual abbreviatedIRI="Balade:Bresil"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Bresil"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual abbreviatedIRI="Balade:Chili"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Chili"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual abbreviatedIRI="Balade:Colombie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Colombie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual abbreviatedIRI="Balade:Costa_Rica"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Costa_Rica"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual abbreviatedIRI="Balade:Cuba"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Cuba"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual abbreviatedIRI="Balade:Honduras"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Honduras"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual abbreviatedIRI="Balade:Maroc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Maroc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:MassifMontagneux"/>
+        <NamedIndividual abbreviatedIRI="Balade:Massif_Central"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Massif_Central"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual abbreviatedIRI="Balade:Nicaragua"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Nicaragua"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual abbreviatedIRI="Balade:Perou"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Perou"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:MassifMontagneux"/>
+        <NamedIndividual abbreviatedIRI="Balade:Pyrennees"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:Pyrennees"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual abbreviatedIRI="Balade:equateur"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:equateur"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual abbreviatedIRI="Balade:mexique"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:mexique"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual abbreviatedIRI="Balade:paraguay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:paraguay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual abbreviatedIRI="Balade:urugay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:urugay"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual abbreviatedIRI="Balade:venezuela"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Balade:venezuela"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Ville"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Alger"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CapVert"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Balade:Cathedrale"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CathedraleAuCapVert"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Balade:Cathedrale"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CathedraleDeNotreDameDAfrique"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Balade"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CheminDeLInca"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Chine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Capitale"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CidadeValha"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:MassifMontagneux"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CordillereRoyale"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Balade:Eglise"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#EgliseAuCapVert"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Balade:Aire_geographique"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Europe"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#France"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Balade:Sentier"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#GR10"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Pays"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Italie"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:village"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Kunming"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:village"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#LagunaChillata"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:village"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#LagunaQutaThiya"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Balade:monument"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#MonumentAuxMartyrs"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Balade"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#RendoEnChine"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:village"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Sorata"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Balade:monument"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#TheatreDeBejaia"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Balade"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#TrekkingCordillereRoyale"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Balade"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#TrekkingCordillereRoyale2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Balade"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#balade1"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Balade"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#balade2"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Balade:Animal"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#monChat"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:MassifMontagneux"/>
+        <NamedIndividual abbreviatedIRI="Ontology1305288783641:alpes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Ontology1305288783641:alpes"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Sommet"/>
+        <NamedIndividual abbreviatedIRI="Ontology1305288783641:montBlanc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Ontology1305288783641:montBlanc"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="Ontology1305288783641:Sommet"/>
+        <NamedIndividual abbreviatedIRI="Ontology1305288783641:teteRousse"/>
+    </ClassAssertion>
+    <ClassAssertion>
+        <Class abbreviatedIRI="owl:Thing"/>
+        <NamedIndividual abbreviatedIRI="Ontology1305288783641:teteRousse"/>
+    </ClassAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Algerie"/>
+        <NamedIndividual abbreviatedIRI="Balade:Afrique"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Andes"/>
+        <NamedIndividual abbreviatedIRI="Balade:Chili"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Andes"/>
+        <NamedIndividual abbreviatedIRI="Balade:Perou"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Andes"/>
+        <NamedIndividual abbreviatedIRI="Balade:Bolivie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Andes"/>
+        <NamedIndividual abbreviatedIRI="Balade:venezuela"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Andes"/>
+        <NamedIndividual abbreviatedIRI="Balade:equateur"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Andes"/>
+        <NamedIndividual abbreviatedIRI="Balade:Colombie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Andes"/>
+        <NamedIndividual abbreviatedIRI="Balade:Argentine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Argentine"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique_Latine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Bolivie"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique_Latine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Bresil"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique_Latine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Chili"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique_Latine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Colombie"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique_Latine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Costa_Rica"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique_Latine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Cuba"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique_Latine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Honduras"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique_Latine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Maroc"/>
+        <NamedIndividual abbreviatedIRI="Balade:Afrique"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Nicaragua"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique_Latine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:Perou"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique_Latine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:equateur"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique_Latine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:mexique"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique_Latine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:paraguay"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique_Latine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:urugay"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique_Latine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual abbreviatedIRI="Balade:venezuela"/>
+        <NamedIndividual abbreviatedIRI="Balade:Amerique_Latine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Alger"/>
+        <NamedIndividual abbreviatedIRI="Balade:Algerie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#se_realise_dans"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CapVert"/>
+        <NamedIndividual abbreviatedIRI="Balade:Afrique"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CathedraleAuCapVert"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CidadeValha"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CathedraleDeNotreDameDAfrique"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Alger"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#se_realise_dans"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CheminDeLInca"/>
+        <NamedIndividual abbreviatedIRI="Balade:Perou"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Chine"/>
+        <NamedIndividual abbreviatedIRI="Balade:Asie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CidadeValha"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CapVert"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CordillereRoyale"/>
+        <NamedIndividual abbreviatedIRI="Balade:Bolivie"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#EgliseAuCapVert"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CidadeValha"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#France"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Europe"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Italie"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Europe"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Kunming"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Chine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#LagunaChillata"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CordillereRoyale"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#MonumentAuxMartyrs"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Alger"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#passe_par"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#RendoEnChine"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Kunming"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#se_realise_dans"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#RendoEnChine"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Chine"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Sorata"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CordillereRoyale"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#TheatreDeBejaia"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Alger"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#passe_par"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#TrekkingCordillereRoyale"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#LagunaQutaThiya"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#passe_par"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#TrekkingCordillereRoyale"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#LagunaChillata"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#passe_par"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#TrekkingCordillereRoyale"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Sorata"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#se_realise_dans"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#TrekkingCordillereRoyale"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CordillereRoyale"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#se_realise_dans"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#TrekkingCordillereRoyale2"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CordillereRoyale"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#se_realise_dans"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#balade1"/>
+        <NamedIndividual abbreviatedIRI="Ontology1305288783641:montBlanc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#se_realise_dans"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#balade2"/>
+        <NamedIndividual abbreviatedIRI="Ontology1305288783641:montBlanc"/>
+    </ObjectPropertyAssertion>
+    <ObjectPropertyAssertion>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#vit_dans"/>
+        <NamedIndividual IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#monChat"/>
+        <NamedIndividual abbreviatedIRI="Balade:Massif_Central"/>
+    </ObjectPropertyAssertion>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#contient"/>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#est_le_lieu_de"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#se_realise_dans"/>
+    </InverseObjectProperties>
+    <InverseObjectProperties>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#est_le_lieu_de_vie_de"/>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#vit_dans"/>
+    </InverseObjectProperties>
+    <TransitiveObjectProperty>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+    </TransitiveObjectProperty>
+    <TransitiveObjectProperty>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#contient"/>
+    </TransitiveObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <Class abbreviatedIRI="Ontology1305288783641:Lieu"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#se_realise_dans"/>
+        <Class abbreviatedIRI="Ontology1305288783641:Activite"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#vit_dans"/>
+        <Class abbreviatedIRI="Balade:Etre_vivant"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty abbreviatedIRI="Balade:seTrouveEn"/>
+        <Class abbreviatedIRI="Ontology1305288783641:Lieu"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#se_realise_dans"/>
+        <Class abbreviatedIRI="Ontology1305288783641:Lieu"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#vit_dans"/>
+        <Class abbreviatedIRI="Ontology1305288783641:Lieu"/>
+    </ObjectPropertyRange>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="Balade:APourProfondeur"/>
+        <Class abbreviatedIRI="Balade:EtendueDeau"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty abbreviatedIRI="Balade:APourSurface"/>
+        <Class abbreviatedIRI="Balade:EtendueDeau"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="Balade:APourProfondeur"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty abbreviatedIRI="Balade:APourSurface"/>
+        <Datatype abbreviatedIRI="xsd:integer"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:APourProfondeur</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">A pour profondeur</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:APourSurface</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">A pour surface</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:APourSurface</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">a pour superficie</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Abbaye</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Abbaye</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Activite_aquatique</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Activité aquatique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Activite_de_montagne</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">activité de montagne</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Afrique</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Afrique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Aire_geographique</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Aire geographique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Algerie</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Algerie</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Amerique</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Amerique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Amerique_Latine</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Amérique Latine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Andes</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Andes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Andes</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Cordillère des andes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Andes</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">chaîne andine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Animal</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Animal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Animal</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">animaux</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Animal_de_montagne</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Animal de montagne</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Animal_de_montagne</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">animaux de montagne</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Argentine</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Argentine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Asie</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Asie</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Autoroute</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Autoroute</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Blaireau</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">blaireau</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Bolivie</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Bolivie</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Bresil</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Bresil</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Cathedrale</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">cathedrale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Chemin</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Chemin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Chili</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Chili</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Colombie</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Colombie</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Costa_Rica</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Costa Rica</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Cuba</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Cuba</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Eglise</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">église</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Epervier</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Epervier</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:EtendueDeau</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Etendue d&#39;eau</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Etre_vivant</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Etre vivant</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Fleuve</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Fleuve</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Gypaete_barbu</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Gypaete barbu</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Honduras</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Honduras</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Lagopede</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Lagopède</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Lynx</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">lynx</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Marmotte</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">marmotte</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Maroc</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Maroc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Massif_Central</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Massif Central</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Minaret</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Minaret</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Monastere</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Monastere</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Monument_religieux</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Monument religieux</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Monument_religieux</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">monuments religieux</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Monument_symbolique</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Monument symbolique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Monument_symbolique</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">monument alegorique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Mosquee</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">mosquée</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Nicaragua</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Nicaragua</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Ocean</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Ocean</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Peripherique</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Peripherique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Peripherique</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">rocade</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Perou</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Perou</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Plongee_sous_marine</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Plongée sous marine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Plongee_sous_marine</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">plongée</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Prieure</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">prieuré</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Pyrennees</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Pyrennees</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Raquette</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Raquette</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Religion</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Religion</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Renard</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">renard</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Sentier</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Sentier</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Ski</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">ski</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Ski_nautique</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Ski nautique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Vegetal</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Végétal</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Velo</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Vélo</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:Velo</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">cylcisme</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:VoieMotorisee</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Voie motorisée</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:VoiePedestre</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">voie pédestre</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:aigle</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">aigle</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:arc_de_triomphe</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">arc de triomphe</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:bouquetin</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">bouquetin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:campagnol</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">campagnol</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:cerf</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">cerf</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:chamoix</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">chamoix</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:chappelle</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">chappelle</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:chevreuil</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">chevreuil</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:chocard</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">chocard</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:chouette</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">chouette</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:cimetiere</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">cimetiere</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:equateur</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">equateur</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:faucon</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">faucon</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:glacier</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">glacier</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:glacier</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">glaciers</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:hibou</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">hibou</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:lac</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">lac</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:lac</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">lacs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:lievreDesNeiges</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">lièvre</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:lievreDesNeiges</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">lièvre des neiges</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:loup</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">loup</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:mammifere</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">mammifère</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:mammifere</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">mammifères</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:mausolee</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">mausolee</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:mexique</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">mexique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:monument</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">edifice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:monument</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">monument</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:monument</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">monuments</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:monument</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">édifice</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:monument_funeraire</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">monument funeraire</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:monument_historique</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">monument historique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:monument_militaire</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">monument militaire</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:musaraigne</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">musaraigne</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:necropole</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">necropole</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:oiseau</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">oiseau</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:palais</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">palais</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:paraguay</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">paraguay</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:rapace</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">rapace</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:rapace_diurne</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">rapace diurne</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:rapace_nocturne</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">rapace nocturne</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:religion_chretienne</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">religion catholique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:religion_juive</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">religion juive</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:religion_musulmane</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">religion musulmane</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:riviere</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">rivière</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:ruine</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">ruine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:sanctuaire</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">sanctuaire</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:seTrouveEn</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">a pour localisation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:seTrouveEn</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">est dans</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:seTrouveEn</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">est en</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:seTrouveEn</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">se situe dans</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:seTrouveEn</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">se situe en</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:seTrouveEn</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">se trouve dans</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:seTrouveEn</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">se trouve en</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:tombe</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">tombe</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:tombeau</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">tombeau</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:urugay</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">urugay</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:vautour</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">vautour</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Balade:venezuela</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">venezuela</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CapVert</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Cap-Vert</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CathedraleAuCapVert</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Collection/d048.xml	/BALADE[1]/RECIT[1]/SEC[5]/P[3]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CathedraleDeNotreDameDAfrique</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Collection/d044.xml	/BALADE[1]/RECIT[1]/SEC[1]/P[6]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CathedraleDeNotreDameDAfrique</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Cathédrale de Notre-Dame d&#39;Afrique</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CheminDeLInca</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Collection/d067.xml	/BALADE[1]/RECIT[1]/SEC[1]/P[1]
+Collection/d067.xml	/BALADE[1]/RECIT[1]/SEC[7]/P[8]
+Collection/d067.xml	/BALADE[1]/RECIT[1]/SEC[7]/P[9]
+Collection/d067.xml	/BALADE[1]/RECIT[1]/SEC[8]/P[1]
+Collection/d067.xml	/BALADE[1]/RECIT[1]/SEC[8]/P[2]
+Collection/d067.xml	/BALADE[1]/RECIT[1]/SEC[8]/P[3]
+Collection/d067.xml	/BALADE[1]/RECIT[1]/SEC[8]/P[4]
+Collection/d067.xml	/BALADE[1]/RECIT[1]/SEC[8]/P[5]
+Collection/d067.xml	/BALADE[1]/RECIT[1]/SEC[9]/P[4]
+Collection/d067.xml	/BALADE[1]/RECIT[1]/SEC[9]/P[5]
+Collection/d067.xml	/BALADE[1]/RECIT[1]/SEC[9]/P[8]
+Collection/d067.xml	/BALADE[1]/RECIT[1]/SEC[9]/P[11]
+Collection/d067.xml	/BALADE[1]/RECIT[1]/SEC[10]/P[1]
+Collection/d067.xml	/BALADE[1]/RECIT[1]/SEC[10]/P[12]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Chine</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Chine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CidadeValha</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Cidade Valha</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CidadeValha</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Ribeira Grande</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#CordillereRoyale</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Cordillère Royale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#EgliseAuCapVert</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Collection/d048.xml	/BALADE[1]/RECIT[1]/SEC[5]/P[3]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Europe</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Europe</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#France</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">France</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#GR10</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">GR10</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#GR10</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">sentier de grande randonnée 10</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Italie</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Italie</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Kunming</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Collection/d049.xml	/BALADE[1]/RECIT[1]/SEC[5]/P[2]
+Collection/d049.xml	/BALADE[1]/RECIT[1]/SEC[5]/P[3]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#LagunaChillata</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[1]/P[8]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[1]/P[9]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#LagunaQutaThiya</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[2]/P[9]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#MonumentAuxMartyrs</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Collection/d044.xml	/BALADE[1]/RECIT[1]/SEC[1]/P[6]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#MonumentAuxMartyrs</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Monument aux Marturs</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Pays_europeen</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">Pays europeen</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#RendoEnChine</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Collection/d049.xml	/BALADE[1]/RECIT[1]/SEC[5]/P[2]
+Collection/d049.xml	/BALADE[1]/RECIT[1]/SEC[5]/P[3]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#Sorata</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Collection/d079.xml	/BALADE[1]/RECIT[1]/SEC[1]/P[11]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#TheatreDeBejaia</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Collection/d044.xml	/BALADE[1]/RECIT[1]/SEC[2]/P[6]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#TheatreDeBejaia</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">théâtre régional de Bejaia</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#TrekkingCordillereRoyale</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Collection/d079.xml	/BALADE[1]/RECIT[1]/SEC[1]/P[13]
+Collection/d079.xml	/BALADE[1]/RECIT[1]/SEC[1]/P[14]
+Collection/d079.xml	/BALADE[1]/RECIT[1]/SEC[1]/P[16]
+Collection/d079.xml	/BALADE[1]/RECIT[1]/SEC[1]/P[18]
+Collection/d079.xml	/BALADE[1]/RECIT[1]/SEC[3]/P[2]
+Collection/d079.xml	/BALADE[1]/RECIT[1]/SEC[4]/P[1]
+Collection/d079.xml	/BALADE[1]/RECIT[1]/SEC[4]/P[7]
+Collection/d079.xml	/BALADE[1]/RECIT[1]/SEC[4]/P[8]
+Collection/d079.xml	/BALADE[1]/RECIT[1]/SEC[4]/P[9]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#TrekkingCordillereRoyale2</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Collection/d080.xml	/BALADE[1]/PRESENTATION[1]/DESCRIPTION[1]/P[1]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[1]/P[1]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[1]/P[5]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[1]/P[6]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[1]/P[7]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[1]/P[10]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[2]/P[1]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[2]/P[5]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[2]/P[6]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[2]/P[7]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[2]/P[8]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[2]/P[9]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[3]/P[1]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[3]/P[5]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[3]/P[6]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[3]/P[7]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[3]/P[8]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[3]/P[9]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[4]/P[1]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[4]/P[5]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[4]/P[6]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[4]/P[7]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[4]/P[8]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[4]/P[10]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[5]/P[1]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[5]/P[5]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[5]/P[6]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[5]/P[7]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[5]/P[8]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[5]/P[9]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[5]/P[10]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[5]/P[11]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[6]/P[1]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[6]/P[5]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[6]/P[6]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[6]/P[7]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[6]/P[8]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[6]/P[9]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[6]/P[10]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[7]/P[1]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[7]/P[5]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[7]/P[6]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[7]/P[7]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[7]/P[9]
+Collection/d080.xml	/BALADE[1]/RECIT[1]/SEC[7]/P[10]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:isDefinedBy"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#balade1</IRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Collection/d037.xml	/BALADE[1]/PRESENTATION[1]/DESCRIPTION[1]/P[1]
+Collection/d037.xml	/BALADE[1]/RECIT[1]/SEC[2]/P[1]
+Collection/d037.xml	/BALADE[1]/RECIT[1]/SEC[3]/P[1]
+Collection/d037.xml	/BALADE[1]/RECIT[1]/SEC[3]/P[2]
+Collection/d037.xml	/BALADE[1]/RECIT[1]/SEC[3]/P[3]
+Collection/d037.xml	/BALADE[1]/RECIT[1]/SEC[3]/P[4]
+Collection/d037.xml	/BALADE[1]/RECIT[1]/SEC[5]/P[1]</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#contient</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">comprend</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#contient</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">contient</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#est_le_lieu_de</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">est le lieu de</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#est_le_lieu_de_vie_de</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">est le lieu de vie de</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#passe_par</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">un sentier passe par un lieu</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#passe_par</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">passe par</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#pays_d&#39;amerique</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">pays d&#39;amerique latine</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#se_realise_dans</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">prend place dans</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#se_realise_dans</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">se fait en</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#se_realise_dans</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">se realise dans</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://www.semanticweb.org/ontologies/2011/4/Baladev2.owl#vit_dans</IRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">vit dans</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Activite</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">activité</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Balade</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">balade</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Balade</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">expédition</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Balade</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">promenade</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Balade</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">rando</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Balade</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">randonnée</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Balade</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">sortie</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Balade</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">vadrouille</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Capitale</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">capitale</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Continent</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">continent</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Habitation</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">domicile</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Habitation</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">etablissement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Habitation</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">habitat</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Habitation</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">habitation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Habitation</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">logement</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Habitation</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">logis</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Habitation</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">propriété</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Habitation</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">résidence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Lieu</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">coin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Lieu</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">endroit</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Lieu</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">espace</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Lieu</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">lieu</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Lieu</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">localite</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Lieu</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">quelque part</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Lieu</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">secteur</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Lieu</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">site</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Lieu</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">zone</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:LieuAdministratif</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">lieu administratif</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:LieuArtificiel</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">lieu artificiel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:LieuNaturel</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">lieu naturel</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Maison</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">baraque</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Maison</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">bicoque</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Maison</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">case</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Maison</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">demeure</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Maison</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">maison</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Maison</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">pavillon</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Maison</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">villa</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:MassifMontagneux</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">colline</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:MassifMontagneux</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">elevation</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:MassifMontagneux</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">eminence</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:MassifMontagneux</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">haut-lieu</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:MassifMontagneux</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">hauteur</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:MassifMontagneux</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">massif</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:MassifMontagneux</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">massif montagneux</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:MassifMontagneux</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">mont</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:MassifMontagneux</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">montagne</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Pays</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">pays</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Pays</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">territoire</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Refuge</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">abri</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Refuge</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">cabane</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Refuge</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">cahute</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Refuge</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">gite</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Refuge</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">hutte</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Refuge</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">refuge</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Sommet</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">acme</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Sommet</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">aiguille</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Sommet</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">apogee</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Sommet</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">crete</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Sommet</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">faite</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Sommet</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">haut-lieu</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Sommet</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">hauteur</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Sommet</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">maximum</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Sommet</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">pic</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Sommet</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">piton</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Sommet</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">point culminant</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Sommet</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">pointe</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Sommet</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">sommet</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Ville</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">acropole</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Ville</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">agglomeration</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Ville</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">cite</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Ville</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">metropole</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Ville</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">municipalite</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:Ville</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">ville</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:alpes</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Alpes</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:montBlanc</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Mont-Blanc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:montBlanc</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">MontBlanc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:montBlanc</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">mont blanc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:montBlanc</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">montblanc</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:teteRousse</AbbreviatedIRI>
+        <Literal datatypeIRI="&rdf;PlainLiteral">Tete Rousse</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:village</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">bled</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:village</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">patelin</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:village</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">trou</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <AbbreviatedIRI>Ontology1305288783641:village</AbbreviatedIRI>
+        <Literal xml:lang="fr" datatypeIRI="&rdf;PlainLiteral">village</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 3.2.3.1824) http://owlapi.sourceforge.net -->
+

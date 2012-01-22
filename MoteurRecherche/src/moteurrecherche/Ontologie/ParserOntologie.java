@@ -32,6 +32,7 @@ public class ParserOntologie {
         try {
             ontologie = manager.loadOntologyFromOntologyDocument(file);
         } catch (OWLOntologyCreationException ex) {
+            System.out.println("Error while loading ontologie");
         }
         System.out.println("Ontologie chargée: " + ontologie);
 
@@ -99,13 +100,6 @@ public class ParserOntologie {
 
     public ArrayList<String> getMotsAAjouter(String motCherche){
         ArrayList<String> motsAAjouter = new ArrayList<String>();
-        /*Entrée clavier */
-
-//        System.out.println("Veuillez entrer le nom d'une classe ou une instance : ");
-//        Scanner scanner = new Scanner(System.in);
-//        String user_search = scanner.nextLine();
-
-        
 
         /* Recherche dans la hashmap */
         Object o = tableLabelInstance.get(motCherche);
