@@ -284,6 +284,13 @@ public final class TraiterRequete {
         ArrayList<String> motsRequetes = (ArrayList<String>) listeMotsRequete.clone();
         ArrayList<String> subList = new ArrayList<String>();
         String chaineCherchee = "";
+        ParserOntologieAvecReasoner parser = null;
+        ParserOntologie parser2 = null;
+
+        if(withReasoner)
+            parser = new ParserOntologieAvecReasoner();
+        else
+            parser2 = new ParserOntologie();
 
 
 
@@ -312,13 +319,11 @@ public final class TraiterRequete {
 
                 /* Ontologie avec raisonneur */
                 if (withReasoner) {
-                    ParserOntologieAvecReasoner parser = new ParserOntologieAvecReasoner();
                     motsAAjouter = parser.getMotsAAjouter(chaineCherchee);
                 }
                 /* Ontologie sans raisonneur */
                 else {
-                    ParserOntologie parser = new ParserOntologie();
-                    motsAAjouter = parser.getMotsAAjouter(chaineCherchee);
+                    motsAAjouter = parser2.getMotsAAjouter(chaineCherchee);
                 }
 
                 if (motsAAjouter.isEmpty()) {
