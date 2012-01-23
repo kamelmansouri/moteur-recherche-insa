@@ -74,12 +74,10 @@ public class EvaluerPerformance {
             int pertinence;
             StringTokenizer st;
 
-            ArrayList<Resultat> resultatsRestants = (ArrayList<Resultat>) resultats.clone();
-            ArrayList<Resultat> toRemove = new ArrayList<Resultat>();
+            ArrayList<Resultat> resultatsQrel = new ArrayList<Resultat>();
 
             try {
                 while ((ligne = reader.readLine()) != null) {
-                    toRemove.clear();
 
                     st = new StringTokenizer(ligne);
 
@@ -101,30 +99,36 @@ public class EvaluerPerformance {
                         pertinence = -2;
                     }
 
-                    for (Resultat r : resultatsRestants) {
-                        if (r.getFilePath().compareTo(filePath) == 0) {
-                            if (r.getPath().compareTo(path) == 0) {
-                                r.setPertinence(pertinence);
-                                toRemove.add(r);
-                            }
-                        }
+                    if(pertinence == 1) {
+                        resultatsQrel.add(new Resultat(filePath, path, 1));
                     }
-
-                    resultatsRestants.removeAll(toRemove);
 
                 }
             } catch (IOException ex) {
                 System.out.println("Lecture du fichier Qrel : ECHEC.\n" + ex.getMessage());
             }
 
-            System.out.println(resultats);
             int count = 0;
+
             for (Resultat r : resultats) {
-                if (r.getPertinence() == 1 || r.getPertinence() == -1) {
-                    count++;
+                for(Resultat rQrel : resultatsQrel) {
+                    if (r.getFilePath().compareTo(rQrel.getFilePath()) == 0
+                            && r.getPath().compareTo(rQrel.getPath()) == 0) {
+                        r.setPertinence(1);
+                        count++;
+                    }
                 }
             }
-            String text = "Req" + q + " : " + count + "/" + resultats.size()+"\n";
+            
+            int size;
+
+            if((size = resultatsQrel.size()) > maxParagraphes) {
+                size = maxParagraphes;
+            }
+
+            double percent = (((double) count) / ((double) size)) *100;
+
+            String text = "Req" + q + " : " + count + "/" + size+"  ("+percent+"%)\n";
             System.out.print(text);
 
             writer.write(text);
