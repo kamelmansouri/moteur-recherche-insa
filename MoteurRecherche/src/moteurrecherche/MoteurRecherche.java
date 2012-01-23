@@ -15,39 +15,50 @@ public class MoteurRecherche {
 
     public static void main(String[] args) throws ClassNotFoundException,
             SQLException, JDOMException, IOException {
+        boolean continuer = true;
+        EvaluerPerformance eval;
 
-        //Indexation indexation = new Indexation();
-        //indexation.indexer();
+        do {
+            System.out.print("\t==== MENU ====\n"
+                    + "\t1. Indexation\n"
+                    + "\t2. Requete personnalisee\n"
+                    + "\t3. Evaluateur qrel (sans raisonneur)\n"
+                    + "\t4. Evaluateur qrel (avec raisonneur)\n\n");
 
-        
-//        System.out.print("Veuillez entrer votre requête:  ");
-//        Scanner sc = new Scanner(System.in);
-//
-//        String ligneLue = sc.nextLine();
-        System.out.print("Veuillez entrer votre requête:  ");
-        Scanner sc = new Scanner(System.in);
+            Scanner sc = new Scanner(System.in);
+            int choix = sc.nextInt();
 
-        String ligneLue = sc.nextLine();
+            switch(choix) {
+                case 1:
+                    Indexation indexation = new Indexation();
+                    indexation.indexer();
+                    break;
 
+                case 2:
+                    System.out.print("Veuillez entrer votre requête:  ");
 
-        //TraiterRequete requete = new TraiterRequete(ligneLue, 5);
-//         EvaluerPerformance eval = new EvaluerPerformance(25);
+                    Scanner sc2 = new Scanner(System.in);
+                    String ligneLue = sc2.nextLine();
 
-//        System.out.println(list);
+                    TraiterRequete requete = new TraiterRequete(ligneLue, 5, false);
+                    break;
 
-        //requete.retournerParagraphesReponse(list, 1);
+                case 3:
+                    System.out.println("Sans raisonneur, Precision à : 5, 10 ou 25? ");
+                    
+                    eval = new EvaluerPerformance(sc.nextInt(), false);
+                    break;
 
-        ParserOntologie ontologieParser = new ParserOntologie();
-        ArrayList<String> listeMotsAAjouter = ontologieParser.getMotsAAjouter(ligneLue);
+                case 4:
+                    System.out.println("Avec raisonneur, Precision à : 5, 10 ou 25? ");
 
-        for(String motAAjouter : listeMotsAAjouter)
-            System.out.println(motAAjouter);
+                    eval = new EvaluerPerformance(sc.nextInt(), true);
+                    break;
 
-        ParserOntologieAvecReasoner parser = new ParserOntologieAvecReasoner();
-        ArrayList<String> listeMotsAAjouter2 = parser.getMotsAAjouter(ligneLue);
-
-        for(String motAAjouter : listeMotsAAjouter2)
-            System.out.println(motAAjouter);
+                default:
+                    break;
+            }
+        } while(continuer);
 
     }
 

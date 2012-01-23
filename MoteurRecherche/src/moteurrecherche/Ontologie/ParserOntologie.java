@@ -140,12 +140,12 @@ public class ParserOntologie {
             //Recuperation des synonims
             motsAAjouter.addAll(tableInstanceLabel.get(o));
             
-            System.out.println("Found Individual : " + o);
+            //System.out.println("Found Individual : " + o);
 
         } /************************************************************************/
         /* Cas d'erreur : la clef n'existe pas ******************************** */ /************************************************************************/
         else {
-            System.out.println("Erreur : la clef entrée ne retourne aucune valeur.");
+            //System.out.println("Erreur : la clef entrée ne retourne aucune valeur.");
         }
 
         return motsAAjouter;

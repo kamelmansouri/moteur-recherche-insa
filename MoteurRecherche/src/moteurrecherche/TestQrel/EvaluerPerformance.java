@@ -1,6 +1,8 @@
 package moteurrecherche.TestQrel;
 
 import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
@@ -27,15 +29,36 @@ public class EvaluerPerformance {
     };
     private int maxParagraphes;
 
-    public EvaluerPerformance(int maxParagraphes) throws ClassNotFoundException, SQLException,
+    public EvaluerPerformance(int maxParagraphes, boolean withReasoner) throws ClassNotFoundException, SQLException,
             JDOMException, IOException {
 
         this.maxParagraphes = maxParagraphes;
         ArrayList<Resultat> resultats;
 
-        for (int q = 1; q <= 11; q++) {
+        FileWriter writer = null;
+        try {
+            String title = "Résultats des tests avec précision à "+ maxParagraphes +"\n"
+                    + "********************************************\n";
 
-            TraiterRequete requete = new TraiterRequete(REQUETE[q - 1], maxParagraphes);
+            String reasoner = "noReasoner";
+            if(withReasoner) reasoner = "reasoner";
+
+            String path  = "resultats_"+maxParagraphes+"_"+reasoner+".data";
+
+            File file = new File(path);
+
+            if(file.exists())
+                file.delete();
+
+            writer = new FileWriter(file, true);
+            writer.write(title);
+        } catch (IOException ex) {
+            System.out.println(ex.getMessage());
+        }
+
+        for (int q = 1; q <= REQUETE.length; q++) {
+
+            TraiterRequete requete = new TraiterRequete(REQUETE[q - 1], maxParagraphes, withReasoner);
             System.out.println("Mots traités : " + requete.getListeMotsRequete());
             resultats = requete.getListeResultats();
 
@@ -101,7 +124,12 @@ public class EvaluerPerformance {
                     count++;
                 }
             }
-            System.out.println("Req"+q+" : " + count + "/" + resultats.size());
+            String text = "Req" + q + " : " + count + "/" + resultats.size()+"\n";
+            System.out.print(text);
+
+            writer.write(text);
         }
+
+        if(writer != null) writer.close();
     }
 }

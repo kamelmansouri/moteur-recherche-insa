@@ -15,13 +15,14 @@ import java.util.TreeMap;
 import moteurrecherche.Database.MySQLAccess;
 import moteurrecherche.Database.Term;
 import moteurrecherche.Ontologie.ParserOntologie;
+import moteurrecherche.Ontologie.ParserOntologieAvecReasoner;
 import moteurrecherche.ParserChaine.TraitementMot;
 import moteurrecherche.ParserXML.ChercherParagraphe;
 import moteurrecherche.ParserXML.Noeud;
 import moteurrecherche.TestQrel.Resultat;
 import org.jdom.JDOMException;
 
-public class TraiterRequete {
+public final class TraiterRequete {
 
     private final static int MAX_MOTS = 20;
     private final static String STOP_LISTE_PATH = "/resources/stopliste.txt";
@@ -38,7 +39,8 @@ public class TraiterRequete {
     private TreeMap<Integer, Double> similariteNoeudTriee;
     private ArrayList<Resultat> listeResultats;
 
-    public TraiterRequete(String req, int maxP) throws ClassNotFoundException, SQLException, JDOMException, IOException {
+    public TraiterRequete(String req, int maxP, boolean withReasoner)
+            throws ClassNotFoundException, SQLException, JDOMException, IOException {
         requete = req;
         maxParagraphes = maxP;
         stopListe = new ArrayList<String>();
@@ -54,7 +56,7 @@ public class TraiterRequete {
         formaterRequeteAvantOntologie();
 
         //ToDo intégrer ontologie
-        separerMots(ajouterMotsOntologie());
+        separerMots(ajouterMotsOntologie(withReasoner));
         formaterRequeteApresOntologie();
         computeScoredTermsInNodes();
         calculeSimilarite();
@@ -76,8 +78,9 @@ public class TraiterRequete {
 
             id_doc = node.getIdDoc();
 
-            //System.out.println("+++PARAGRAPHE " + cptParagraphe + ":+++");
-            listeResultats.add(ChercherParagraphe.renvoyerParagraphe(node.getPath(), db.getDocNameById(id_doc)));
+            System.out.println("\n+++PARAGRAPHE " + cptParagraphe + ":+++");
+            listeResultats.add(ChercherParagraphe.renvoyerParagraphe(node.getPath(),
+                    db.getDocNameById(id_doc)));
 
         }
     }
@@ -178,12 +181,12 @@ public class TraiterRequete {
         /* Separer les mots de la chaîne */
         String delimiteur = "[^a-z0-9]"; //On ne garde que les lettres et chiffres
 
-        for(String mot : motsASeparer) {
+        for (String mot : motsASeparer) {
             listeMotsRequete.addAll(Arrays.asList(mot.split(delimiteur)));
         }
 
-        Set set = new HashSet() ;
-        set.addAll(listeMotsRequete) ;
+        Set set = new HashSet();
+        set.addAll(listeMotsRequete);
         listeMotsRequete.clear();
         listeMotsRequete.addAll(set);
     }
@@ -274,14 +277,15 @@ public class TraiterRequete {
         return listeResultats;
     }
 
-    private ArrayList<String> ajouterMotsOntologie() {
+    private ArrayList<String> ajouterMotsOntologie(boolean withReasoner) {
         int fenetreDeRecherche = 3;
         int start;
         ArrayList<String> termesEnPlus = new ArrayList<String>();
         ArrayList<String> motsRequetes = (ArrayList<String>) listeMotsRequete.clone();
         ArrayList<String> subList = new ArrayList<String>();
         String chaineCherchee = "";
-        ParserOntologie parser = new ParserOntologie();
+
+
 
         while (fenetreDeRecherche > 0) {
             start = 0;
@@ -290,11 +294,11 @@ public class TraiterRequete {
                 chaineCherchee = "";
                 subList.clear();
 
-                    subList.addAll(motsRequetes.subList(start, fenetreDeRecherche + start));
+                subList.addAll(motsRequetes.subList(start, fenetreDeRecherche + start));
 
 
                 /*System.out.println("Sublist avec fenetre" + fenetreDeRecherche + " = "
-                            + subList);*/
+                + subList);*/
 
                 for (int x = 0; x < subList.size(); x++) {
                     if (subList.size() == 1 || x == subList.size() - 1) {
@@ -304,8 +308,19 @@ public class TraiterRequete {
                     }
                 }
 
+                ArrayList<String> motsAAjouter = new ArrayList<String>();
 
-                ArrayList<String> motsAAjouter = parser.getMotsAAjouter(chaineCherchee);
+                /* Ontologie avec raisonneur */
+                if (withReasoner) {
+                    ParserOntologieAvecReasoner parser = new ParserOntologieAvecReasoner();
+                    motsAAjouter = parser.getMotsAAjouter(chaineCherchee);
+                }
+                /* Ontologie sans raisonneur */
+                else {
+                    ParserOntologie parser = new ParserOntologie();
+                    motsAAjouter = parser.getMotsAAjouter(chaineCherchee);
+                }
+
                 if (motsAAjouter.isEmpty()) {
                     start++;
                 } else {
