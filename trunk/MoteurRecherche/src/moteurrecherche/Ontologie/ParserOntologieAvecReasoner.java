@@ -182,7 +182,7 @@ public class ParserOntologieAvecReasoner {
         
         // Cas d'erreur : la clef n'existe pas
         else {
-            System.out.println("Erreur : la clef entrée ne retourne aucune valeur.");
+            //System.out.println("Erreur : la clef entrée ne retourne aucune valeur.");
         }
 
         return motsAAjouter;
