@@ -9,29 +9,20 @@ import java.io.InputStreamReader;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.StringTokenizer;
+import moteurrecherche.ParserXML.XMLQueryReader;
 import moteurrecherche.Recherche.TraiterRequete;
 import org.jdom.JDOMException;
 
 public class EvaluerPerformance {
-
-    private final static String[] REQUETE = {
-        "balade au Mont Blanc",
-        "balade montage amérique latine",
-        "monuments Afrique",
-        "lacs de France",
-        "liste des monuments religieux visités",
-        "village randonnée montagne asie",
-        "GR10 rando pyrénées",
-        "animaux pyrénées",
-        "paysage montagne",
-        "glaciers des alpes",
-        "plongée sous marine"
-    };
+    private String[] requetes = null;
     private int maxParagraphes;
 
     public EvaluerPerformance(int maxParagraphes, boolean withReasoner) throws ClassNotFoundException, SQLException,
             JDOMException, IOException {
 
+        File queries = new File(EvaluerPerformance.class.getResource("/resources/queries.xml").getPath());
+        this.requetes = XMLQueryReader.readQueryFile(queries);
+        
         this.maxParagraphes = maxParagraphes;
         ArrayList<Resultat> resultats;
 
@@ -56,13 +47,13 @@ public class EvaluerPerformance {
             System.out.println(ex.getMessage());
         }
 
-        for (int q = 1; q <= REQUETE.length; q++) {
+        for (int q = 1; q <= this.requetes.length; q++) {
 
-            TraiterRequete requete = new TraiterRequete(REQUETE[q - 1], maxParagraphes, withReasoner);
+            TraiterRequete requete = new TraiterRequete(this.requetes[q - 1], maxParagraphes, withReasoner);
             System.out.println("Mots traités : " + requete.getListeMotsRequete());
             resultats = requete.getListeResultats();
 
-            System.out.println("Q:" + REQUETE[q - 1]);
+            System.out.println("Q:" + this.requetes[q - 1]);
 
             InputStream ips = EvaluerPerformance.class.getResourceAsStream(
                     "/resources/qrels/qrel" + q + ".txt");
