@@ -31,13 +31,13 @@ public class ErrorDB extends javax.swing.JDialog {
         javax.swing.JLabel appDescLabel = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(SearchTool.DesktopApplication1.class).getContext().getResourceMap(ErrorDB.class);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(SearchTool.MoteurRechercheUI.class).getContext().getResourceMap(ErrorDB.class);
         setTitle(resourceMap.getString("title")); // NOI18N
         setModal(true);
         setName("aboutBox"); // NOI18N
         setResizable(false);
 
-        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(SearchTool.DesktopApplication1.class).getContext().getActionMap(ErrorDB.class, this);
+        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(SearchTool.MoteurRechercheUI.class).getContext().getActionMap(ErrorDB.class, this);
         closeButton.setAction(actionMap.get("closeAboutBox")); // NOI18N
         closeButton.setName("closeButton"); // NOI18N
 
