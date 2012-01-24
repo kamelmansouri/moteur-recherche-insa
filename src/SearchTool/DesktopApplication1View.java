@@ -443,7 +443,8 @@ public class DesktopApplication1View extends FrameView {
                 TraiterRequete requete = new TraiterRequete(this.searchField.getText(), 5, false);
                 for(Resultat resultat : requete.getListeResultats()){
                     int pos = model.getSize();
-                    model.add(pos, resultat.getParagraph().substring(0, 50));
+                    String texte = resultat.getFilePath() + " (" +resultat.getPath() + ")";
+                    model.add(pos, texte);
                     resultats.add(resultat);
                 }
                 listResults.updateUI();
