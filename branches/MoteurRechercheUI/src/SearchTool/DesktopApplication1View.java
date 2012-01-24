@@ -98,21 +98,21 @@ public class DesktopApplication1View extends FrameView {
     @Action
     public void showAboutBox() {
         if (aboutBox == null) {
-            JFrame mainFrame = DesktopApplication1.getApplication().getMainFrame();
+            JFrame mainFrame = MoteurRechercheUI.getApplication().getMainFrame();
             aboutBox = new DesktopApplication1AboutBox(mainFrame);
             aboutBox.setLocationRelativeTo(mainFrame);
         }
-        DesktopApplication1.getApplication().show(aboutBox);
+        MoteurRechercheUI.getApplication().show(aboutBox);
     }
 
     @Action
     public void showErrorDBBox() {
         if (errorDbBox == null) {
-            JFrame mainFrame = DesktopApplication1.getApplication().getMainFrame();
+            JFrame mainFrame = MoteurRechercheUI.getApplication().getMainFrame();
             errorDbBox = new ErrorDB(mainFrame);
             errorDbBox.setLocationRelativeTo(mainFrame);
         }
-        DesktopApplication1.getApplication().show(errorDbBox);
+        MoteurRechercheUI.getApplication().show(errorDbBox);
     }
 
     /** This method is called from within the constructor to
@@ -162,7 +162,7 @@ public class DesktopApplication1View extends FrameView {
 
         jPanel1.setName("jPanel1"); // NOI18N
 
-        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(SearchTool.DesktopApplication1.class).getContext().getResourceMap(DesktopApplication1View.class);
+        org.jdesktop.application.ResourceMap resourceMap = org.jdesktop.application.Application.getInstance(SearchTool.MoteurRechercheUI.class).getContext().getResourceMap(DesktopApplication1View.class);
         searchField.setText(resourceMap.getString("searchField.text")); // NOI18N
         searchField.setName("searchField"); // NOI18N
         searchField.addKeyListener(new java.awt.event.KeyAdapter() {
@@ -357,7 +357,7 @@ public class DesktopApplication1View extends FrameView {
         fileMenu.setText(resourceMap.getString("fileMenu.text")); // NOI18N
         fileMenu.setName("fileMenu"); // NOI18N
 
-        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(SearchTool.DesktopApplication1.class).getContext().getActionMap(DesktopApplication1View.class, this);
+        javax.swing.ActionMap actionMap = org.jdesktop.application.Application.getInstance(SearchTool.MoteurRechercheUI.class).getContext().getActionMap(DesktopApplication1View.class, this);
         jMenuItem1.setAction(actionMap.get("indexer")); // NOI18N
         jMenuItem1.setText(resourceMap.getString("jMenuItem1.text")); // NOI18N
         jMenuItem1.setName("jMenuItem1"); // NOI18N
@@ -519,7 +519,7 @@ public class DesktopApplication1View extends FrameView {
     final JFileChooser fc = new JFileChooser();
     
     private void getFile(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_getFile
-        JFrame mainFrame = DesktopApplication1.getApplication().getMainFrame();
+        JFrame mainFrame = MoteurRechercheUI.getApplication().getMainFrame();
         int returnVal = fc.showOpenDialog(mainFrame);
         
         if (returnVal == JFileChooser.APPROVE_OPTION) {
